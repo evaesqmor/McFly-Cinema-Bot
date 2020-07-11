@@ -1,4 +1,3 @@
-# ChatbotTFG
+# McFly Cinema Bot
 
-DialogFlow
-Telegram
+A bot about cinema and TV shows entertainment.
