@@ -1,0 +1,70 @@
+{
+  "id": "251b9922-c6b0-46fc-a8e4-541c98cc47fb",
+  "name": "Saludo",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "644118fd-a551-49d4-a380-6ec438fe09e5",
+          "required": false,
+          "dataType": "@sys.music-artist",
+          "name": "music-artist",
+          "value": "$music-artist",
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "182f5a85-294f-4a5a-88ba-f55cd4c069c4",
+          "required": false,
+          "dataType": "@sys.geo-city",
+          "name": "geo-city",
+          "value": "$geo-city",
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 1,
+          "platform": "telegram",
+          "lang": "es",
+          "condition": "",
+          "title": "Bienvenido",
+          "imageUrl": "https://www.google.es/search?hl\u003des\u0026authuser\u003d0\u0026tbm\u003disch\u0026sxsrf\u003dALeKk01qXFWXZQWO4gWja0jIXauVtTbEXg%3A1595343782342\u0026source\u003dhp\u0026biw\u003d1366\u0026bih\u003d625\u0026ei\u003dpgMXX4P9EeOflwT6qo34Cw\u0026q\u003dhola\u0026oq\u003dhola\u0026gs_lcp\u003dCgNpbWcQAzIFCAAQsQMyBQgAELEDMgIIADICCAAyAggAMgIIADIFCAAQsQMyBQgAELEDMgIIADICCAA6BAgjECc6BwgjEOoCECdQ5gZY0SZgpiloA3AAeACAAWCIAfgCkgEBNZgBAKABAaoBC2d3cy13aXotaW1nsAEK\u0026sclient\u003dimg\u0026ved\u003d0ahUKEwiD6MDbzt7qAhXjz4UKHXpVA78Q4dUDCAc\u0026uact\u003d5#imgrc\u003djR4O1MNMWeQYYM"
+        },
+        {
+          "type": 0,
+          "lang": "es",
+          "condition": "",
+          "speech": [
+            "Buenos días",
+            "Hola",
+            "Bienvenido"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "telegram": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
