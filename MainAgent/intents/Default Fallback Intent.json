@@ -24,6 +24,18 @@
         },
         {
           "type": 0,
+          "lang": "es",
+          "condition": "",
+          "speech": [
+            "Ups, no he entendido a que te refieres.",
+            "¿Podrías repetirlo, por favor?",
+            "¿Disculpa?",
+            "¿Decías?",
+            "¿Cómo?"
+          ]
+        },
+        {
+          "type": 0,
           "lang": "en",
           "condition": "",
           "speech": [
@@ -39,18 +51,6 @@
             "Say that one more time?",
             "I didn\u0027t get that. Can you repeat?",
             "I missed that, say that again?"
-          ]
-        },
-        {
-          "type": 0,
-          "lang": "es",
-          "condition": "",
-          "speech": [
-            "Ups, no he entendido a que te refieres.",
-            "¿Podrías repetirlo, por favor?",
-            "¿Disculpa?",
-            "¿Decías?",
-            "¿Cómo?"
           ]
         }
       ],

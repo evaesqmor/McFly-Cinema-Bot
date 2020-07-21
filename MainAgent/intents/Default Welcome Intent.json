@@ -22,6 +22,16 @@
         },
         {
           "type": 0,
+          "lang": "es",
+          "condition": "",
+          "speech": [
+            "¡Hola!",
+            "¡Hey!",
+            "¡Buenos días!"
+          ]
+        },
+        {
+          "type": 0,
           "lang": "en",
           "condition": "",
           "speech": [
@@ -29,16 +39,6 @@
             "Hello! How can I help you?",
             "Good day! What can I do for you today?",
             "Greetings! How can I assist?"
-          ]
-        },
-        {
-          "type": 0,
-          "lang": "es",
-          "condition": "",
-          "speech": [
-            "¡Hola!",
-            "¡Hey!",
-            "¡Buenos días!"
           ]
         }
       ],
