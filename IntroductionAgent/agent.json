@@ -31,13 +31,13 @@
   },
   "defaultTimezone": "Europe/Kaliningrad",
   "webhook": {
-    "url": "",
+    "url": "https://us-central1-introductionagent-ohrbtq.cloudfunctions.net/dialogflowFirebaseFulfillment",
     "username": "",
     "headers": {},
-    "available": false,
+    "available": true,
     "useForDomains": false,
-    "cloudFunctionsEnabled": false,
-    "cloudFunctionsInitialized": false
+    "cloudFunctionsEnabled": true,
+    "cloudFunctionsInitialized": true
   },
   "isPrivate": true,
   "customClassifierMode": "use.after",
