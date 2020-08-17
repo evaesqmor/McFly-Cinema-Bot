@@ -1,0 +1,73 @@
+{
+  "id": "82ce78bc-a397-4ed1-a06f-0ec8c9e39bb0",
+  "name": "AuthYesIntent",
+  "auto": true,
+  "contexts": [
+    "WelcomeIntent-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "auth_yes_followup",
+          "lifespan": 1
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "4",
+          "platform": "telegram",
+          "title": "",
+          "payload": {
+            "telegram": {
+              "reply_markup": {
+                "keyboard": [
+                  [
+                    {
+                      "callback_data": "si",
+                      "text": "Por supuesto que si 😊"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "No 🤔",
+                      "callback_data": "no"
+                    }
+                  ]
+                ],
+                "one_time_keyboard": true,
+                "resize_keyboard": true
+              },
+              "text": "¿Estás registrado? 🤔"
+            }
+          },
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "Está bien, ¿estás registrado?"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

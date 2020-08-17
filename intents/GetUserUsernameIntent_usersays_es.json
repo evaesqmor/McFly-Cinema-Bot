@@ -1,0 +1,21 @@
+[
+  {
+    "id": "69001027-78be-4f82-be29-8a5e2fac98ac",
+    "data": [
+      {
+        "text": "Mi usuario es ",
+        "userDefined": false
+      },
+      {
+        "text": "jamiedoey",
+        "meta": "@sys.any",
+        "alias": "username",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  }
+]

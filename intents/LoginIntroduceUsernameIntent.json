@@ -1,0 +1,66 @@
+{
+  "id": "3293f40a-5802-4221-9855-b883b3dfdea6",
+  "name": "LoginIntroduceUsernameIntent",
+  "auto": true,
+  "contexts": [
+    "proceed_to_login_followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.email",
+      "affectedContexts": [
+        {
+          "name": "introduce_username_followup",
+          "lifespan": 1
+        }
+      ],
+      "parameters": [
+        {
+          "id": "871fca66-2040-40b1-be9d-af20bee42dc4",
+          "name": "username",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$username",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "1",
+          "platform": "telegram",
+          "subtitle": "Genial,  ¿cuál es tu contraseña?",
+          "title": "Login - Contraseña",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "Genial,  ¿cuál es tu contraseña?"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

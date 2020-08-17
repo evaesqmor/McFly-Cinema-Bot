@@ -1,0 +1,96 @@
+[
+  {
+    "id": "20bf45ca-41db-40fa-9cb9-3b8a3e969a06",
+    "data": [
+      {
+        "text": "si quiero autenticarme",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "1d6e6837-839f-4bc0-bc7b-0bba85072c32",
+    "data": [
+      {
+        "text": "vamos",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0b065d33-64e8-4d7d-a2b0-d1910c8c35fa",
+    "data": [
+      {
+        "text": "si claro",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0dcc0ed6-7cea-46bb-b806-c61106bc09f3",
+    "data": [
+      {
+        "text": "si",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 2,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d6c6afe6-bd94-4eb1-945c-5d9b411e34fd",
+    "data": [
+      {
+        "text": "adelante",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "323c71a8-3f6b-4de4-b6c9-b2d6efc836a8",
+    "data": [
+      {
+        "text": "por supuesto",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "5043d9b6-5f61-4493-bed8-7647c93e215f",
+    "data": [
+      {
+        "text": "claro",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

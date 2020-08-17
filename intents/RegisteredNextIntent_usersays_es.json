@@ -1,0 +1,123 @@
+[
+  {
+    "id": "32dffa9c-40e3-4c2c-9524-3dc1a62ee775",
+    "data": [
+      {
+        "text": "genial",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "32b6dfc6-89c0-4638-b016-708167d51dcd",
+    "data": [
+      {
+        "text": "perfecto",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d06a33fe-b567-4cdd-85da-bd998d28a2b3",
+    "data": [
+      {
+        "text": "por supuesto",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "9aff7f2f-ccf9-4a74-9986-d5165ecc6e17",
+    "data": [
+      {
+        "text": "claro",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "2547b7f0-a467-4fba-8970-110f1b58c281",
+    "data": [
+      {
+        "text": "está bien",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "295d24a2-5c6a-462a-8857-c35d7310da6b",
+    "data": [
+      {
+        "text": "vale",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "95500465-2f72-4a35-be36-5195cf9578dd",
+    "data": [
+      {
+        "text": "adelante",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b05444b2-b99b-4810-8208-44b8be39c955",
+    "data": [
+      {
+        "text": "continuemos",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7a1da9bc-de09-4aa6-bcb0-9fc977785d8a",
+    "data": [
+      {
+        "text": "si",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

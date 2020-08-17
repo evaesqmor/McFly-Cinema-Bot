@@ -1,0 +1,138 @@
+[
+  {
+    "id": "16584110-af1b-475d-af25-107831da7366",
+    "data": [
+      {
+        "text": "más ",
+        "userDefined": false
+      },
+      {
+        "text": "tarde",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "291f9e26-91ae-45e4-97ff-563d99382a2d",
+    "data": [
+      {
+        "text": "luego",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "1f42d140-dbfc-484d-982c-ac8d7f7b3fae",
+    "data": [
+      {
+        "text": "no me apetece",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c8e90981-8991-4aa5-9c7c-406f2be69ad4",
+    "data": [
+      {
+        "text": "no quiero registrarme",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "a5a41993-f37c-43f9-8113-31add8d72fdd",
+    "data": [
+      {
+        "text": "salir",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "ae1da52c-95a7-4f42-8090-9ef25dff54fd",
+    "data": [
+      {
+        "text": "no registrar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "a5407b4c-012d-41ad-a94e-bbb9c27d694e",
+    "data": [
+      {
+        "text": "cancelar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "8df669bf-00e4-4cfc-ab9d-cfc538541dca",
+    "data": [
+      {
+        "text": "volver",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "1202f310-e1f2-42d2-b18e-bc6384ffa7c1",
+    "data": [
+      {
+        "text": "no hacer nada",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "2da825ea-4dd6-4ebb-9b9f-474b34710515",
+    "data": [
+      {
+        "text": "omitir",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
