@@ -7,10 +7,15 @@
     {
       "resetContexts": false,
       "action": "get.access",
-      "affectedContexts": [],
+      "affectedContexts": [
+        {
+          "name": "correct_access_followup",
+          "lifespan": 1
+        }
+      ],
       "parameters": [
         {
-          "id": "947059b9-f69a-410c-ad02-275b55b6df87",
+          "id": "bdaf7add-614f-4609-8891-a9acc163ce1a",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -23,8 +28,21 @@
           "outputDialogContexts": []
         },
         {
-          "id": "48c61c6d-3b0d-459d-8084-ffa68d2b7c51",
+          "id": "36a82946-730b-4af0-89b7-0e8c5fa29cf5",
           "name": "password",
+          "required": false,
+          "dataType": "",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "c93e3d8f-2ce0-48e9-b597-c4fa690a4e5b",
+          "name": "alias",
           "required": false,
           "dataType": "",
           "defaultValue": "",
@@ -36,26 +54,7 @@
           "outputDialogContexts": []
         }
       ],
-      "messages": [
-        {
-          "type": "1",
-          "platform": "telegram",
-          "title": "¡Genial! Has accedido",
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "es",
-          "speech": [
-            "¡Genial! Has accedido."
-          ],
-          "condition": ""
-        }
-      ],
+      "messages": [],
       "speech": []
     }
   ],
