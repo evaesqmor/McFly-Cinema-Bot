@@ -1,24 +1,28 @@
 {
-  "id": "e4cff9f6-3d5d-4e35-ad2d-3288c4c3b569",
-  "name": "CorrectAccessIntent",
+  "id": "2fadd8cb-d61e-45b7-b4bd-4985e48f6f20",
+  "name": "SearchInfoIntent",
   "auto": true,
-  "contexts": [],
+  "contexts": [
+    "correct_access_followup",
+    "search_info_followup"
+  ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "get.access",
+      "action": "input.medianame",
       "affectedContexts": [
         {
-          "name": "correct_access_followup",
-          "lifespan": 1
+          "name": "search_info_followup",
+          "lifespan": 5
         }
       ],
       "parameters": [
         {
-          "id": "bdaf7add-614f-4609-8891-a9acc163ce1a",
+          "id": "325348af-fca0-4e4e-b539-2e501de77583",
           "name": "username",
           "required": false,
           "dataType": "",
+          "value": "#correct_access_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -28,10 +32,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "36a82946-730b-4af0-89b7-0e8c5fa29cf5",
+          "id": "6df0000b-5765-4e01-b54d-bacd1252bab0",
           "name": "password",
           "required": false,
           "dataType": "",
+          "value": "#correct_access_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -41,10 +46,25 @@
           "outputDialogContexts": []
         },
         {
-          "id": "c93e3d8f-2ce0-48e9-b597-c4fa690a4e5b",
+          "id": "7d4c4579-aa72-482f-9448-d29345e26dbd",
           "name": "alias",
           "required": false,
           "dataType": "",
+          "value": "#correct_access_followup.alias",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "d7438281-a179-41bf-a982-18a53f11a6c8",
+          "name": "medianame",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$medianame",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -54,7 +74,15 @@
           "outputDialogContexts": []
         }
       ],
-      "messages": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        }
+      ],
       "speech": []
     }
   ],
@@ -62,11 +90,7 @@
   "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
-  "events": [
-    {
-      "name": "correctaccess"
-    }
-  ],
+  "events": [],
   "conditionalResponses": [],
   "condition": "",
   "conditionalFollowupEvents": []

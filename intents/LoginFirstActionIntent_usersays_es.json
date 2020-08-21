@@ -1,0 +1,54 @@
+[
+  {
+    "id": "771ff8cf-c97d-4810-9b16-e5149e7f97f3",
+    "data": [
+      {
+        "text": "Mi",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " nombre ",
+        "userDefined": false
+      },
+      {
+        "text": "es",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Claudia",
+        "meta": "@sys.any",
+        "alias": "alias",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "1a42d9ea-8e92-482d-8e6a-ece2caefa1f6",
+    "data": [
+      {
+        "text": "Mi alias es ",
+        "userDefined": false
+      },
+      {
+        "text": "María",
+        "meta": "@sys.any",
+        "alias": "alias",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

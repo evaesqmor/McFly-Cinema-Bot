@@ -1,0 +1,59 @@
+[
+  {
+    "id": "f41820c6-c034-45c0-9756-99a985ae75a1",
+    "data": [
+      {
+        "text": "Buscar ",
+        "userDefined": false
+      },
+      {
+        "text": "Ready Player One",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "994e2303-7029-4c43-b1d5-454d005b7781",
+    "data": [
+      {
+        "text": "Buscar ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "87aae10d-df7b-45bf-8728-93ff8c60cc5f",
+    "data": [
+      {
+        "text": "Buscar información de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Regreso al futuro",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

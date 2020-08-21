@@ -8,16 +8,11 @@
   "responses": [
     {
       "resetContexts": false,
-      "action": "",
-      "affectedContexts": [
-        {
-          "name": "get_username_followup",
-          "lifespan": 1
-        }
-      ],
+      "action": "input.username",
+      "affectedContexts": [],
       "parameters": [
         {
-          "id": "6817dc68-6e4e-402f-b115-e989087d3d66",
+          "id": "9808cd83-5496-484b-bb62-280516e8e146",
           "name": "username",
           "required": false,
           "dataType": "@sys.any",
@@ -32,25 +27,6 @@
         }
       ],
       "messages": [
-        {
-          "type": "1",
-          "platform": "telegram",
-          "subtitle": "Vale, tu email es $email, y a continuación establece una contraseña para tu sesión.",
-          "title": "Contraseña",
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "es",
-          "speech": [
-            "Vale $username, y a continuación establece una contraseña para tu sesión."
-          ],
-          "condition": ""
-        },
         {
           "type": "0",
           "title": "",
@@ -84,7 +60,7 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [],

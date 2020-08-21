@@ -8,7 +8,7 @@
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.email",
+      "action": "input.username",
       "affectedContexts": [
         {
           "name": "introduce_username_followup",
@@ -17,7 +17,7 @@
       ],
       "parameters": [
         {
-          "id": "871fca66-2040-40b1-be9d-af20bee42dc4",
+          "id": "0820314d-51c3-470e-a1b4-e57eff5daac6",
           "name": "username",
           "required": false,
           "dataType": "@sys.any",
