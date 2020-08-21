@@ -3,23 +3,85 @@
   "name": "SearchInfoIntent",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+
+    "correct_access_followup",
+    "search_info_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "",
-      "affectedContexts": [],
-      "parameters": [],
+
+      "action": "input.medianame",
+      "affectedContexts": [
+        {
+          "name": "search_info_followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "325348af-fca0-4e4e-b539-2e501de77583",
+          "name": "username",
+          "required": false,
+          "dataType": "",
+          "value": "#correct_access_followup.username",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "6df0000b-5765-4e01-b54d-bacd1252bab0",
+          "name": "password",
+          "required": false,
+          "dataType": "",
+          "value": "#correct_access_followup.password",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "7d4c4579-aa72-482f-9448-d29345e26dbd",
+          "name": "alias",
+          "required": false,
+          "dataType": "",
+          "value": "#correct_access_followup.alias",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "d7438281-a179-41bf-a982-18a53f11a6c8",
+          "name": "medianame",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
       "messages": [
         {
           "type": "0",
           "title": "",
           "textToSpeech": "",
           "lang": "es",
-          "speech": [
-            "Vale"
-          ],
           "condition": ""
         }
       ],
@@ -27,7 +89,7 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [],
