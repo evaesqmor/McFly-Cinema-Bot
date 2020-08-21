@@ -1,0 +1,24 @@
+[
+  {
+    "id": "baa57836-cc4d-4f4e-9e2f-ac130835c927",
+    "data": [
+      {
+        "text": "quiero buscar información sobre ",
+        "userDefined": false
+      },
+      {
+        "text": "una",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " película",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

@@ -1,22 +1,22 @@
 {
-  "id": "15e03a48-07db-465b-97b5-dbf2c94d24f6",
-  "name": "LoginIntroducePasswordIntent",
+  "id": "5af0def2-b6f7-47c8-9cfa-0c3b3374a6f7",
+  "name": "LoginFirstActionIntent",
   "auto": true,
   "contexts": [
-    "introduce_username_followup"
+    "correct_access_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.password",
+      "action": "input.alias",
       "affectedContexts": [],
       "parameters": [
         {
-          "id": "31b26d1e-b186-4bf9-b0d7-585db43558ee",
-          "name": "password",
+          "id": "6196bc5c-ed4b-412a-bff4-ee2a7517001d",
+          "name": "username",
           "required": false,
-          "dataType": "@sys.any",
-          "value": "$password",
+          "dataType": "",
+          "value": "#correct_access_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -26,11 +26,25 @@
           "outputDialogContexts": []
         },
         {
-          "id": "0a918716-bb6d-4f33-bfa6-4c5159291842",
-          "name": "username",
+          "id": "8943f5e5-5283-4a2d-bb9e-be1388db745e",
+          "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#introduce_username_followup.username",
+          "value": "#correct_access_followup.password",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "b6884c53-47f9-43b1-b73d-c8a22be1aefc",
+          "name": "alias",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -46,6 +60,9 @@
           "title": "",
           "textToSpeech": "",
           "lang": "es",
+          "speech": [
+            "Okey $alias, me lo apunto."
+          ],
           "condition": ""
         }
       ],
