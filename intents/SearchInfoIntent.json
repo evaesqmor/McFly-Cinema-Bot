@@ -3,12 +3,14 @@
   "name": "SearchInfoIntent",
   "auto": true,
   "contexts": [
+
     "correct_access_followup",
     "search_info_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
+
       "action": "input.medianame",
       "affectedContexts": [
         {
