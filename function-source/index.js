@@ -183,7 +183,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
          }));
   
        });
-      
     }
     
     if(mediatype=="tv"){
