@@ -1,0 +1,138 @@
+{
+  "id": "30943f28-f40d-4f59-9750-6a46c310a8b1",
+  "name": "ViewMediaDetails",
+  "auto": true,
+  "contexts": [
+    "search_info_followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.mediaelement",
+      "affectedContexts": [
+        {
+          "name": "view_media_details_followup",
+          "lifespan": 1
+        }
+      ],
+      "parameters": [
+        {
+          "id": "757464ef-48ca-48e4-af4f-99ff11a1a9fe",
+          "name": "mediaelement",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$mediaelement",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "051268bb-b1a5-4310-be12-a3641d340e3a",
+          "name": "mediatype",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$mediatype",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "ffa7ec36-4e32-429a-80b9-3e04edfaa253",
+          "name": "mediaid",
+          "required": false,
+          "dataType": "@sys.number",
+          "value": "$mediaid",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "24b47eb0-9034-40b0-bb19-706fb7620091",
+          "name": "medianame",
+          "required": false,
+          "dataType": "",
+          "value": "#search_info_followup.medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "95112def-ba1d-4a6e-928a-6bf5c38ab7b5",
+          "name": "username",
+          "required": false,
+          "dataType": "",
+          "value": "#search_info_followup.username",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "10e69465-d8ff-452f-b1e6-309f067547e8",
+          "name": "password",
+          "required": false,
+          "dataType": "",
+          "value": "#search_info_followup.password",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "554bea1b-895c-4cb0-bb45-173cf69bc851",
+          "name": "alias",
+          "required": false,
+          "dataType": "",
+          "value": "#search_info_followup.alias",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
