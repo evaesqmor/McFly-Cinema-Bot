@@ -1,27 +1,27 @@
 {
-  "id": "2fadd8cb-d61e-45b7-b4bd-4985e48f6f20",
-  "name": "SearchInfoIntent",
+  "id": "cfde856c-5741-4b4d-9e5c-9c30faef4dca",
+  "name": "KeepSearchingIntent",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "search_info_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.medianame",
+      "action": "",
       "affectedContexts": [
         {
-          "name": "search_info_followup",
+          "name": "correct_access_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "a1d46136-0c33-457f-8fd1-2aac7fd34ef5",
+          "id": "6ba74692-1daf-450e-be24-f190ecc7bc42",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#correct_access_followup.username",
+          "value": "#search_info_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -31,11 +31,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "ba39c9f3-dbd9-43aa-8a6a-e38f6d7c99bd",
+          "id": "53c9e32b-c5f4-4186-aff0-063ce329d885",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#correct_access_followup.password",
+          "value": "#search_info_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -45,11 +45,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "15316625-ccf1-40ea-a4f4-2610dd73868f",
+          "id": "19709185-3e33-4e2a-a4d7-74ec495f4a5b",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#correct_access_followup.alias",
+          "value": "#search_info_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -59,11 +59,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "75cd7f3c-7ed6-476d-98ee-f71be703a72f",
+          "id": "adf3cd11-5495-4221-a59e-a174e60bef42",
           "name": "medianame",
           "required": false,
-          "dataType": "@sys.any",
-          "value": "$medianame",
+          "dataType": "",
+          "value": "#search_info_followup.medianame",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -86,7 +86,7 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [],

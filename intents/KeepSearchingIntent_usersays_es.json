@@ -1,0 +1,54 @@
+[
+  {
+    "id": "180f59c6-eced-4eda-9723-c06eb04d4dd3",
+    "data": [
+      {
+        "text": "Otra",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "307d42a9-dbf5-46f9-a610-d5efa18b1a31",
+    "data": [
+      {
+        "text": "Buscar otra",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f7af886d-d386-45b3-b0c1-0e03d5926e72",
+    "data": [
+      {
+        "text": "Volver a buscar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "95fef13b-ad20-488f-aa8c-5850b1688923",
+    "data": [
+      {
+        "text": "Otra búsqueda",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
