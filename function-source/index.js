@@ -180,10 +180,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
            title: name,
            imageUrl: image,
            text: cardText,
-         }));
-  
+         }));  
        });
-      
     }
     
     if(mediatype=="tv"){
