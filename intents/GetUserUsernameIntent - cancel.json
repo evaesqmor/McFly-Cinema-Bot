@@ -1,42 +1,25 @@
 {
-  "id": "d862d006-cbd6-44c4-8401-b383f4f1e56b",
-  "name": "GetUserUsernameIntent",
+  "id": "62c9e20f-2154-4f08-b145-f58e342c2a38",
+  "name": "GetUserUsernameIntent - cancel",
   "auto": true,
   "contexts": [
-    "not_registered_followup"
+    "get_username_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.username",
-      "affectedContexts": [
-        {
-          "name": "get_username_followup",
-          "lifespan": 1
-        }
-      ],
-      "parameters": [
-        {
-          "id": "67723113-a694-4c84-ab98-9cb718185f30",
-          "name": "username",
-          "required": false,
-          "dataType": "@sys.any",
-          "value": "$username",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        }
-      ],
+      "action": "GetUserUsernameIntent.GetUserUsernameIntent-cancel",
+      "affectedContexts": [],
+      "parameters": [],
       "messages": [
         {
           "type": "0",
           "title": "",
           "textToSpeech": "",
-          "lang": "es-es",
+          "lang": "es",
+          "speech": [
+            "Está bien, cancelamos entonces el registro. ¡Hasta pronto!"
+          ],
           "condition": ""
         },
         {
@@ -44,6 +27,13 @@
           "title": "",
           "textToSpeech": "",
           "lang": "en-us",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es-es",
           "condition": ""
         },
         {
@@ -65,11 +55,12 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [],
   "conditionalResponses": [],
   "condition": "",
-  "conditionalFollowupEvents": []
+  "conditionalFollowupEvents": [],
+  "endInteraction": true
 }

@@ -1,37 +1,31 @@
 {
-  "id": "d862d006-cbd6-44c4-8401-b383f4f1e56b",
-  "name": "GetUserUsernameIntent",
-  "auto": true,
+  "id": "d11108e7-93ee-4327-9a85-4d5fd3dd731c",
+  "name": "AuthYesIntent - fallback",
   "contexts": [
-    "not_registered_followup"
+    "auth_yes_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.username",
+      "action": "AuthYesIntent.AuthYesIntent-fallback",
       "affectedContexts": [
         {
-          "name": "get_username_followup",
+          "name": "auth_yes_followup",
           "lifespan": 1
         }
       ],
-      "parameters": [
-        {
-          "id": "67723113-a694-4c84-ab98-9cb718185f30",
-          "name": "username",
-          "required": false,
-          "dataType": "@sys.any",
-          "value": "$username",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        }
-      ],
+      "parameters": [],
       "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "Hmm...¿quieres decir que estás registrado entonces?"
+          ],
+          "condition": ""
+        },
         {
           "type": "0",
           "title": "",
@@ -65,9 +59,9 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
-  "fallbackIntent": false,
+  "fallbackIntent": true,
   "events": [],
   "conditionalResponses": [],
   "condition": "",

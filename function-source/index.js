@@ -7,6 +7,7 @@
 const functions = require('firebase-functions');
 const {Text, Card, WebhookClient, Image, Suggestion, Payload} = require('dialogflow-fulfillment');
 const axios = require('axios');
+var nodemailer = require('nodemailer');
 
 //Conection to Firebase Database
 const admin = require('firebase-admin');
@@ -24,6 +25,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   var tmdbKey = "5de10ffec3fea5b06d8713b047977f01";
   var imgPth = "http://image.tmdb.org/t/p/w500/";
 
+  function handleDefaultFallback(){
+    var ct = agent.getContext('welcomeintent-followup');
+    console.log("Context: ",ct);  
+  }
   
   /*Registro, comprobar que el usuario no existe en la bdd*/
   function handleUsernameRegistered(){
@@ -32,10 +37,11 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     return ref.once("value").then((snapshot) =>{
       var passw =snapshot.child(`${username}/password`).val();
       if(passw !=null){
-        agent.add(`El usuario ${username} ya existe. Prueba a registrarte con otro usuario`);
+        agent.add(`El usuario ${username} ya existe. Prueba a introducir otro usuario`);
+        agent.setContext({ "name": "not_registered_followup","lifespan":1});
       }else {
-        agent.add(`Adelante, introduce tu contraseña`);
-        agent.setContext({ "name": "get_username_followup","lifespan":2,"parameters":{"username":username}});
+        agent.add(`Adelante, introduce una contraseña`);
+        agent.setContext({ "name": "get_username_followup","lifespan":1,"parameters":{"username":username}});
       }
     });
   }
@@ -44,7 +50,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   function handleGetPassword(){
     const username= agent.parameters.username;
     const password = agent.parameters.password;
-    agent.add(`Has sido registrado correctamente, ${username}`);
+    agent.add(`Has sido registrado correctamente, ${username}. ¿Te gustaría logearte?`);
     generalRef.child(username).set({
       password: password,
     });
@@ -62,10 +68,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         let alias = user.alias;
         if(password == storedPassword){
           agent.setFollowupEvent({ "name": "correctaccess", "parameters" : { "username": username, "password":password, "alias":alias}});
-        }else{
-          agent.add(`Lo siento, la contraseña no es correcta`);
-          agent.setFollowupEvent({ "name": "deniedaccess"});
-        }  
+        }
+      }else{
+        agent.add(`Lo siento, la contraseña no es correcta. ¿Quieres volver a intentarlo?`);
+        agent.setContext({ "name": "registered_followup","lifespan":1});  
       }
       return user;
     },function(error, isSuccess){
@@ -183,6 +189,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
          }));
   
        });
+      
     }
     
     if(mediatype=="tv"){

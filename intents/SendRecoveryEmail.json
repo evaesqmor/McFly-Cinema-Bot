@@ -1,27 +1,27 @@
 {
-  "id": "3293f40a-5802-4221-9855-b883b3dfdea6",
-  "name": "LoginIntroduceUsernameIntent",
+  "id": "19f7f99b-21b2-4c61-b534-e6e722ba69c1",
+  "name": "SendRecoveryEmail",
   "auto": true,
   "contexts": [
-    "proceed_to_login_followup"
+    "introduce_username_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.username",
+      "action": "",
       "affectedContexts": [
         {
-          "name": "introduce_username_followup",
+          "name": "proceed_to_login_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "8123681f-497b-431f-b387-75b97d97b596",
+          "id": "dc9f3f14-49fa-42e7-9f76-a5b4e256159e",
           "name": "username",
           "required": false,
-          "dataType": "@sys.any",
-          "value": "$username",
+          "dataType": "",
+          "value": "#introduce_username_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -33,21 +33,12 @@
       ],
       "messages": [
         {
-          "type": "1",
-          "platform": "telegram",
-          "subtitle": "Genial,  ¿cuál es tu contraseña?",
-          "title": "Login - Contraseña",
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        },
-        {
           "type": "0",
           "title": "",
           "textToSpeech": "",
           "lang": "es",
           "speech": [
-            "Genial,  ¿cuál es tu contraseña?"
+            "Te hemos enviado un email al correo asociado a dicho usuario."
           ],
           "condition": ""
         }
@@ -56,7 +47,7 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [],

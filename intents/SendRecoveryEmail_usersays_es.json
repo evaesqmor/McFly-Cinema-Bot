@@ -1,0 +1,37 @@
+[
+  {
+    "id": "819c3f1d-7136-4a3b-8c74-9f7efd07060c",
+    "data": [
+      {
+        "text": "no me acuerdo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "639fd0f9-9265-46fc-a4a3-9ac38c894e53",
+    "data": [
+      {
+        "text": "No recuerdo ",
+        "userDefined": false
+      },
+      {
+        "text": "mi",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " contraseña",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

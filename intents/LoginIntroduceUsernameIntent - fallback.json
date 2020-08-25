@@ -1,37 +1,31 @@
 {
-  "id": "d862d006-cbd6-44c4-8401-b383f4f1e56b",
-  "name": "GetUserUsernameIntent",
-  "auto": true,
+  "id": "25488076-40b8-456f-8da2-e1ff03c2c700",
+  "name": "LoginIntroduceUsernameIntent - fallback",
   "contexts": [
-    "not_registered_followup"
+    "introduce_username_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.username",
+      "action": "LoginIntroduceUsernameIntent.LoginIntroduceUsernameIntent-fallback",
       "affectedContexts": [
         {
-          "name": "get_username_followup",
+          "name": "introduce_username_followup",
           "lifespan": 1
         }
       ],
-      "parameters": [
-        {
-          "id": "67723113-a694-4c84-ab98-9cb718185f30",
-          "name": "username",
-          "required": false,
-          "dataType": "@sys.any",
-          "value": "$username",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        }
-      ],
+      "parameters": [],
       "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "Vuelve a introducir tu contraseña"
+          ],
+          "condition": ""
+        },
         {
           "type": "0",
           "title": "",
@@ -43,14 +37,14 @@
           "type": "0",
           "title": "",
           "textToSpeech": "",
-          "lang": "en-us",
+          "lang": "en-gb",
           "condition": ""
         },
         {
           "type": "0",
           "title": "",
           "textToSpeech": "",
-          "lang": "en-gb",
+          "lang": "en-us",
           "condition": ""
         },
         {
@@ -65,9 +59,9 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
-  "fallbackIntent": false,
+  "fallbackIntent": true,
   "events": [],
   "conditionalResponses": [],
   "condition": "",

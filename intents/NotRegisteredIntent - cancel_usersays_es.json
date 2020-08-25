@@ -1,0 +1,132 @@
+[
+  {
+    "id": "8903510d-0370-4eb4-ba7e-e7dd75d1062c",
+    "data": [
+      {
+        "text": "olvidar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "376ca001-ded5-483e-844b-9cb39bf1acec",
+    "data": [
+      {
+        "text": "ignorar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "efd3b40b-3d54-4cc2-8a89-e7721161880b",
+    "data": [
+      {
+        "text": "prescindir",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "8eccf0f0-4223-48b5-b7bc-51c7c0aa0002",
+    "data": [
+      {
+        "text": "anular",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "ac439069-fe9b-4271-89d3-76ab273b7edc",
+    "data": [
+      {
+        "text": "cancelar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "77b9fa1c-87ce-42e6-9222-bd804083523a",
+    "data": [
+      {
+        "text": "saltar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f1a67c51-2da4-4455-ad90-29823300cb3c",
+    "data": [
+      {
+        "text": "parar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "1202f310-e1f2-42d2-b18e-bc6384ffa7c1",
+    "data": [
+      {
+        "text": "no hacer nada",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "af0b7007-ef38-4696-b9bd-5cf64f653096",
+    "data": [
+      {
+        "text": "detener",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "2da825ea-4dd6-4ebb-9b9f-474b34710515",
+    "data": [
+      {
+        "text": "omitir",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
