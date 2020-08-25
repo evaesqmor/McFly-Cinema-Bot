@@ -1,37 +1,33 @@
 {
-  "id": "d862d006-cbd6-44c4-8401-b383f4f1e56b",
-  "name": "GetUserUsernameIntent",
-  "auto": true,
+  "id": "624ae11b-9ad9-4ae7-a29e-d72e28dcc18e",
+  "parentId": "b9d90bf3-8ff2-4023-9e36-552d72bf7453",
+  "rootParentId": "b9d90bf3-8ff2-4023-9e36-552d72bf7453",
+  "name": "WelcomeIntent - fallback",
   "contexts": [
-    "not_registered_followup"
+    "WelcomeIntent-followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.username",
+      "action": "WelcomeIntent.WelcomeIntent-fallback",
       "affectedContexts": [
         {
-          "name": "get_username_followup",
+          "name": "WelcomeIntent-followup",
           "lifespan": 1
         }
       ],
-      "parameters": [
-        {
-          "id": "67723113-a694-4c84-ab98-9cb718185f30",
-          "name": "username",
-          "required": false,
-          "dataType": "@sys.any",
-          "value": "$username",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        }
-      ],
+      "parameters": [],
       "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "No he entendido qué querías decir, pero ¿te gustaría acceder?"
+          ],
+          "condition": ""
+        },
         {
           "type": "0",
           "title": "",
@@ -43,14 +39,14 @@
           "type": "0",
           "title": "",
           "textToSpeech": "",
-          "lang": "en-us",
+          "lang": "en-gb",
           "condition": ""
         },
         {
           "type": "0",
           "title": "",
           "textToSpeech": "",
-          "lang": "en-gb",
+          "lang": "en-us",
           "condition": ""
         },
         {
@@ -65,9 +61,9 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
-  "fallbackIntent": false,
+  "fallbackIntent": true,
   "events": [],
   "conditionalResponses": [],
   "condition": "",

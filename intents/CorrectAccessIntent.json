@@ -15,7 +15,7 @@
       ],
       "parameters": [
         {
-          "id": "bdaf7add-614f-4609-8891-a9acc163ce1a",
+          "id": "742dc844-7c9c-4cb9-8a08-452415526b62",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -28,7 +28,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "36a82946-730b-4af0-89b7-0e8c5fa29cf5",
+          "id": "0af03111-1fed-4ec5-816e-7bf4fa29dd75",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -41,7 +41,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "c93e3d8f-2ce0-48e9-b597-c4fa690a4e5b",
+          "id": "c0714037-7b0c-4c65-9841-6953df919f6d",
           "name": "alias",
           "required": false,
           "dataType": "",

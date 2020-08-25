@@ -1,9 +1,9 @@
 {
-  "id": "8e7ce2d2-0dbe-4bfe-b97d-382cffd8effa",
-  "name": "RegisteredNextIntent",
+  "id": "5663794f-95c4-4c42-ae5a-afb2769ba9e2",
+  "name": "FalseRegisteredIntent",
   "auto": true,
   "contexts": [
-    "registered_followup"
+    "proceed_to_login_followup"
   ],
   "responses": [
     {
@@ -11,7 +11,7 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "proceed_to_login_followup",
+          "name": "not_registered_followup",
           "lifespan": 1
         }
       ],
@@ -23,7 +23,7 @@
           "textToSpeech": "",
           "lang": "es",
           "speech": [
-            "De acuerdo, ¿Cuál es tu usuario?"
+            "Entonces prueba a registrarte. ¿Cuál será tu usuario?"
           ],
           "condition": ""
         }

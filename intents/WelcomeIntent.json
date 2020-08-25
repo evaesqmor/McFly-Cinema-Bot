@@ -32,12 +32,13 @@
           "payload": {
             "telegram": {
               "reply_markup": {
+                "one_time_keyboard": true,
                 "resize_keyboard": true,
                 "keyboard": [
                   [
                     {
-                      "callback_data": "si",
-                      "text": "Si, claro 😊"
+                      "text": "Si, claro 😊",
+                      "callback_data": "si"
                     }
                   ],
                   [
@@ -46,8 +47,7 @@
                       "text": "Quizá más tarde 🤔"
                     }
                   ]
-                ],
-                "one_time_keyboard": true
+                ]
               },
               "text": "¿Quieres autenticarte?😄"
             }
@@ -122,7 +122,7 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [

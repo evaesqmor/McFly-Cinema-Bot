@@ -1,5 +1,5 @@
 {
-  "id": "221f9fa8-f46d-4d38-925b-f8f766ec5d67",
+  "id": "22379bb1-0c3c-4066-9d22-d5797b29a21b",
   "name": "Default Fallback Intent",
   "auto": true,
   "contexts": [],
@@ -14,6 +14,9 @@
           "type": "1",
           "platform": "telegram",
           "title": "¿Podrías repetirlo, por favor?",
+          "buttons": [
+            {}
+          ],
           "textToSpeech": "",
           "lang": "es",
           "condition": ""
@@ -29,83 +32,6 @@
             "¿Disculpa?",
             "¿Decías?",
             "¿Cómo?"
-          ],
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "en-us",
-          "speech": [
-            "I didn\u0027t get that. Can you say it again?",
-            "I missed what you said. What was that?",
-            "Sorry, could you say that again?",
-            "Sorry, can you say that again?",
-            "Can you say that again?",
-            "Sorry, I didn\u0027t get that. Can you rephrase?",
-            "Sorry, what was that?",
-            "One more time?",
-            "What was that?",
-            "Say that one more time?",
-            "I didn\u0027t get that. Can you repeat?",
-            "I missed that, say that again?"
-          ],
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "es-es",
-          "speech": [
-            "Ups, no he entendido a que te refieres.",
-            "¿Podrías repetirlo, por favor?",
-            "¿Disculpa?",
-            "¿Decías?",
-            "¿Cómo?"
-          ],
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "en-gb",
-          "speech": [
-            "I didn\u0027t get that. Can you say it again?",
-            "I missed what you said. What was that?",
-            "Sorry, could you say that again?",
-            "Sorry, can you say that again?",
-            "Can you say that again?",
-            "Sorry, I didn\u0027t get that. Can you rephrase?",
-            "Sorry, what was that?",
-            "One more time?",
-            "What was that?",
-            "Say that one more time?",
-            "I didn\u0027t get that. Can you repeat?",
-            "I missed that, say that again?"
-          ],
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "en",
-          "speech": [
-            "I didn\u0027t get that. Can you say it again?",
-            "I missed what you said. What was that?",
-            "Sorry, could you say that again?",
-            "Sorry, can you say that again?",
-            "Can you say that again?",
-            "Sorry, I didn\u0027t get that. Can you rephrase?",
-            "Sorry, what was that?",
-            "One more time?",
-            "What was that?",
-            "Say that one more time?",
-            "I didn\u0027t get that. Can you repeat?",
-            "I missed that, say that again?"
           ],
           "condition": ""
         }
@@ -114,7 +40,7 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": true,
   "events": [],

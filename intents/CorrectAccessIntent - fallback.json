@@ -1,42 +1,29 @@
 {
-  "id": "d862d006-cbd6-44c4-8401-b383f4f1e56b",
-  "name": "GetUserUsernameIntent",
-  "auto": true,
+  "id": "12e7ae28-aa8a-4cc3-88d9-0fcc3b56f195",
+  "name": "CorrectAccessIntent - fallback",
   "contexts": [
-    "not_registered_followup"
+    "correct_access_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.username",
+      "action": "CorrectAccessIntent.CorrectAccessIntent-fallback",
       "affectedContexts": [
         {
-          "name": "get_username_followup",
+          "name": "correct_access_followup",
           "lifespan": 1
         }
       ],
-      "parameters": [
-        {
-          "id": "67723113-a694-4c84-ab98-9cb718185f30",
-          "name": "username",
-          "required": false,
-          "dataType": "@sys.any",
-          "value": "$username",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        }
-      ],
+      "parameters": [],
       "messages": [
         {
           "type": "0",
           "title": "",
           "textToSpeech": "",
-          "lang": "es-es",
+          "lang": "es",
+          "speech": [
+            "No he entendido qué quieres hacer. ¿Puedes repetirlo?"
+          ],
           "condition": ""
         },
         {
@@ -44,6 +31,13 @@
           "title": "",
           "textToSpeech": "",
           "lang": "en-us",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es-es",
           "condition": ""
         },
         {
@@ -65,9 +59,9 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
-  "fallbackIntent": false,
+  "fallbackIntent": true,
   "events": [],
   "conditionalResponses": [],
   "condition": "",

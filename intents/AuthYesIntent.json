@@ -27,14 +27,14 @@
                 "keyboard": [
                   [
                     {
-                      "callback_data": "si",
-                      "text": "Por supuesto que si 😊"
+                      "text": "Por supuesto que si 😊",
+                      "callback_data": "si"
                     }
                   ],
                   [
                     {
-                      "text": "No 🤔",
-                      "callback_data": "no"
+                      "callback_data": "no",
+                      "text": "No 🤔"
                     }
                   ]
                 ],
