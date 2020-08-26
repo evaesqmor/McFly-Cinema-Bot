@@ -24,11 +24,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   var generalRef = database.ref("users");
   var tmdbKey = "5de10ffec3fea5b06d8713b047977f01";
   var imgPth = "http://image.tmdb.org/t/p/w500/";
-
-  function handleDefaultFallback(){
-    var ct = agent.getContext('welcomeintent-followup');
-    console.log("Context: ",ct);  
-  }
   
   /*Registro, comprobar que el usuario no existe en la bdd*/
   function handleUsernameRegistered(){
