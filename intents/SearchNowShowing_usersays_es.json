@@ -1,0 +1,38 @@
+[
+  {
+    "id": "766baada-ae4f-41c4-bcfd-f32f746441f4",
+    "data": [
+      {
+        "text": "buscar cartelera",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "5875aba0-df38-43d7-92e4-bb0a0ce9f42c",
+    "data": [
+      {
+        "text": "buscar peliculas",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "en el cine",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

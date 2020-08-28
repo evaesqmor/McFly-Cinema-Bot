@@ -44,8 +44,6 @@
   "mlMinConfidence": 0.3,
   "supportedLanguages": [
     "en",
-    "en-gb",
-    "en-us",
     "es-es"
   ],
   "enableOnePlatformApi": true,

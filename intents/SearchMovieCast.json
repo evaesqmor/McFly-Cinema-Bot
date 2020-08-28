@@ -1,6 +1,6 @@
 {
-  "id": "2fadd8cb-d61e-45b7-b4bd-4985e48f6f20",
-  "name": "SearchInfoIntent",
+  "id": "4a6c2e8c-0eec-449b-9c0e-152364958513",
+  "name": "SearchMovieCast",
   "auto": true,
   "contexts": [
     "correct_access_followup"
@@ -8,11 +8,10 @@
   "responses": [
     {
       "resetContexts": false,
-
-      "action": "input.medianame",
+      "action": "",
       "affectedContexts": [
         {
-          "name": "search_info_followup",
+          "name": "search_movie_cast_followup",
           "lifespan": 1
         },
         {
@@ -22,7 +21,21 @@
       ],
       "parameters": [
         {
-          "id": "55167a7f-beaf-420d-8276-02f87d238d10",
+          "id": "dec4eadd-1fe3-4234-842d-56a0a71e4a67",
+          "name": "medianame",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "4b316671-a7a0-41c0-96d4-45a29bb158da",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -36,7 +49,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "d8ed3b60-4ee7-4554-aa85-bba8f9e5805f",
+          "id": "3dccc2e5-6904-47e0-829e-4b199f6ff2a1",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -50,25 +63,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "c2a076f4-66c1-4914-a7cc-69cdc4c245c3",
+          "id": "9f819282-78a4-451f-b41a-be0401cf3af5",
           "name": "alias",
           "required": false,
           "dataType": "",
           "value": "#correct_access_followup.alias",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "e1af473a-cec8-4566-be4b-859c96b25ca3",
-          "name": "medianame",
-          "required": false,
-          "dataType": "@sys.any",
-          "value": "$medianame",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

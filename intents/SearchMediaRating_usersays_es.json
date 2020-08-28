@@ -1,0 +1,109 @@
+[
+  {
+    "id": "f360e672-3967-4b8e-9658-de1ad05f3e88",
+    "data": [
+      {
+        "text": "Valoración de ",
+        "userDefined": false
+      },
+      {
+        "text": "La La Land",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f341da06-d926-467c-91ad-7707a6dfd772",
+    "data": [
+      {
+        "text": "Puntuación de ",
+        "userDefined": false
+      },
+      {
+        "text": "Maniac",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "1f01e5cd-7c56-438a-8117-9260c4eb0848",
+    "data": [
+      {
+        "text": "¿Qué puntuación tiene ",
+        "userDefined": false
+      },
+      {
+        "text": "Atrápame si puedes",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "529b0724-49cb-40a6-ad4e-d6c46cb339c2",
+    "data": [
+      {
+        "text": "¿Cual es la valoración de ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "eb3f9eaa-41a6-4de6-93ed-cecbda7f20b0",
+    "data": [
+      {
+        "text": "¿Cuál es la puntuación de ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  }
+]
