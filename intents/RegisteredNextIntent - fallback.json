@@ -39,20 +39,6 @@
           "textToSpeech": "",
           "lang": "en",
           "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "en-us",
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "en-gb",
-          "condition": ""
         }
       ],
       "speech": []

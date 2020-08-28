@@ -1,0 +1,155 @@
+[
+  {
+    "id": "e31a8325-6a53-4369-bc56-0bb5b4242997",
+    "data": [
+      {
+        "text": "Fecha de estreno de ",
+        "userDefined": false
+      },
+      {
+        "text": "Maniac",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "8a16ac75-bd09-4322-9720-8d88d8baac55",
+    "data": [
+      {
+        "text": "Estreno de ",
+        "userDefined": false
+      },
+      {
+        "text": "Avengers Endgame",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "6c29ff42-60ef-4da0-ad7e-520bb5aab2f3",
+    "data": [
+      {
+        "text": "¿Cuando se estrena ",
+        "userDefined": false
+      },
+      {
+        "text": "Tenet",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "24dff2a0-8ff3-4913-a77f-82d65e7829b8",
+    "data": [
+      {
+        "text": "¿Cuando se estrenará ",
+        "userDefined": false
+      },
+      {
+        "text": "Black Widow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d967fe6b-161e-4e4f-b00a-977449e3cb0f",
+    "data": [
+      {
+        "text": "¿En qué fecha se estrenó ",
+        "userDefined": false
+      },
+      {
+        "text": "La Vida de Pi",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7d95f80d-b9b8-4d05-8962-204e44fc6b4c",
+    "data": [
+      {
+        "text": "¿Cuál fue la fecha de estreno de ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "3a30dd2a-2639-4d12-895d-c303f5e0ae4a",
+    "data": [
+      {
+        "text": "¿Cuando se estrenó ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": " ?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

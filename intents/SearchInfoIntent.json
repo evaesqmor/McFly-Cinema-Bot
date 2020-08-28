@@ -21,7 +21,7 @@
       ],
       "parameters": [
         {
-          "id": "2085fd26-de75-4870-9b0e-ec1f83d3e1a9",
+          "id": "55167a7f-beaf-420d-8276-02f87d238d10",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -35,7 +35,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "a1d91756-11a8-4136-8529-d66dae33fbd1",
+          "id": "d8ed3b60-4ee7-4554-aa85-bba8f9e5805f",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -49,7 +49,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "be41cbff-880f-476e-85a2-542ce8c95128",
+          "id": "c2a076f4-66c1-4914-a7cc-69cdc4c245c3",
           "name": "alias",
           "required": false,
           "dataType": "",
@@ -63,7 +63,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "6edf0f39-5e95-4ddc-81a4-2c89c67c7296",
+          "id": "e1af473a-cec8-4566-be4b-859c96b25ca3",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "7fbaab0b-0a6a-4ce3-ad5a-aacfa3fb1c17",
+    "data": [
+      {
+        "text": "Reparto de la pelicula ",
+        "userDefined": false
+      },
+      {
+        "text": "50 sombras de Grey",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "595e44c5-f391-41d6-b38c-4e73cb8a8eea",
+    "data": [
+      {
+        "text": "¿Cuáles son los personajes de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Drive",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f6e338a3-21f5-4268-b155-e414606e8296",
+    "data": [
+      {
+        "text": "¿Quién sale en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Animales Fantásticos",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "71660654-58bc-4e24-b953-0f4640b89955",
+    "data": [
+      {
+        "text": "¿Cuál es el reparto de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "El Resplandor",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b9f7bccb-e930-444b-81d8-778eca3a3330",
+    "data": [
+      {
+        "text": "¿Qué actores salen en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Spiderman Homecoming",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
