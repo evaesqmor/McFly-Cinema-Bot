@@ -1,0 +1,109 @@
+[
+  {
+    "id": "ee0123d1-c6c0-475f-8972-e8f0d3375da0",
+    "data": [
+      {
+        "text": "Director de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "The Office",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c2f7e12b-e105-4847-9f30-fcd0a3ab2cdf",
+    "data": [
+      {
+        "text": "¿Quién dirigió la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Space Force",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "70f0817b-dfd0-408e-810f-6152b6d12769",
+    "data": [
+      {
+        "text": "¿Quién es el director de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Maniac",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "24da0178-0955-45fd-a3d0-9c4c36e41218",
+    "data": [
+      {
+        "text": "Directores de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "3dbc3a9f-9138-4100-b21f-ecf45685aa0b",
+    "data": [
+      {
+        "text": "¿Cuáles son los directores de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

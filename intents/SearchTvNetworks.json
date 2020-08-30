@@ -1,0 +1,58 @@
+{
+  "id": "9c711b41-467a-497b-8634-042747d909fa",
+  "name": "SearchTvNetworks",
+  "auto": true,
+  "contexts": [
+    "correct_access_followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "search_tv_networks_followup",
+          "lifespan": 1
+        },
+        {
+          "name": "correct_access_followup",
+          "lifespan": 1
+        }
+      ],
+      "parameters": [
+        {
+          "id": "44760410-4a57-4b2d-bba6-c1b6712f28da",
+          "name": "medianame",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

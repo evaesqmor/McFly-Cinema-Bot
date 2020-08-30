@@ -1,0 +1,58 @@
+{
+  "id": "15404b16-59e4-4941-a72b-8e3184a2330d",
+  "name": "SearchTvGenres",
+  "auto": true,
+  "contexts": [
+    "correct_access_followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "search_tv_genres_followup",
+          "lifespan": 1
+        },
+        {
+          "name": "correct_access_followup",
+          "lifespan": 1
+        }
+      ],
+      "parameters": [
+        {
+          "id": "f944da79-3f19-4e50-b096-4fae57596eec",
+          "name": "medianame",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

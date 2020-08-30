@@ -1,0 +1,58 @@
+{
+  "id": "a9f458ea-f30c-4938-85f5-22de24ba0647",
+  "name": "SearchTvSeasons",
+  "auto": true,
+  "contexts": [
+    "correct_access_followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "search_tv_seasons_followup",
+          "lifespan": 1
+        },
+        {
+          "name": "correct_access_followup",
+          "lifespan": 1
+        }
+      ],
+      "parameters": [
+        {
+          "id": "415ab803-25a2-49a3-b8f7-b72eb595b76c",
+          "name": "medianame",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

@@ -1,0 +1,58 @@
+{
+  "id": "bd939a2b-a6b2-453d-8c53-04ce0b6db681",
+  "name": "SearchTvDirectors",
+  "auto": true,
+  "contexts": [
+    "correct_access_followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "search_tv_directors_followup",
+          "lifespan": 1
+        },
+        {
+          "name": "correct_access_followup",
+          "lifespan": 1
+        }
+      ],
+      "parameters": [
+        {
+          "id": "ac3ad055-3850-48e2-9ce6-7b7b1feb8f4f",
+          "name": "medianame",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

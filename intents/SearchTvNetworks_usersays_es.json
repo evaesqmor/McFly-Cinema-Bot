@@ -1,0 +1,63 @@
+[
+  {
+    "id": "6cf9485f-4003-4a27-8bf7-11e2887e0d04",
+    "data": [
+      {
+        "text": "Donde ver la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Peaky Blinders",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "66c21863-fd90-43cd-91e9-d37a322befe7",
+    "data": [
+      {
+        "text": "Plataformas donde se puede ver la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "2200c6ab-cd7f-4fe8-8ff4-0939bcd2ab2a",
+    "data": [
+      {
+        "text": "¿Dónde se puede ver la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "The Office",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

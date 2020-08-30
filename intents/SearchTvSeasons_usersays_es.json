@@ -1,0 +1,63 @@
+[
+  {
+    "id": "229da3aa-61ba-4ac3-a739-9f1bf3b3cc00",
+    "data": [
+      {
+        "text": "Número de temporadas de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "The Office",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "db89c879-bfb3-4dca-978e-583b68c8e267",
+    "data": [
+      {
+        "text": "Temporadas de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "84686cfd-d052-4842-9607-aa95271dd81d",
+    "data": [
+      {
+        "text": "¿Cuántas temporadas tiene la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
