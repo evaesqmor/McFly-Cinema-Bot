@@ -1,0 +1,67 @@
+[
+  {
+    "id": "4d251b73-97d0-46c2-8880-82ff1f3af52b",
+    "data": [
+      {
+        "text": "¿A qué géneros pertenece la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Umbrella Academy",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "80f01ea0-6ea6-47f3-a5d2-11b2362dd66f",
+    "data": [
+      {
+        "text": "Géneros de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "99cfd1bb-9c7b-4a06-9d63-f257ecf5a33b",
+    "data": [
+      {
+        "text": "¿Cuáles son los géneros de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "The Office",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

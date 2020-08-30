@@ -1,0 +1,44 @@
+[
+  {
+    "id": "7e199a09-d9e4-49e1-b86e-34f2d0ea2e4e",
+    "data": [
+      {
+        "text": "¿A qué géneros pertenece la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Deadpool",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "aeabeb6a-9c35-4bf7-bf84-36da11b46c2c",
+    "data": [
+      {
+        "text": "Géneros de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "The Cube",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

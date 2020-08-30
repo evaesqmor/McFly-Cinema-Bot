@@ -1,0 +1,38 @@
+[
+  {
+    "id": "9fdef905-13e5-4858-8a8d-ba475db568c3",
+    "data": [
+      {
+        "text": "Idioma original de Stranger Things",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "4159dddc-20f0-44a8-898d-69cbc88e33e7",
+    "data": [
+      {
+        "text": "¿Cuál es el idioma original de ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
