@@ -8,6 +8,7 @@
   "responses": [
     {
       "resetContexts": false,
+
       "action": "input.medianame",
       "affectedContexts": [
         {
