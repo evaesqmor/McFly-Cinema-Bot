@@ -1,0 +1,63 @@
+[
+  {
+    "id": "69271ff4-56d6-4f7d-ab95-e5391f138650",
+    "data": [
+      {
+        "text": "¿Cuál es el titulo original de ",
+        "userDefined": false
+      },
+      {
+        "text": "La La Land: La ciudad de las estrellas",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c1f24123-5669-403b-bf97-c9a9a7b4f834",
+    "data": [
+      {
+        "text": "Título original de ",
+        "userDefined": false
+      },
+      {
+        "text": "Como conocí a vuestra madre",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "641fe8c6-f261-4d9d-af06-f24878b3ed2e",
+    "data": [
+      {
+        "text": "Nombre original de ",
+        "userDefined": false
+      },
+      {
+        "text": "Origen",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

@@ -1,0 +1,109 @@
+[
+  {
+    "id": "ece96361-e75d-483e-9e66-2b9476651e92",
+    "data": [
+      {
+        "text": "¿Para qué edades se recomienda ",
+        "userDefined": false
+      },
+      {
+        "text": "The Witcher",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "bc324eab-c02f-4abf-a0a8-95afda850221",
+    "data": [
+      {
+        "text": "Calificación de edad de ",
+        "userDefined": false
+      },
+      {
+        "text": "Mamma Mia",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b2eaffa8-c742-4096-8e07-83d5d259c383",
+    "data": [
+      {
+        "text": "La invención de Hugo",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": " calificación de edad",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f1d5f68e-d78c-44d4-b7c6-348614ca48a3",
+    "data": [
+      {
+        "text": "¿Es ",
+        "userDefined": false
+      },
+      {
+        "text": "101 Dálmatas",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": " para adultos?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "316c66e1-9635-4c09-93f7-1eee8a2f98d2",
+    "data": [
+      {
+        "text": "¿Es para adultos ",
+        "userDefined": false
+      },
+      {
+        "text": "Origen",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "232784a0-bbc8-4873-9b00-e5c0a0ec114d",
+    "data": [
+      {
+        "text": "Muéstrame videos de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Maniac",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7a1bfdde-98dc-4c56-978d-3f45f8798109",
+    "data": [
+      {
+        "text": "Enséñame videos de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "The Office",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "40f1f03d-2810-4935-b101-bf36d62ba0fd",
+    "data": [
+      {
+        "text": "trailer de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "8ab0597f-0fa5-47a9-9bde-2b0666b33a45",
+    "data": [
+      {
+        "text": "videos de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Como conocí a vuestra madre",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

@@ -1,0 +1,185 @@
+[
+  {
+    "id": "0ef2395f-0e0f-4a58-80b3-ecd191e5fa4b",
+    "data": [
+      {
+        "text": "Recomendaciones peliculas ",
+        "userDefined": false
+      },
+      {
+        "text": "Thor",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "882ea994-018b-47d8-9c50-4821a6d7a52c",
+    "data": [
+      {
+        "text": "Peliculas recomendadas similares a ",
+        "userDefined": false
+      },
+      {
+        "text": "Wonder Woman",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "63a21cfc-aa90-4dd3-80b2-6f9dc6f74657",
+    "data": [
+      {
+        "text": "Peliculas que recomiendas parecidas a ",
+        "userDefined": false
+      },
+      {
+        "text": "Capitan América",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d92b655f-00b7-4753-a1ea-790fb274db7d",
+    "data": [
+      {
+        "text": "¿Qué películas me recomiendas si me gustó ",
+        "userDefined": false
+      },
+      {
+        "text": "Deadpool",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "96fd19ae-fd27-4077-91f8-2fa0c27ec72d",
+    "data": [
+      {
+        "text": "Películas similares a ",
+        "userDefined": false
+      },
+      {
+        "text": "Regreso al futuro",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "39067f93-6a40-401d-97c9-35917e73d804",
+    "data": [
+      {
+        "text": "¿Qué películas son similares a ",
+        "userDefined": false
+      },
+      {
+        "text": "Origen",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "879b04be-fb94-42da-8090-0281530ec9ac",
+    "data": [
+      {
+        "text": "Películas que se parecen a ",
+        "userDefined": false
+      },
+      {
+        "text": "Tenet",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "a0fe6764-b4ec-4cdb-96a7-cc9934c5ca16",
+    "data": [
+      {
+        "text": "Películas parecidas a ",
+        "userDefined": false
+      },
+      {
+        "text": "101 Dálmatas",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c208eb09-68ae-4951-8ba6-74bc1ff77feb",
+    "data": [
+      {
+        "text": "¿Qué películas se parecen a ",
+        "userDefined": false
+      },
+      {
+        "text": "La Cumbre Escarlata",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
