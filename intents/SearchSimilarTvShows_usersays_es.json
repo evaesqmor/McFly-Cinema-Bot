@@ -1,0 +1,166 @@
+[
+  {
+    "id": "d373509f-c48b-4175-ba3a-9f99b732b781",
+    "data": [
+      {
+        "text": "Series recomendadas parecidas a ",
+        "userDefined": false
+      },
+      {
+        "text": "Umbrella Academy",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "af77178e-2583-4496-801e-7ed76e4f3059",
+    "data": [
+      {
+        "text": "¿Qué series me recomiendas si me gustó ",
+        "userDefined": false
+      },
+      {
+        "text": "Space Force",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "2853a3cc-f235-4c08-90b6-97f75043c55e",
+    "data": [
+      {
+        "text": "Recomendaciones ",
+        "userDefined": false
+      },
+      {
+        "text": "Como conocí a vuestra madre",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "9f6ccaff-f3c9-4916-a86d-d0ccc3242429",
+    "data": [
+      {
+        "text": "Series que se parecen a ",
+        "userDefined": false
+      },
+      {
+        "text": "The OA",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c5100365-dc83-45e4-b20c-122d6c98d44b",
+    "data": [
+      {
+        "text": "¿Qué series se parecen a ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "67c1f21b-c8be-4551-adc4-11e5bbfb78da",
+    "data": [
+      {
+        "text": "Series parecidas a ",
+        "userDefined": false
+      },
+      {
+        "text": "Maniac",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "dcba4a84-fee1-42f3-afdb-145235614bd1",
+    "data": [
+      {
+        "text": "¿Qué series son similares a ",
+        "userDefined": false
+      },
+      {
+        "text": "The Office",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "1f5decd4-65c8-4143-9726-d4a18f9b2ab5",
+    "data": [
+      {
+        "text": "Series similares a ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

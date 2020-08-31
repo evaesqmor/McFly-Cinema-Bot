@@ -97,6 +97,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     });
   }
   
+  /*******SEARCHING CONTENTS*******/
+  
   /*General Info Search*/
   function handleMediaSearch(){
     const medianame = agent.parameters.medianame;
@@ -130,7 +132,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
             }
             if(mediaType=="tv"){
               title =`${media.name}`;
-              fullTitle =`${count}. ${media.name} (Serie de televisión})`;
+              fullTitle =`${count}. ${media.name} (Serie de televisión)`;
               cardText = "**Nota media:** "+media.vote_average==0+
                 "**Fecha de estreno:** "+media.first_air_date+"\n"+
                 "**Resumen:\n"+media.overview;
@@ -179,8 +181,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
            title: name,
            imageUrl: image,
            text: cardText,
-         }));  
+         }));
+  
        });
+      
     }
     
     if(mediatype=="tv"){
@@ -567,14 +571,12 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   }
   
   function handleSearchTvNetworks(){
-    
     var medianame =agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
-    
+   
     return axios.get(`https://api.themoviedb.org/3/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
-      
+      .then((result)=>{   
       var element = result.data.results[0];
       var tvId = element.id;
        return axios.get(`https://api.themoviedb.org/3/tv/${tvId}?api_key=${tmdbKey}&language=en-US`)
@@ -638,7 +640,205 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
      });
   }
   
+  function handleSearchMediaOriginalTitle(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    
+    return axios.get(`https://api.themoviedb.org/3/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      console.log("Element",element);
+      var title = element.title==null?element.name:element.title;
+      var mediaType = element.media_type;
+      var originalTitle= element.original_name;
+      agent.add(`Titulo orig: ${originalTitle}`);
+      if(mediaType=="tv"){
+        agent.add(`El título original de la serie ${title} es ${originalTitle}.`);
+      } 
+      if(mediaType=="movie"){
+        agent.add(`El título original de la película ${title} es ${originalTitle}.`);
+      }
+    });
+  }
   
+  /*Tv videos */
+  function handleSearchTvVideos(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    
+    return axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+      .then((result)=>{
+      
+      var element = result.data.results[0];
+      var tvId = element.id;
+    
+       return axios.get(`https://api.themoviedb.org/3/tv/${tvId}/videos?api_key=${tmdbKey}&language=en-us`)
+      .then((series)=>{
+         var video = series.data.results[0];
+         var videoName = video.name;
+         var site = video.site;
+         var videoKey = video.key;
+         var videoPath;
+         if(site=="YouTube"){
+           videoPath="https://www.youtube.com/watch?v="+videoKey;
+         }
+         if(site=="Vimeo"){
+         	videoPath="https://vimeo.com/"+videoKey;
+         }
+         
+         agent.add(new Card({
+              title: videoName,
+              imageUrl: videoPath,
+            }));
+       });    
+    }); 
+  }
+  
+  /*Tv videos */
+  function handleSearchMovieVideos(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    
+    return axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var movieId = element.id;
+      return axios.get(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${tmdbKey}&language=en-us`)
+      .then((movie)=>{
+         var video = movie.data.results[0];
+         var videoName = video.name;
+         var site = video.site;
+         var videoKey = video.key;
+         var videoPath;
+         if(site=="YouTube"){
+           videoPath="https://www.youtube.com/watch?v="+videoKey;
+         }
+         if(site=="Vimeo"){
+         	videoPath="https://vimeo.com/"+videoKey;
+         }
+         agent.add(new Card({
+              title: videoName,
+              imageUrl: videoPath,
+            }));
+       });    
+    }); 
+  }
+  
+  function handleSearchTvOfficialPage(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var tvId = element.id;
+      return axios.get(`https://api.themoviedb.org/3/tv/${tvId}?api_key=${tmdbKey}&language=es`)
+      .then((result)=>{
+        var series = result.data;
+        agent.add(`La página oficial de la serie ${series.name} es ${series.homepage}`);
+      });
+    });
+  }
+  
+  function handleSearchMovieOfficialPage(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var movieId = element.id;
+      return axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${tmdbKey}&language=es`)
+      .then((result)=>{
+        var movie = result.data;
+        agent.add(`La página oficial de la película ${movie.title} es ${movie.homepage}`);
+      });
+    });
+  }
+  
+  function handleSearchSimilarTvShows(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var tvId = element.id;
+      return axios.get(`https://api.themoviedb.org/3/tv/${tvId}/similar?api_key=${tmdbKey}&language=es&page=1`)
+      .then((series)=>{
+        var count = 0;
+        series.data.results.map((element)=>{
+          if(count<4){
+          count++;
+          var name = element.name;
+          var posterPath = imgPth+element.poster_path;
+           agent.add(new Card({
+              title: name,
+              imageUrl: posterPath
+            }));
+          }
+        });
+      });
+    });
+  }
+  
+  function handleSearchSimilarMovies(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var movieId = element.id;
+      return axios.get(`https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${tmdbKey}&language=es&page=1`)
+      .then((movie)=>{
+        var count = 0;
+        movie.data.results.map((element)=>{
+          if(count<4){
+          count++;
+          var name = element.title;
+          var posterPath = imgPth+element.poster_path;
+           agent.add(new Card({
+              title: name,
+              imageUrl: posterPath
+            }));
+          }
+        });
+      });
+    });
+  }
+  
+  function handleSearchMediaIsAdult(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var title = element.title==null?element.name:element.title;
+      var mediaType =  element.media_type;
+      var adult = element.adult;
+      if(mediaType=="tv"){
+        if(adult){
+          agent.add(`La serie ${title} es para mayores de edad.`);
+        }else{
+          agent.add(`La serie ${title} es para todos los públicos.`);
+        }
+      }
+      if(mediaType=="movie"){
+        if(adult){
+          agent.add(`La película ${title} es para mayores de edad.`);
+        }else{
+          agent.add(`La película ${title} es para todos los públicos. `);
+        }
+      }
+    });  
+  }
+  
+  /******* MAPING INTENTS *******/
   let intentMap = new Map();
   intentMap.set('GetUserUsernameIntent', handleUsernameRegistered);
   intentMap.set('GetUserPasswordIntent', handleGetPassword);
@@ -662,5 +862,13 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('SearchTvNetworks', handleSearchTvNetworks);
   intentMap.set('SearchMovieGenres', handleSearchMovieGenres);
   intentMap.set('SearchTvGenres', handleSearchTvGenres);
+  intentMap.set('SearchMediaOriginalTitle', handleSearchMediaOriginalTitle);
+  intentMap.set('SearchTvVideos', handleSearchTvVideos);
+  intentMap.set('SearchMovieVideos', handleSearchMovieVideos);
+  intentMap.set('SearchTvOfficialPage', handleSearchTvOfficialPage);
+  intentMap.set('SearchMovieOfficialPage', handleSearchMovieOfficialPage);
+  intentMap.set('SearchSimilarTvShows', handleSearchSimilarTvShows);
+  intentMap.set('SearchSimilarMovies', handleSearchSimilarMovies);
+  intentMap.set('SearchMediaIsAdult', handleSearchMediaIsAdult);
   agent.handleRequest(intentMap);
 });

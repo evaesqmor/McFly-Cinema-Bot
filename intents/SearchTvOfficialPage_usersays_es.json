@@ -1,0 +1,86 @@
+[
+  {
+    "id": "80820577-0bca-485e-8a50-184729b73af3",
+    "data": [
+      {
+        "text": "¿Cuál es el perfil oficial de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Space Force",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f3fc8011-91a3-4a37-a17a-90aebf1aabf4",
+    "data": [
+      {
+        "text": "Perfil oficial de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "705f7e30-8036-4e89-8210-16cadf5fea04",
+    "data": [
+      {
+        "text": "Página oficial de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "4c056ca6-3579-484b-8490-d6f030648282",
+    "data": [
+      {
+        "text": "¿Cuál es la página oficial de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Maniac",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  }
+]
