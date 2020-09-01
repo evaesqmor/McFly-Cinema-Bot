@@ -1,0 +1,63 @@
+[
+  {
+    "id": "53b65979-c4bb-43df-b9a9-d68e8d8ad600",
+    "data": [
+      {
+        "text": "Opiniones de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Ava",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c81d6483-24f5-4226-a236-5b43669dcefb",
+    "data": [
+      {
+        "text": "Reseñas de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "La Lista de Schindler",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "3e7789c1-495a-4ec1-9b1e-48007b737c59",
+    "data": [
+      {
+        "text": "¿Cuáles son las reseñas de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "It: Capítulo 2",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

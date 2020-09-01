@@ -838,6 +838,213 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     });  
   }
   
+  function handleSearchActorPopularMovies(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1&include_adult=true`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var personId = element.id;
+      return axios.get(`https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
+      .then((credits)=>{
+        var count = 0;
+        credits.data.cast.map((element)=>{
+          if(count<7){
+          count++;
+          var name = element.title;
+          var posterPath = imgPth+element.poster_path;
+          var character = "Personaje: "+element.character;
+           agent.add(new Card({
+              title: name,
+              imageUrl: posterPath,
+              text: character
+            }));
+          }
+        });
+      });
+    });
+  }
+  
+  function handleSearchActorPopularTvShows(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1&include_adult=true`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var personId = element.id;
+      return axios.get(`https://api.themoviedb.org/3/person/${personId}/tv_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
+      .then((credits)=>{
+        var count = 0;
+        credits.data.cast.map((element)=>{
+          if(count<7){
+          count++;
+          var name = element.name;
+          var posterPath = imgPth+element.poster_path;
+          var character = element.character;
+          var numberOfEpisodes = element.episode_count;
+          var cardText = "Personaje: "+character+"\n"+
+              "Aparece en "+numberOfEpisodes+" episodios";
+           agent.add(new Card({
+              title: name,
+              imageUrl: posterPath,
+              text: cardText
+            }));
+          }
+        });
+      });
+    });
+  }
+  
+  function handleSearchMovieReviews(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var movieId = element.id;
+      var title = element.title;
+      agent.add(`Reseñas para la película ${title}`);
+      return axios.get(`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${tmdbKey}&language=es&page=1`)
+      .then((movie)=>{
+        movie.data.results.map((review)=>{
+          var reviewAuthor = review.author;
+          var content = review.content;   
+          agent.add(new Card({
+              title: "Autor: "+reviewAuthor,
+              text: content
+            }));
+        });
+      });
+    });
+  }
+  
+  function handleSearchTvReviews(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var tvId = element.id;
+      var name = element.name;
+      agent.add(`Tv Id: ${tvId}`);
+      agent.add(`Reseñas para la serie ${name}`);
+      return axios.get(`https://api.themoviedb.org/3/tv/${tvId}/reviews?api_key=${tmdbKey}&language=es&page=1`)
+      .then((series)=>{
+        series.data.results.map((review)=>{
+          var reviewAuthor = review.author;
+          var content = review.content;   
+          agent.add(new Card({
+              title: "Autor: "+reviewAuthor,
+              text: content
+            }));
+        });
+      });
+    });
+  }
+  
+  function handleSearchActorBiography(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1&include_adult=false`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var personId = element.id;
+      return axios.get(`https://api.themoviedb.org/3/person/${personId}?api_key=${tmdbKey}&language=es`)
+      .then((person)=>{
+        var name = person.data.name;
+        var biography = person.data.biography;
+        var gender = person.data.gender;
+        var cardTitle = "";
+        var posterPath=imgPth+person.data.profile_path;
+        if(gender=="1"){
+          cardTitle="Biografía de la actriz "+name+":\n";
+        }
+        if(gender=="2"){
+          cardTitle="Biografía del actor "+name+":\n";
+        }
+        agent.add(new Card({
+              title: cardTitle,
+          	  imageUrl:posterPath,
+              text: biography
+            }));
+      });
+    });
+  }
+  
+  function handleSearchActorBirthdate(){
+     var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1&include_adult=false`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var personId = element.id;
+      return axios.get(`https://api.themoviedb.org/3/person/${personId}?api_key=${tmdbKey}&language=es`)
+      .then((person)=>{
+        var name = person.data.name;
+        var birthdate = person.data.birthday;
+        var placeOfBirth = person.data.place_of_birth;
+        var gender = person.data.gender;
+        var posterPath=imgPth+person.data.profile_path;
+        var cardText = "";
+        if(gender=="1"){
+          cardText="La actriz "+name+" nació el "+birthdate+" en "+placeOfBirth;
+        }
+        if(gender=="2"){
+          cardText="El actor "+name+" nació el "+birthdate+" en "+placeOfBirth;
+        }
+        agent.add(new Card({
+              title: "Fecha de nacimiento de "+name,
+          	  imageUrl:posterPath,
+              text: cardText
+            }));
+      });
+    });
+  }
+  
+  function handleSearchActorRoleInMovie(){
+    var medianame =agent.parameters.medianame;
+    var person = agent.parameters.person;
+    var arrayName = person.split(" ");
+    var arrayMovie = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    var queryMovie = arrayMovie.join('-');
+    return axios.get(`https://api.themoviedb.org/3/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var personId = element.id;
+      var personName = element.name;
+      return axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${tmdbKey}&query=${queryMovie}&language=es&page=1`)
+      .then((movies)=>{
+        var movie = movies.data.results[0];
+        var title = movie.title;
+        var originalTitle = movie.original_title;
+      return axios.get(`https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
+      .then((credits)=>{
+        credits.data.cast.map((credit)=>{
+          var creditTitle=credit.title;
+          var creditOriginalTitle =credit.original_title;
+          if(title==creditTitle||originalTitle==creditOriginalTitle){
+            var posterPath = imgPth+credit.backdrop_path;
+            var character = credit.character;
+            var cardText = "El papel que interpreta "+personName+" en "+title+" es "+character+".";
+            agent.add(new Card({
+              title: title,
+          	  imageUrl:posterPath,
+              text: cardText
+            }));
+          }
+        });
+      });
+    });
+    });
+  }
+  
   /******* MAPING INTENTS *******/
   let intentMap = new Map();
   intentMap.set('GetUserUsernameIntent', handleUsernameRegistered);
@@ -870,5 +1077,13 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('SearchSimilarTvShows', handleSearchSimilarTvShows);
   intentMap.set('SearchSimilarMovies', handleSearchSimilarMovies);
   intentMap.set('SearchMediaIsAdult', handleSearchMediaIsAdult);
+  intentMap.set('SearchActorPopularMovies', handleSearchActorPopularMovies);
+  intentMap.set('SearchActorPopularTvShows', handleSearchActorPopularTvShows);
+  intentMap.set('SearchMovieReviews', handleSearchMovieReviews);
+  intentMap.set('SearchTvReviews', handleSearchTvReviews);
+  intentMap.set('SearchActorBiography', handleSearchActorBiography);
+  intentMap.set('SearchActorBirthdate', handleSearchActorBirthdate);
+  intentMap.set('SearchActorRoleInMovie', handleSearchActorRoleInMovie);
   agent.handleRequest(intentMap);
 });
+

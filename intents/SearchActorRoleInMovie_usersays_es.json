@@ -1,0 +1,461 @@
+[
+  {
+    "id": "ce0fa733-f2dc-49dd-bccd-f2331f6c1814",
+    "data": [
+      {
+        "text": "Rol de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Blake Lively",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en ",
+        "userDefined": false
+      },
+      {
+        "text": "Cafe Society",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b0a14341-a739-48e6-8927-5353e8b0be7d",
+    "data": [
+      {
+        "text": "Rol del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Daniel Craig",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en ",
+        "userDefined": false
+      },
+      {
+        "text": "Casino Royale",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0bac4322-6d6a-4611-9c68-c4f39090ad8f",
+    "data": [
+      {
+        "text": "Rol de ",
+        "userDefined": false
+      },
+      {
+        "text": "Ryan Reynolds",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Deadpool",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "715dc34d-78a7-4a3c-93c0-45b24a028171",
+    "data": [
+      {
+        "text": "Papel que interpreta ",
+        "userDefined": false
+      },
+      {
+        "text": "Johnny Depp",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Los Piratas del Caribe",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "703c2fd8-22f4-403e-bd73-31e6002273ad",
+    "data": [
+      {
+        "text": "Papel que interpreta la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Rebel Wilson",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Jojo Rabbit",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "069ff6ac-458d-40ed-811d-37facc0e93c2",
+    "data": [
+      {
+        "text": "Papel que interpreta ",
+        "userDefined": false
+      },
+      {
+        "text": "Will Smith",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Yo Robot",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "217da1bf-8462-4343-87e1-0af0a9ad8de7",
+    "data": [
+      {
+        "text": "Personaje de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Jennifer Lawrence",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Sinsajo",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "141bf0d3-1697-4c4a-b309-421bae95f51f",
+    "data": [
+      {
+        "text": "Personaje del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Robert De Niro",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "El Padrino",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b474f7b7-3007-4fdd-ac20-e461b1b029c4",
+    "data": [
+      {
+        "text": "Personaje de ",
+        "userDefined": false
+      },
+      {
+        "text": "Brad Pitt",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Malditos Bastardos",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "ed28b5ef-82b7-4740-8bb7-2f7290471dc4",
+    "data": [
+      {
+        "text": "¿Cuál es el personaje de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Charlize Theron",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Mil Maneras de Morder el Polvo",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "85471ce0-b89b-4330-85c2-5d6eb54b3f73",
+    "data": [
+      {
+        "text": "¿Cuál es el personaje del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "George Clooney",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Ocean\u0027s Eleven",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0b39b7ef-64c0-4cd6-9625-ac45880b5d30",
+    "data": [
+      {
+        "text": "¿Cuál es el personaje de ",
+        "userDefined": false
+      },
+      {
+        "text": "Rihanna",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Battleship",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f6dbcdea-8da4-4008-aab2-310698fd9c1d",
+    "data": [
+      {
+        "text": "¿Qué papel hace ",
+        "userDefined": false
+      },
+      {
+        "text": "Robin Williams",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": "  en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "El hombre Bicentenario",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d12332a1-c479-4911-9b6a-3a858bff331e",
+    "data": [
+      {
+        "text": "¿Qué papel hace la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Rooney Mara",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Her",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "dfdc7e4c-4473-4949-8c1f-fd0591af4e57",
+    "data": [
+      {
+        "text": "¿Qué papel hace el actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Joaquín Phoenix",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Joker",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
