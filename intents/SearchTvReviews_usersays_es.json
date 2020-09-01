@@ -1,0 +1,63 @@
+[
+  {
+    "id": "d0d25cc6-4585-4f65-b496-8e8c86776424",
+    "data": [
+      {
+        "text": "Opiniones de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "The OA",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "73076d3a-b7bb-407b-937e-0aa36dc07007",
+    "data": [
+      {
+        "text": "Reseñas de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "108c348b-bbe1-48b2-817c-8d2e549e654b",
+    "data": [
+      {
+        "text": "¿Cuáles son las reseñas de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

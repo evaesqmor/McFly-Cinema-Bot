@@ -1,0 +1,208 @@
+[
+  {
+    "id": "71469421-c946-496a-8005-56b36a855d72",
+    "data": [
+      {
+        "text": "¿En qué películas sale el actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Colin Firth",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "cc1a794b-b06b-4aa2-b27d-12e8227dae29",
+    "data": [
+      {
+        "text": "Películas de ",
+        "userDefined": false
+      },
+      {
+        "text": "Paul Rudd",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "4a5a5adf-b2e6-498a-8335-335935eb467c",
+    "data": [
+      {
+        "text": "Películas conocidas de ",
+        "userDefined": false
+      },
+      {
+        "text": "Emilia Clarke",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "e7ae79b8-a314-485e-bf80-85e0223e3316",
+    "data": [
+      {
+        "text": "Películas famosas de ",
+        "userDefined": false
+      },
+      {
+        "text": "Russell Crowe",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "99cebde3-2656-4f24-b1e3-0b558048b369",
+    "data": [
+      {
+        "text": "Películas conocidas del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Johnny Depp",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "2c964b14-7f23-4ce9-b288-96ca22a86c00",
+    "data": [
+      {
+        "text": "Películas famosas de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Winona Ryder",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "79555b22-1d26-4a8d-94c7-6a472a1bb609",
+    "data": [
+      {
+        "text": "Peliculas famosas del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Colin Farrell",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "3fc466b2-3b6b-4482-bcb8-726ea03e77ec",
+    "data": [
+      {
+        "text": "¿Por qué películas se conoce a ",
+        "userDefined": false
+      },
+      {
+        "text": "Will Smith",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "5f384518-910a-4985-9b9b-97702fa8c5a1",
+    "data": [
+      {
+        "text": "¿Por qué películas se conoce a la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Amy Adams",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d7fe2076-65f9-415a-af64-694c85c96577",
+    "data": [
+      {
+        "text": "¿Por qué películas se conoce al actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Will Ferrell",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
