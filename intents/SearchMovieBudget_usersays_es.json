@@ -1,0 +1,44 @@
+[
+  {
+    "id": "7ca9a92b-e929-4065-9a56-b202bf38ad66",
+    "data": [
+      {
+        "text": "Presupuesto de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Guardianes de la Galaxia",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "925afd49-0fb4-4940-8ebb-229ab2ca34d9",
+    "data": [
+      {
+        "text": "¿Cuál es el presupuesto de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Origen",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?P",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

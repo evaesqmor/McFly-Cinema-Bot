@@ -1,0 +1,116 @@
+[
+  {
+    "id": "a69409cc-f456-46de-bca5-e95b9fd717b1",
+    "data": [
+      {
+        "text": "Foto del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Joaquin Phoenix",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c14abda4-e6ea-4ac0-ba3d-cfd1c7e63da0",
+    "data": [
+      {
+        "text": "Foto de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Blanca Suárez",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "e368081c-2108-4795-9a27-e6a8bdf03bff",
+    "data": [
+      {
+        "text": "Imágenes del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "George Clooney",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "e63940e9-f861-469b-92cd-a84718e3c6dd",
+    "data": [
+      {
+        "text": "Imágenes de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Julliane Moore",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "ce3afd88-f5c2-4844-b84f-d46e1d1415fd",
+    "data": [
+      {
+        "text": "Fotos de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Lily Collins",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "8d9de87f-c9d5-4462-87d5-e44e2533bb0f",
+    "data": [
+      {
+        "text": "Fotos del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Colin Farrell",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

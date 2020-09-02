@@ -1,0 +1,63 @@
+[
+  {
+    "id": "ace2c40f-af89-41ae-8791-74290300dd12",
+    "data": [
+      {
+        "text": "Duración película ",
+        "userDefined": false
+      },
+      {
+        "text": "Tenet",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d8fce2e9-5806-45e9-872b-91b105ce8208",
+    "data": [
+      {
+        "text": "Duración de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Los Guardianes de la Galaxia",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "5bfe5c62-18c9-4428-a6cf-ea46a2bbcb76",
+    "data": [
+      {
+        "text": "¿Cuál es la duración de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Origen",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

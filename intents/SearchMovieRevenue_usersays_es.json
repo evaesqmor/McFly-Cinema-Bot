@@ -1,0 +1,44 @@
+[
+  {
+    "id": "00ab9e2e-e287-4047-9fb3-1ef804f80ec0",
+    "data": [
+      {
+        "text": "¿Qué ingresos obtuvo la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Guardianes de la Galaxia",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0d35db95-1503-49aa-8f0f-02b8f8ed4fa8",
+    "data": [
+      {
+        "text": "Ingresos de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Origen",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

@@ -1,6 +1,6 @@
 {
-  "id": "7b4b0e75-7615-4d8b-b58d-073c321f6552",
-  "name": "SearchActorRoleInMovie",
+  "id": "24c82f4f-4ab8-44c1-a603-34960d2e4e61",
+  "name": "SearchActorRoleInTvShow",
   "auto": true,
   "contexts": [
     "correct_access_followup"
@@ -11,7 +11,7 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_actor_role_in_movie_followup",
+          "name": "search_actor_role_in_tv_show_followup",
           "lifespan": 1
         },
         {
@@ -21,7 +21,7 @@
       ],
       "parameters": [
         {
-          "id": "bd664113-2124-4e29-82f8-8fb071ba8680",
+          "id": "8af47305-f348-41fc-a2be-2a22c31d4f80",
           "name": "person",
           "required": false,
           "dataType": "@sys.any",
@@ -35,7 +35,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "c3c7cf61-2cda-49d0-9453-c264c6a8a6da",
+          "id": "4e116528-4c09-4d2b-83df-5a49dd9118f9",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",

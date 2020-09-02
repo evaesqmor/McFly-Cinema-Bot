@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ff8a9e9e-20bd-4bcd-beaf-4c0550bf0d54",
+    "data": [
+      {
+        "text": "Presupuesto de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "64772486-ecfe-4ee8-85e4-579a3fd45755",
+    "data": [
+      {
+        "text": "¿Cuál es el presupuesto de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Cómo conocí a vuestra madre",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

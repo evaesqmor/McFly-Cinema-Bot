@@ -1,0 +1,40 @@
+[
+  {
+    "id": "251a9770-33e1-44bb-af0f-374021325d94",
+    "data": [
+      {
+        "text": "Fotos de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Los Guardianes de la Galaxia",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "9a636e54-f138-44c9-8f30-d488234ca453",
+    "data": [
+      {
+        "text": "Imágenes de la película ",
+        "userDefined": false
+      },
+      {
+        "text": "Origen",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
