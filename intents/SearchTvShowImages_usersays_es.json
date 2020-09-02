@@ -1,0 +1,40 @@
+[
+  {
+    "id": "b1e562c1-5388-4eff-a434-dda5ef42a33c",
+    "data": [
+      {
+        "text": "Fotos de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "e1067171-11d3-4356-aa0e-816722da5c77",
+    "data": [
+      {
+        "text": "Imágenes de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

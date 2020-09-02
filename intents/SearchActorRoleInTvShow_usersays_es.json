@@ -1,0 +1,197 @@
+[
+  {
+    "id": "c33764e0-f270-4c11-8867-d09490358b01",
+    "data": [
+      {
+        "text": "Personaje de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Alison Brie",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "e357aca3-bcd6-4142-ab5e-75cb58e80302",
+    "data": [
+      {
+        "text": "Personaje del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Kit Harington",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Juego de Tronos",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "64b69f97-895b-4548-9187-e3b988948df7",
+    "data": [
+      {
+        "text": "Personaje de ",
+        "userDefined": false
+      },
+      {
+        "text": "Emilia Clarke",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Juego de Tronos",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "55139fd9-c43c-470c-b228-515628334400",
+    "data": [
+      {
+        "text": "¿Qué papel hace el actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Sean Astin",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "fa110dc5-014d-4751-8314-8d0f12c29cd8",
+    "data": [
+      {
+        "text": "¿Qué papel hace la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Winona Ryder",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "ecdfc98a-a4fc-42cb-ac19-a83a8e9d469d",
+    "data": [
+      {
+        "text": "¿Qué ",
+        "userDefined": false
+      },
+      {
+        "text": "papel",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " hace ",
+        "userDefined": false
+      },
+      {
+        "text": "David Harbour",
+        "meta": "@sys.any",
+        "alias": "person",
+        "userDefined": true
+      },
+      {
+        "text": " en la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

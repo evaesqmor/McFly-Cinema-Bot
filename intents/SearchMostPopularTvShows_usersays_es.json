@@ -1,0 +1,28 @@
+[
+  {
+    "id": "57b0aecd-fba7-40f8-a29f-8e1bdf7c04f9",
+    "data": [
+      {
+        "text": "¿Qué series son las más populares?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "bece1db2-105d-4332-b4b4-8a60e38366e3",
+    "data": [
+      {
+        "text": "Series más populares",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

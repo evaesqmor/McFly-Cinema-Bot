@@ -1,6 +1,6 @@
 {
-  "id": "7b4b0e75-7615-4d8b-b58d-073c321f6552",
-  "name": "SearchActorRoleInMovie",
+  "id": "8c4045da-870d-4996-b297-a6ff0e5335cd",
+  "name": "SearchMovieImages",
   "auto": true,
   "contexts": [
     "correct_access_followup"
@@ -11,7 +11,7 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_actor_role_in_movie_followup",
+          "name": "search_movie_images_followup",
           "lifespan": 1
         },
         {
@@ -21,21 +21,7 @@
       ],
       "parameters": [
         {
-          "id": "bd664113-2124-4e29-82f8-8fb071ba8680",
-          "name": "person",
-          "required": false,
-          "dataType": "@sys.any",
-          "value": "$person",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "c3c7cf61-2cda-49d0-9453-c264c6a8a6da",
+          "id": "bb3c260a-34c0-4f6d-9649-36c9e90bcc7f",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
