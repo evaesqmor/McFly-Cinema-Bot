@@ -1,0 +1,120 @@
+[
+  {
+    "id": "bfad8675-6486-48d6-85a0-2e3183ca7814",
+    "data": [
+      {
+        "text": "Películas populares de ",
+        "userDefined": false
+      },
+      {
+        "text": "2011",
+        "meta": "@sys.any",
+        "alias": "year",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "2a521333-c47e-4a7f-b06c-c0c85f63348e",
+    "data": [
+      {
+        "text": "Películas conocidas de ",
+        "userDefined": false
+      },
+      {
+        "text": "1982",
+        "meta": "@sys.any",
+        "alias": "year",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "e55a2048-0779-4de7-80f6-ca32f355e2f4",
+    "data": [
+      {
+        "text": "Películas famosas de ",
+        "userDefined": false
+      },
+      {
+        "text": "1983",
+        "meta": "@sys.any",
+        "alias": "year",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "07fe0e8c-2d8e-4418-9ad7-1746963d6fc4",
+    "data": [
+      {
+        "text": "Películas populares del ",
+        "userDefined": false
+      },
+      {
+        "text": "1990",
+        "meta": "@sys.any",
+        "alias": "year",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "55e0c5b5-891f-4b4e-a87b-289a4f1cbb56",
+    "data": [
+      {
+        "text": "¿Qué películas son las más populares del año ",
+        "userDefined": false
+      },
+      {
+        "text": "1998",
+        "meta": "@sys.any",
+        "alias": "year",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "9c9af0f1-2576-433d-b946-9aed74211f04",
+    "data": [
+      {
+        "text": "Películas más populares del año ",
+        "userDefined": false
+      },
+      {
+        "text": "2010",
+        "meta": "@sys.any",
+        "alias": "year",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

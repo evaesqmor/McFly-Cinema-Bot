@@ -1,0 +1,31 @@
+[
+  {
+    "id": "6aa6bf1b-35e0-46b6-97bb-a7f465cbd301",
+    "data": [
+      {
+        "text": "Temporada ",
+        "userDefined": false
+      },
+      {
+        "text": "1",
+        "meta": "@sys.number",
+        "alias": "seasonNumber",
+        "userDefined": true
+      },
+      {
+        "text": " de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Como conoci a vuestra madre",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

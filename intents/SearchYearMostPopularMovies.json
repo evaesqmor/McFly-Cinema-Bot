@@ -1,27 +1,31 @@
 {
-  "id": "d862d006-cbd6-44c4-8401-b383f4f1e56b",
-  "name": "GetUserUsernameIntent",
+  "id": "397fb8c5-64df-4aac-aae9-ffa0e5df3c0d",
+  "name": "SearchYearMostPopularMovies",
   "auto": true,
   "contexts": [
-    "not_registered_followup"
+    "correct_access_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.username",
+      "action": "",
       "affectedContexts": [
         {
-          "name": "get_username_followup",
+          "name": "search_year_most_popular_movies_followup",
+          "lifespan": 1
+        },
+        {
+          "name": "correct_access_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "251edbc4-5c56-4f51-8f4f-a0f3f81f6561",
-          "name": "username",
+          "id": "2844f8d2-3f59-411b-bac6-16e0fde3c75d",
+          "name": "year",
           "required": false,
           "dataType": "@sys.any",
-          "value": "$username",
+          "value": "$year",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -36,14 +40,7 @@
           "type": "0",
           "title": "",
           "textToSpeech": "",
-          "lang": "es-es",
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "en",
+          "lang": "es",
           "condition": ""
         }
       ],

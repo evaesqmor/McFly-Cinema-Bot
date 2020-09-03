@@ -1,27 +1,45 @@
 {
-  "id": "d862d006-cbd6-44c4-8401-b383f4f1e56b",
-  "name": "GetUserUsernameIntent",
+  "id": "c7aeb72a-9076-4824-b7f5-b3956bf34068",
+  "name": "SearchTvShowSeasonInfo",
   "auto": true,
   "contexts": [
-    "not_registered_followup"
+    "correct_access_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.username",
+      "action": "",
       "affectedContexts": [
         {
-          "name": "get_username_followup",
+          "name": "search_tv_show_season_info_followup",
+          "lifespan": 1
+        },
+        {
+          "name": "correct_access_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "251edbc4-5c56-4f51-8f4f-a0f3f81f6561",
-          "name": "username",
+          "id": "f2534324-97e7-4436-b05b-ada5a1bd1b2c",
+          "name": "seasonNumber",
+          "required": false,
+          "dataType": "@sys.number",
+          "value": "$seasonNumber",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "500d9b66-3ddb-473d-a7c2-2e1fe467d2a3",
+          "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
-          "value": "$username",
+          "value": "$medianame",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -36,14 +54,7 @@
           "type": "0",
           "title": "",
           "textToSpeech": "",
-          "lang": "es-es",
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "en",
+          "lang": "es",
           "condition": ""
         }
       ],

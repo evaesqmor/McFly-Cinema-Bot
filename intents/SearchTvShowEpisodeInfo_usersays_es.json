@@ -1,0 +1,41 @@
+[
+  {
+    "id": "36c5ecbd-bce4-4a67-accd-22e704e04833",
+    "data": [
+      {
+        "text": "Episodio ",
+        "userDefined": false
+      },
+      {
+        "text": "3",
+        "meta": "@sys.any",
+        "alias": "episodeNumber",
+        "userDefined": true
+      },
+      {
+        "text": " de la temporada ",
+        "userDefined": false
+      },
+      {
+        "text": "2",
+        "meta": "@sys.any",
+        "alias": "seasonNumber",
+        "userDefined": true
+      },
+      {
+        "text": " de la serie ",
+        "userDefined": false
+      },
+      {
+        "text": "Como Conocí a vuestra madre",
+        "meta": "@sys.any",
+        "alias": "any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

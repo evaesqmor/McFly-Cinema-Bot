@@ -1,0 +1,63 @@
+[
+  {
+    "id": "2db218ed-f5fa-4b49-9bbf-c4b26f945fee",
+    "data": [
+      {
+        "text": "Series populares del género ",
+        "userDefined": false
+      },
+      {
+        "text": "Romance",
+        "meta": "@sys.any",
+        "alias": "genre",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "eb3c4710-e4f9-4667-8aec-a374464c1065",
+    "data": [
+      {
+        "text": "¿Cuáles son las series más populares del género ",
+        "userDefined": false
+      },
+      {
+        "text": "Ciencia Ficción",
+        "meta": "@sys.any",
+        "alias": "genre",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b19a739c-ada8-4617-ae1b-a61fe130593e",
+    "data": [
+      {
+        "text": "Series más populares del género ",
+        "userDefined": false
+      },
+      {
+        "text": "Acción",
+        "meta": "@sys.any",
+        "alias": "genre",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

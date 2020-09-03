@@ -1,0 +1,46 @@
+[
+  {
+    "id": "15a83409-d3ba-433b-8b0e-77a0c9bde165",
+    "data": [
+      {
+        "text": "Series",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      },
+      {
+        "text": " mejor valoradas",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d443046d-2178-4d66-b039-1233a4e40b69",
+    "data": [
+      {
+        "text": "Series con mejor puntuación",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "045657ce-6494-4206-8db1-07863b1180d2",
+    "data": [
+      {
+        "text": "¿Cuáles son las series con mejor puntuación?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
