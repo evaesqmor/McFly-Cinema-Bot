@@ -1,5 +1,20 @@
 [
   {
+    "id": "619fde77-417e-4a92-8255-08e9429ddbde",
+    "data": [
+      {
+        "text": "janedoey",
+        "meta": "@sys.any",
+        "alias": "username",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
     "id": "4ee34e67-ad84-4c35-ac94-19dd981e5679",
     "data": [
       {

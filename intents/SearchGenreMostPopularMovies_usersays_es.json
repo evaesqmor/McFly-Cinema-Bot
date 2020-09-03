@@ -1,0 +1,113 @@
+[
+  {
+    "id": "e644baa3-a386-4300-8528-e283e3c198c0",
+    "data": [
+      {
+        "text": "Películas ",
+        "userDefined": false
+      },
+      {
+        "text": "western",
+        "meta": "@sys.any",
+        "alias": "genre",
+        "userDefined": true
+      },
+      {
+        "text": " populares",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b2e69e7e-92f2-4ac3-8e07-98d16de4a20c",
+    "data": [
+      {
+        "text": "Películas ",
+        "userDefined": false
+      },
+      {
+        "text": "suspense",
+        "meta": "@sys.any",
+        "alias": "genre",
+        "userDefined": true
+      },
+      {
+        "text": " más populares",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "2946a32d-52f3-4f8b-aba2-cdc3a17debb6",
+    "data": [
+      {
+        "text": "Peliculas populares ",
+        "userDefined": false
+      },
+      {
+        "text": "Misterio",
+        "meta": "@sys.any",
+        "alias": "genre",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "dc548826-85af-4ac0-8343-9452a275436b",
+    "data": [
+      {
+        "text": "Películas ",
+        "userDefined": false
+      },
+      {
+        "text": "románticas",
+        "meta": "@sys.any",
+        "alias": "genre",
+        "userDefined": true
+      },
+      {
+        "text": " más populares",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0cfbdca8-baea-4c71-95ba-e47a8e693689",
+    "data": [
+      {
+        "text": "¿Cuáles son las películas más populares del género ",
+        "userDefined": false
+      },
+      {
+        "text": "Acción",
+        "meta": "@sys.any",
+        "alias": "genre",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

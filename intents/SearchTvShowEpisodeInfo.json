@@ -1,22 +1,31 @@
 {
-  "id": "15e03a48-07db-465b-97b5-dbf2c94d24f6",
-  "name": "LoginIntroducePasswordIntent",
+  "id": "0883167a-b088-4343-9b7a-a19e7f3a55ba",
+  "name": "SearchTvShowEpisodeInfo",
   "auto": true,
   "contexts": [
-    "introduce_username_followup"
+    "correct_access_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.password",
-      "affectedContexts": [],
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "search_tv_show_episode_info_followup",
+          "lifespan": 1
+        },
+        {
+          "name": "correct_access_followup",
+          "lifespan": 1
+        }
+      ],
       "parameters": [
         {
-          "id": "9181e5b1-7cd1-4749-a945-99d0710c95f7",
-          "name": "password",
+          "id": "463b11bd-309b-4cbd-8292-a4c0e2b0f1e0",
+          "name": "episodeNumber",
           "required": false,
           "dataType": "@sys.any",
-          "value": "$password",
+          "value": "$episodeNumber",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -26,11 +35,25 @@
           "outputDialogContexts": []
         },
         {
-          "id": "cef7e491-398e-43ba-a23b-d3696534a927",
-          "name": "username",
+          "id": "a8601d42-7fdd-4bef-97e2-4671d8045fc4",
+          "name": "seasonNumber",
           "required": false,
-          "dataType": "",
-          "value": "#introduce_username_followup.username",
+          "dataType": "@sys.any",
+          "value": "$seasonNumber",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "a66defe7-7f71-4308-be88-5991a02605e9",
+          "name": "any",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$any",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

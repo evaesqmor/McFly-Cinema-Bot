@@ -32,7 +32,7 @@
           "textToSpeech": "",
           "lang": "es",
           "speech": [
-            "En tal caso, procedamos a registrarte. ¿Cuál es tu usuario?"
+            "En tal caso, procedamos a registrarte. Escribe un nombre de usuario:"
           ],
           "condition": ""
         },
