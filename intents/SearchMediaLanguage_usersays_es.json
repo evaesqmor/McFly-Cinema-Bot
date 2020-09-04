@@ -3,8 +3,14 @@
     "id": "9fdef905-13e5-4858-8a8d-ba475db568c3",
     "data": [
       {
-        "text": "Idioma original de Stranger Things",
+        "text": "Idioma original de ",
         "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
       }
     ],
     "isTemplate": false,

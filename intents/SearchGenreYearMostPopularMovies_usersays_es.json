@@ -1,0 +1,31 @@
+[
+  {
+    "id": "ff2cd59d-71c0-4467-a764-a1eb812c89dc",
+    "data": [
+      {
+        "text": "Películas de ",
+        "userDefined": false
+      },
+      {
+        "text": "Acción",
+        "meta": "@sys.any",
+        "alias": "genre",
+        "userDefined": true
+      },
+      {
+        "text": " más populares de ",
+        "userDefined": false
+      },
+      {
+        "text": "2012",
+        "meta": "@sys.any",
+        "alias": "year",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

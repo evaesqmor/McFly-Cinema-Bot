@@ -22,7 +22,7 @@
           "textToSpeech": "",
           "lang": "es",
           "speech": [
-            "¿Puedes repetir tu usuario?"
+            "Parece que tu contraseña no cumple los requisitos. La contraseña de debe tener entre **8 y 16 caracteres**"
           ],
           "condition": ""
         },

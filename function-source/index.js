@@ -1241,7 +1241,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
               var posterPath = imgPth+show.poster_path;
               var cardText = 
                   "Puntuación media: "+show.vote_average+"\n"+
-                  "Resumen"+show.overview+"";
+                  "Resumen: "+show.overview+"";
               agent.add(new Card({
                 title: showName,
                 imageUrl: posterPath,
@@ -1252,6 +1252,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     });
   }
   
+  /*Searching Top Rated Shows*/
   function handleSearchTopRatedTvShows(){
     return axios.get(`${endpoint}/tv/top_rated?api_key=${tmdbKey}&language=es&page=1`)
         .then((result)=>{
@@ -1272,6 +1273,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     });
   }
   
+  /*Tv Show Info: Season Details*/
   function handleSearchTvShowSeasonInfo(){
     var medianame =agent.parameters.medianame;
     var arrayName = medianame.split(" ");
@@ -1299,18 +1301,20 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     });
   }
   
+  /*Tv Show Info: Episode Details*/
   function handleSearchTvShowEpisodeInfo(){
      var medianame =agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
     var seasonNumber = agent.parameters.seasonNumber;
     var episodeNumber = agent.parameters.episodeNumber;
+    agent.add(`Episodio: ${episodeNumber}, temporada: ${seasonNumber}, query: ${queryName}`);
     return axios.get(`${endpoint}/search/tv?api_key=${tmdbKey}&language=es&page=1&query=${queryName}&include_adult=false`)
         .then((result)=>{
       var element = result.data.results[0];
       var showId = element.id;
-      var showName = element.name;
-      return axios.get(`${endpoint}/tv/${showId}/season/${seasonNumber}/episode/${episodeNumber}?api_key=${tmdbKey}&language=es`)
+      agent.add(`Show ID: ${showId}`);
+     return axios.get(`${endpoint}/tv/${showId}/season/${seasonNumber}/episode/${episodeNumber}?api_key=${tmdbKey}&language=es`)
         .then((episode)=>{
         var title = episode.data.name;
         var cardText ="Fecha de emisión: "+episode.data.air_date+" \n "+
@@ -1319,18 +1323,123 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
             "Puntuación: "+episode.data.vote_average+" \n "+
             "Resumen: "+episode.data.overview;
         var posterPath=imgPth+episode.data.still_path;
-        agent.add(`${title}`);
-        agent.add(`${cardText}`);
-        agent.add(new Image(posterPath));
-        /*agent.add(new Card({
+        agent.add(new Card({
                title: title,
                imageUrl: posterPath,
                text: cardText
-              }));*/
+              }));
       });
     });
   }
    
+  /*Search Genre & Year Most Popular Movies*/
+  function handleSearchGenreYearMostPopularMovies(){
+    var genreParameter = agent.parameters.genre;
+    var year = agent.parameters.year;
+    return axios.get(`${endpoint}/genre/movie/list?api_key=${tmdbKey}&language=es`)
+        .then((result)=>{
+      var genreId;
+      var genreName;
+      result.data.genres.map((genre)=>{
+        if(genre.name == genreParameter){
+          genreId = genre.id;
+          genreName = genre.name;
+        }
+      });
+      agent.add(`Genre Id: ${genreId}, Genre Name: ${genreName}`);
+       return axios.get(`${endpoint}/discover/movie?api_key=${tmdbKey}&primary_release_year=${year}&with_genres=${genreId}&sort_by=popularity.desc`)
+        .then((movies)=>{
+         movies.data.results.map((movie)=>{
+              var movieName = movie.title;
+              var posterPath = imgPth+movie.poster_path;
+              var cardText = 
+                  "Puntuación media: "+movie.vote_average+" \n "+
+                  "Resumen: "+movie.overview+"";
+              agent.add(new Card({
+                title: movieName,
+                imageUrl: posterPath,
+                text: cardText
+              }));
+            });
+       });
+    });
+  }
+  
+  /*Search Year Actor Most Poular Movies*/
+   function handleSearchYearActorMostPopularMovies(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    var year = agent.parameters.year;
+    return axios.get(`${endpoint}/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1&include_adult=true`)
+      .then((result)=>{
+      var element = result.data.results[0];
+      var personId = element.id;
+      return axios.get(`${endpoint}/person/${personId}/movie_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
+      .then((credits)=>{
+        credits.data.cast.map((element)=>{
+          var releaseDate = element.release_date;
+          if(releaseDate!=undefined){
+            var arrayDate = releaseDate.split('-');
+            var releaseYear = arrayDate[0];
+            if(releaseYear == year){
+              var name = element.title;
+              var posterPath = imgPth+element.poster_path;
+              var character = "Personaje: "+element.character;
+              agent.add(new Card({
+                title: name,
+                imageUrl: posterPath,
+                text: character
+              }));
+            }
+          }
+        });  
+      });
+    });
+  }
+  
+  /*Actor & Genre Movies*/
+  function handleSearchGenreActorMostPopularMovies(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    var genreParameter = agent.parameters.genre;
+    return axios.get(`${endpoint}/genre/movie/list?api_key=${tmdbKey}&language=es`)
+        .then((result)=>{
+      var genreId;
+      var genreName;
+      result.data.genres.map((genre)=>{
+        if(genre.name == genreParameter){
+          genreId = genre.id;
+          genreName = genre.name;
+        }
+      });
+      agent.add(`Genre: ${genreId}`);
+      return axios.get(`${endpoint}/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1&include_adult=true`)
+      .then((person)=>{
+        var element = person.data.results[0];
+        var personId = element.id;
+        var personName = element.name;
+        return axios.get(`${endpoint}/person/${personId}/movie_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
+      .then((credits)=>{
+          credits.data.cast.map((movie)=>{
+              var arraygenres = movie.genre_ids;
+            if(arraygenres.includes(genreId)){
+              var name = movie.title;
+              var posterPath = imgPth+movie.poster_path;
+              var character = "Personaje: "+movie.character;
+              agent.add(new Card({
+                title: name,
+                imageUrl: posterPath,
+                text: character
+              }));
+            }
+          });
+        });
+      });
+    });
+  }
+  
   /******* MAPING INTENTS *******/
   let intentMap = new Map();
   intentMap.set('GetUserUsernameIntent', handleUsernameRegistered);
@@ -1384,5 +1493,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('SearchTopRatedTvShows', handleSearchTopRatedTvShows);
   intentMap.set('SearchTvShowSeasonInfo', handleSearchTvShowSeasonInfo);
   intentMap.set('SearchTvShowEpisodeInfo', handleSearchTvShowEpisodeInfo);
+  intentMap.set('SearchGenreYearMostPopularMovies', handleSearchGenreYearMostPopularMovies);
+  intentMap.set('SearchYearActorMostPopularMovies', handleSearchYearActorMostPopularMovies);
+  intentMap.set('SearchGenreActorMostPopularMovies', handleSearchGenreActorMostPopularMovies);
   agent.handleRequest(intentMap);
 });
