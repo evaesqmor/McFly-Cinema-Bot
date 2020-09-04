@@ -1,0 +1,92 @@
+{
+  "id": "feac7fe1-6853-42ba-ab7f-573b05d5745a",
+  "name": "HelpFunctionsList",
+  "auto": true,
+  "contexts": [
+    "correct_access_followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "correct_access_followup",
+          "lifespan": 1
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "¿Qué puede hacer este bot? \n\nCon McFly Cinema bot puedes buscar información sobre:"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "**BÚSQUEDA GENERAL DE INFORMACIÓN** \n\n**Búsqueda de una película: **  __\"Buscar Origen\"__ \n\n**Búsqueda de una serie: ** __\"Buscar Anatomía de Grey\"__ \n\n**Búsqueda de un actor o director: ** __\"Buscar Robin Williams\"__"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "**MULTIMEDIA** \n\n**Fecha de estreno de una serie o película: ** __\"Fecha de estreno de Avengers Endgame\"__ \n\n**Puntuación media de una serie o película: ** __\"Puntuación media de La La Land\"__ \n\n**Resumen de la una serie o película: ** __\"Sipnosis de Stranger Things\"__ \n\n**Idioma original de una serie o película: ** __\"Idioma original de Dark\"__ \n\n**Título original de una serie o película: ** __\"Título original de El Gran Showman\"__ \n\n**Calificación de edad para una serie o película: ** __\"¿Para qué edades se recomienda The Witcher?\"__"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "**BÚSQUEDA DE PELÍCULAS** \n\n**Películas actualmente en cines: ** __\"Buscar cartelera\"__ \n\n**Películas más populares: ** __\"Buscar películas más populares\"__ \n\n**Películas más populares de un género: ** __Películas de Acción más populares__ \n\n**Películas más populares de un año: ** __\"Películas más populares del 2010\"__ \n\n**Peliculas más populares de un género y año: ** __\"Películas de Romance más populares del 2012\"__ \n\n**Películas mejor valoradas: ** __\"Buscar películas mejor valoradas\"__ \n\n**Casting de una película: ** __\"Reparto de la película El Hombre Bicentenario\"__ \n\n**Director de una película: ** __\"Director de la película Cinema Paradiso\"__ \n\n**Géneros de una película: ** __\"Géneros de la película Jumanji\"__ \n\n**Ver trailer de una película: ** __\"Trailer de la película Tenet\"__ \n\n**Página oficial de una película: ** __\"Web oficial de la película Jojo Rabbit\"__ \n\n**Películas similares: ** __\"¿Qué películas me recomiendas si me gustó Forrest Gump?\"__ \n\n**Reseñas de una película: ** __\"Reseñas de la película El Padrino\"__ \n\n**Duración de una película: **__\"Duración de la película Los Guardianes de la Galaxia\"__ \n\n**Imágenes de una película: ** __\"Imágenes de la película Capitana Marvel\"__ \n\n**Presupuesto de una película: ** __\"¿Cuál es el presupuesto de la película El Caballero Oscuro?\"__ \n\n**Ingresos obtenidos de una película: ** __Ingresos de la película Los Juegos del Hambre__"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "**BÚSQUEDA DE SERIES DE TELEVISIÓN** \n\n**Series de televisión más populares: ** __\"¿Qué series son las más populares?\"__ \n\n**Series más populares de un género: ** __\"Series más populares de Misterio\"__ \n\n**Series mejor valoradas: ** __\"Series con mejor puntuación\"__ \n\n**Casting de una serie: ** __\"Reparto de la serie Juego de Tronos\"__ \n\n**Director de una serie: ** __\"Director de la serie The Office\"__ \n\n**Número de temporadas de una serie: ** __\"Número de temporadas de la serie Glow\"__ \n\n**Géneros de una serie: ** __\"Géneros de la serie Friends\"__ \n\n**Ver trailers de una serie: ** __\"Trailer de la serie Como conocí a vuestra madre\"__ \n\n**Página oficial de una serie: ** __\"Web oficial de la serie Stranger Things\"__ \n\n**Series similares: ** __\"¿Qué series me recomiendas si me gustó Space Force?\"__ \n\n**Reseñas de una serie: ** __\"Reseñas de la serie Anatomía de Grey\"__ \n\n**Imágenes de una serie: ** __\"Imágenes de la serie Umbrella Academy\"__ \n\n**Información sobre una temporada de una serie: ** __\"Temporada 1 de la serie The Office\"__ \n\n**Información de un episodio de una serie: ** __\"Episodio 3 de la temporada 2 de la serie Como conocí a vuestra madre\"__"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "BÚSQUEDA DE ACTOR \n\n**Biografía de un actor: ** __\"Biografía de Johnny Depp\"__ \n\n**Fecha de nacimiento de un actor: ** __\"¿Cuándo nació Julia Roberts?\"__ \n\n**Lugar de nacimiento de un actor: ** __\"¿Dónde nació George Clooney?\"__ \n\n**Imágenes de un actor: ** __\"Fotos del actor Colin Farrell\"__ \n\n**Películas más populares de un actor: ** __\"Películas famosas de Russell Crowe\"__ \n\n**Películas más populares de un actor en un año concreto: ** __\"Películas más populares de Tom Hanks del año 1998\"__ \n\n**Películas más populares de un actor de un género concreto: ** __\"Películas de Acción más populares de Tom Cruise\"__ \n\n**Series más populares de un actor: ** __\"Series conocidas de Evangeline Lilly\"__ \n\n**Rol que interpreta un actor en una película: ** __\"¿Cuál es el personaje del actor Joaquín Phoenix en el Joker?\"__ \n\n**Rol que interpreta un actor en una serie: ** __\"Personaje del actor Kit Harington en la serie Juego de Tronos\"__"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

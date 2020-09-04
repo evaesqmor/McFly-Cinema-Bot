@@ -1,6 +1,6 @@
 {
-  "id": "908829c7-9852-4502-a841-c35b20a488f5",
-  "name": "SearchMovieBudget",
+  "id": "f8b11f1f-1402-40ce-9c39-6f4699fe99da",
+  "name": "SearchGenreYearMostPopularMovies",
   "auto": true,
   "contexts": [
     "correct_access_followup"
@@ -11,7 +11,7 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_movie_budget_followup",
+          "name": "search_genre_year_most_popular_movies_followup",
           "lifespan": 1
         },
         {
@@ -21,11 +21,25 @@
       ],
       "parameters": [
         {
-          "id": "44c0b627-30fe-4c6c-b495-99babded2bc3",
-          "name": "medianame",
+          "id": "741614ee-73fa-4a00-8e45-ddc3a671b0cb",
+          "name": "genre",
           "required": false,
           "dataType": "@sys.any",
-          "value": "$medianame",
+          "value": "$genre",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "de2a0313-a7cf-4083-b3bf-dc88246ccff2",
+          "name": "year",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$year",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

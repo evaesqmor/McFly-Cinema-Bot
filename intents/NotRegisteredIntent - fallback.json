@@ -22,7 +22,7 @@
           "textToSpeech": "",
           "lang": "es",
           "speech": [
-            "Vaya...no he entendido eso, pero ahora puedes introducir tu usuario o cancelar el registro."
+            "Vaya...parece que tu usuario no cumple los requisitos necesarios. Debe tener entre **8 y 10 caracteres**"
           ],
           "condition": ""
         },

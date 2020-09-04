@@ -1,6 +1,6 @@
 {
-  "id": "908829c7-9852-4502-a841-c35b20a488f5",
-  "name": "SearchMovieBudget",
+  "id": "69e5d3fd-7710-4828-b4ba-659f3cd582a9",
+  "name": "SearchYearActorMostPopularMovies",
   "auto": true,
   "contexts": [
     "correct_access_followup"
@@ -11,7 +11,7 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_movie_budget_followup",
+          "name": "search_year_actor_most_popular_movies_followup",
           "lifespan": 1
         },
         {
@@ -21,11 +21,25 @@
       ],
       "parameters": [
         {
-          "id": "44c0b627-30fe-4c6c-b495-99babded2bc3",
+          "id": "f6638f34-8846-4c13-9e59-de7b471d0415",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
           "value": "$medianame",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "ccb94da1-710d-43de-8dfa-d854e6ea6ab5",
+          "name": "year",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$year",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

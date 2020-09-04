@@ -17,10 +17,10 @@
       ],
       "parameters": [
         {
-          "id": "251edbc4-5c56-4f51-8f4f-a0f3f81f6561",
+          "id": "c39cc0ab-3ad0-46f5-a6dc-087e9f514a14",
           "name": "username",
           "required": false,
-          "dataType": "@sys.any",
+          "dataType": "@username",
           "value": "$username",
           "defaultValue": "",
           "isList": false,

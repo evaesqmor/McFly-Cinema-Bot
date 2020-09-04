@@ -1,0 +1,31 @@
+[
+  {
+    "id": "140e10bc-3abe-466f-a4f0-44e66993635d",
+    "data": [
+      {
+        "text": "Películas de ",
+        "userDefined": false
+      },
+      {
+        "text": "Acción",
+        "meta": "@sys.any",
+        "alias": "genre",
+        "userDefined": true
+      },
+      {
+        "text": " más populares del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Colin Farrell",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
