@@ -3,20 +3,25 @@
   "name": "LoginFirstActionIntent",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "login_asking_alias_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
       "action": "input.alias",
-      "affectedContexts": [],
+      "affectedContexts": [
+        {
+          "name": "login_first_action_followup",
+          "lifespan": 1
+        }
+      ],
       "parameters": [
         {
-          "id": "6196bc5c-ed4b-412a-bff4-ee2a7517001d",
+          "id": "8b18ee71-9309-406e-a1b7-bb75b603e89a",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#correct_access_followup.username",
+          "value": "#login_asking_alias_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -26,11 +31,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "8943f5e5-5283-4a2d-bb9e-be1388db745e",
+          "id": "f9bffa6e-9212-4acd-af34-fa16d27434e3",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#correct_access_followup.password",
+          "value": "#login_asking_alias_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -40,10 +45,10 @@
           "outputDialogContexts": []
         },
         {
-          "id": "b6884c53-47f9-43b1-b73d-c8a22be1aefc",
+          "id": "f4c18662-0c3d-4c06-9240-e40d577d2758",
           "name": "alias",
           "required": false,
-          "dataType": "@sys.any",
+          "dataType": "@sys.person",
           "value": "$alias",
           "defaultValue": "",
           "isList": false,
@@ -56,12 +61,21 @@
       ],
       "messages": [
         {
+          "type": "1",
+          "platform": "telegram",
+          "subtitle": "Okey $alias, me lo apunto. Ahora introduce tu email.",
+          "title": "Email",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        },
+        {
           "type": "0",
           "title": "",
           "textToSpeech": "",
           "lang": "es",
           "speech": [
-            "Okey $alias, me lo apunto."
+            "Okey $alias, me lo apunto. Introduce tu email."
           ],
           "condition": ""
         }

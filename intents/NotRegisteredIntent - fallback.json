@@ -17,13 +17,19 @@
       "parameters": [],
       "messages": [
         {
+          "type": "1",
+          "platform": "telegram",
+          "subtitle": "Vaya...parece que tu usuario no cumple los requisitos necesarios. Debe tener entre 8 y 10 caracteres",
+          "title": "Usuario no válido",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        },
+        {
           "type": "0",
           "title": "",
           "textToSpeech": "",
           "lang": "es",
-          "speech": [
-            "Vaya...parece que tu usuario no cumple los requisitos necesarios. Debe tener entre **8 y 10 caracteres**"
-          ],
           "condition": ""
         },
         {

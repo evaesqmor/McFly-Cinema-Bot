@@ -1,50 +1,27 @@
 {
-  "id": "e4cff9f6-3d5d-4e35-ad2d-3288c4c3b569",
-  "name": "CorrectAccessIntent",
+  "id": "a08d4cdc-cef9-465b-9483-34de6c40a84e",
+  "name": "SearchingIntent",
   "auto": true,
-  "contexts": [],
+  "contexts": [
+    "tasks_followup"
+  ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "get.access",
+      "action": "",
       "affectedContexts": [
         {
-          "name": "correct_access_followup",
+          "name": "searching_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "305950b8-95ce-477f-9299-080dd3dc261a",
-          "name": "username",
-          "required": false,
-          "dataType": "",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "3f899393-834d-495c-8453-181b1a350b49",
-          "name": "password",
-          "required": false,
-          "dataType": "",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "def67fca-1063-421c-9019-46ce38ac72d8",
+          "id": "d2871510-9be7-48d7-a795-f078a9f5326e",
           "name": "alias",
           "required": false,
           "dataType": "",
+          "value": "#tasks_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -54,10 +31,25 @@
           "outputDialogContexts": []
         },
         {
-          "id": "44fb68db-ebd6-4716-9dd0-b117885403fa",
-          "name": "email",
+          "id": "7ebd5c68-31cf-4747-9a98-28dd206a6e4e",
+          "name": "username",
           "required": false,
           "dataType": "",
+          "value": "#tasks_followup.username",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "cdc4323e-39d1-4d74-b2ba-0f739e1a3d34",
+          "name": "password",
+          "required": false,
+          "dataType": "",
+          "value": "#tasks_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -67,19 +59,25 @@
           "outputDialogContexts": []
         }
       ],
-      "messages": [],
+      "messages": [
+        {
+          "type": "1",
+          "platform": "telegram",
+          "subtitle": "¿Qué quieres buscar, $alias?",
+          "title": "Búsqueda",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        }
+      ],
       "speech": []
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
-  "events": [
-    {
-      "name": "correctaccess"
-    }
-  ],
+  "events": [],
   "conditionalResponses": [],
   "condition": "",
   "conditionalFollowupEvents": []

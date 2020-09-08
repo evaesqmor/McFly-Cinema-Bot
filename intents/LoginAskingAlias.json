@@ -1,21 +1,21 @@
 {
-  "id": "e4cff9f6-3d5d-4e35-ad2d-3288c4c3b569",
-  "name": "CorrectAccessIntent",
+  "id": "acec372f-18ae-4d07-988f-b12765dce345",
+  "name": "LoginAskingAlias",
   "auto": true,
   "contexts": [],
   "responses": [
     {
       "resetContexts": false,
-      "action": "get.access",
+      "action": "",
       "affectedContexts": [
         {
-          "name": "correct_access_followup",
+          "name": "login_asking_alias_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "305950b8-95ce-477f-9299-080dd3dc261a",
+          "id": "a479f0cf-ec9f-48ce-8b8b-50dd9540ce51",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -28,34 +28,8 @@
           "outputDialogContexts": []
         },
         {
-          "id": "3f899393-834d-495c-8453-181b1a350b49",
+          "id": "be44543d-3936-41d3-bc4a-61768067f892",
           "name": "password",
-          "required": false,
-          "dataType": "",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "def67fca-1063-421c-9019-46ce38ac72d8",
-          "name": "alias",
-          "required": false,
-          "dataType": "",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "44fb68db-ebd6-4716-9dd0-b117885403fa",
-          "name": "email",
           "required": false,
           "dataType": "",
           "defaultValue": "",
@@ -67,17 +41,34 @@
           "outputDialogContexts": []
         }
       ],
-      "messages": [],
+      "messages": [
+        {
+          "type": "1",
+          "platform": "telegram",
+          "subtitle": "Ya que la primera vez que accedes, ¿cómo te gustaría que te llamase?",
+          "title": "¡Bienvenido!",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        }
+      ],
       "speech": []
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [
     {
-      "name": "correctaccess"
+      "name": "askAlias"
     }
   ],
   "conditionalResponses": [],

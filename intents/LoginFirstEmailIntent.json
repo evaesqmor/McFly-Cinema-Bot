@@ -1,24 +1,36 @@
 {
-  "id": "e4cff9f6-3d5d-4e35-ad2d-3288c4c3b569",
-  "name": "CorrectAccessIntent",
+  "id": "f1151460-56e4-4611-b1b2-1bd98d83ffcd",
+  "name": "LoginFirstEmailIntent",
   "auto": true,
-  "contexts": [],
+  "contexts": [
+    "login_first_action_followup"
+  ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "get.access",
-      "affectedContexts": [
-        {
-          "name": "correct_access_followup",
-          "lifespan": 1
-        }
-      ],
+      "action": "",
+      "affectedContexts": [],
       "parameters": [
         {
-          "id": "305950b8-95ce-477f-9299-080dd3dc261a",
+          "id": "02711626-5335-4e47-a5cc-0a86993d5cd2",
+          "name": "email",
+          "required": false,
+          "dataType": "@sys.email",
+          "value": "$email",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "17cfed42-909a-45a3-a759-cebd85720a30",
           "name": "username",
           "required": false,
           "dataType": "",
+          "value": "#login_first_action_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -28,10 +40,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "3f899393-834d-495c-8453-181b1a350b49",
+          "id": "9e49df55-72c8-444b-9f95-83ed8f3ecdfb",
           "name": "password",
           "required": false,
           "dataType": "",
+          "value": "#login_first_action_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -41,23 +54,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "def67fca-1063-421c-9019-46ce38ac72d8",
+          "id": "33e38308-b760-40da-9958-cafdd72a511f",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "44fb68db-ebd6-4716-9dd0-b117885403fa",
-          "name": "email",
-          "required": false,
-          "dataType": "",
+          "value": "#login_first_action_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -67,7 +68,15 @@
           "outputDialogContexts": []
         }
       ],
-      "messages": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        }
+      ],
       "speech": []
     }
   ],
@@ -75,11 +84,7 @@
   "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
-  "events": [
-    {
-      "name": "correctaccess"
-    }
-  ],
+  "events": [],
   "conditionalResponses": [],
   "condition": "",
   "conditionalFollowupEvents": []

@@ -36,7 +36,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         agent.add(`El usuario ${username} ya existe. Prueba a introducir otro usuario`);
         agent.setContext({ "name": "not_registered_followup","lifespan":1});
       }else {
-        agent.add(`Adelante, introduce una contraseña`);
+        agent.add(new Card({
+              title: "Contraseña",
+              text: "Adelante, introduce una contraseña",
+            }));
         agent.setContext({ "name": "get_username_followup","lifespan":1,"parameters":{"username":username}});
       }
     });
@@ -67,7 +70,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
           agent.setFollowupEvent({ "name": "correctaccess", "parameters" : { "username": username, "password":password, "alias":alias}});
         }
       }else{
-        agent.add(`Lo siento, la contraseña no es correcta. ¿Quieres volver a intentarlo?`);
+        agent.add(`Lo siento, la contraseña o el usuario no son correctos. ¿Quieres volver a intentarlo?`);
         agent.setContext({ "name": "registered_followup","lifespan":1});  
       }
       return user;
@@ -79,23 +82,35 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   /*First Access Action*/
   function handleCorrectAccess(){
     const alias= agent.parameters.alias;
+    const username = agent.parameters.username;
+    const password = agent.parameters.password;
     if(alias == ""){
-      agent.add(`¡Bienvenido!, ya que la primera vez que accedes, ¿cómo te gustaría que te llamase?`);
+      agent.setFollowupEvent({ "name": "askalias", "parameters" : { "username": username, "password":password, "alias":alias}});
     }else{
-        agent.add(`Buenas ${alias}, ¿qué te gustaría hacer?`);
+      agent.setFollowupEvent({ "name": "tasks", "parameters" : { "username": username, "password":password, "alias":alias}});
     }
   }
   
   /*Storing the user's alias*/
   function handleUserAlias(){
-    const alias= agent.parameters.alias;
+    const alias= agent.parameters.alias.name;
+    const username = agent.parameters.username;
+	const password = agent.parameters.password;    
+    generalRef.child(username).update({
+      alias: alias,
+    });
+  }
+  
+  /*Storing the user's email*/
+  function handleUserEmail(){
+    const alias= agent.parameters.alias.name;
     const username = agent.parameters.username;
 	const password = agent.parameters.password;
-    let userRef = database.ref("users/"+username);
-    agent.setFollowupEvent({ "name": "correctaccess", "parameters" : { "username": username, "password":password, "alias":alias}});
-    userRef.update({
-      alias: alias
+    const email = agent.parameters.email;
+    generalRef.child(username).update({
+      email: email,
     });
+    agent.setFollowupEvent({ "name": "correctaccess", "parameters" : { "username": username, "password":password, "alias":alias, "email":email}});
   }
   
   /*******SEARCHING CONTENTS*******/
@@ -104,56 +119,71 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     const medianame = agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
-    agent.add(`Resultados para ${medianame}:`);
+    agent.add(new Card({title: "Resultados",text: `Para ${medianame}`}));
     return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
       .then((result)=>{
-      if(result!=null){
+      console.log("RESULTTT:",result.data.results);
+      if(result.data.results.length>0){
         var count = 0;
         result.data.results.map((media) =>{
-          if(count < 10){
+          if(count < 5){
             count++;
             var mediaType=media.media_type;
             var title, fullTitle, cardText, posterPath = "";
+            var voteAverage, releaseDate, overview;
+            /*Person generic view*/
             if(mediaType=="person"){
               title =`${media.name}`;
-              fullTitle = `${count}. ${media.name} (Persona)`;
+              var department = media.known_for_department;
+              var gender = media.gender;
+              var occupation = "";
+              if(department=="Acting"){
+                if(gender==1){
+                  occupation = "Actriz";
+                }
+                if(gender==2){
+                  occupation= "Actor";
+                }
+              }
+              fullTitle = `${count}. ${title} (${occupation})`;
               cardText = "";
               posterPath = imgPth+media.profile_path;
               var countNotable = 0;
               media.known_for.map((notable) => {
-                if(countNotable < 3){
-                  countNotable++;
                   var notableName = notable.title==null?notable.name:notable.title;
                   cardText = cardText+notableName+"\n";
-                }
               });
               cardText = cardText!=""?"**Conocido por** :\n"+cardText:cardText;
             }
+            /*Tv Show generic view*/
             if(mediaType=="tv"){
-              title =`${media.name}`;
               fullTitle =`${count}. ${media.name} (Serie de televisión)`;
-              cardText = "**Nota media:** "+media.vote_average==0+
-                "**Fecha de estreno:** "+media.first_air_date+"\n"+
-                "**Resumen:\n"+media.overview;
+              voteAverage = media.vote_average==0?"":"Nota media: "+media.vote_average;
+              releaseDate = media.first_air_date==null?"":"Fecha de estreno: "+media.first_air_date;
+              overview = media.overview == ""?"":"Resumen: "+media.overview;
+              cardText = voteAverage+"\n"+releaseDate+"\n"+overview;
               posterPath = imgPth+media.poster_path;
             }
-            
+            /*Movie generic view*/
             if(mediaType=="movie"){
-              title = `${media.title}`;
               fullTitle = `${count}. ${media.title} (Película)`;
-              cardText = "**Nota media:** "+media.vote_average==0+"\n"+
-              "**Fecha de estreno:** "+media.release_date+"\n"+
-              "**Resumen:** \n"+media.overview;
+              voteAverage = media.vote_average==0?"":"Nota media: "+media.vote_average;
+              releaseDate = media.release_date==null?"":"Fecha de estreno: "+media.release_date;
+              overview = media.overview == ""?"":"Resumen: "+media.overview;
+              cardText = voteAverage+"\n"+releaseDate+"\n"+overview;
               posterPath = imgPth+media.poster_path;
             }
             agent.add(new Card({
               title: fullTitle,
               imageUrl: posterPath,
-              text: cardText
+              text: cardText,
+              buttonText: `Ver detalles`,
+              buttonUrl: `${media.name} (${mediaType} : ${media.id})`,
             }));
-            agent.add(new Suggestion(`${title} (${mediaType} : ${media.id})`));  
           }
         });
+      }else{
+        agent.add(`No se han encontrado resultados para la búsqueda de ${medianame}. Vuelve a intentarlo`);
       }
     });
   }
@@ -163,81 +193,83 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     var mediaelement = agent.parameters.mediaelement;
     var mediatype = agent.parameters.mediatype;
     var mediaid = agent.parameters.mediaid;
+    /*Person details*/
     if(mediatype=="person"){
        return axios.get(`${endpoint}/person/${mediaid}?api_key=${tmdbKey}&language=es`)
       .then((result)=>{
-         var name = result.data.name;
-         var cardText=
-             "**Ocupación:** "+result.data.known_for_department+"\n"+
-             "**Fecha de nacimiento:** "+result.data.birthday+"\n"+
-             "**Fecha de fallecimiento:** "+result.data.deathday+"\n"+
-             "**Lugar de nacimiento:** "+result.data.place_of_birth+"\n"+
-             "**Biografía:** "+result.data.biography;
+         var person = result.data;
+         var name = person.name;
+         var department = person.known_for_department;
+         var knownDepartment = "Ocupación: ";
+         if(department=="Acting"){knownDepartment = knownDepartment+"Actuación \n";}
+         if(department=="Directing"){knownDepartment = knownDepartment+"Dirección \n";}
+         if(department=="Production"){knownDepartment = knownDepartment+"Producción \n"; }
+         var birthday ="Fecha de nacimiento: "+person.birthday+"\n";
+         var deathday = person.deathday==null?"":"Fecha de fallecimiento: "+person.deathday+"\n";
+         var placeOfBirth = "Lugar de nacimiento: "+person.place_of_birth+"\n";
+         var biography = person.biography==""?"":"Biografía: "+person.biography+"\n";
+         var personalWeb = person.homepage==""?"":"Página web: "+person.homepage+"\n";
+         var cardText=knownDepartment+birthday+deathday+placeOfBirth+biography+personalWeb;
          var image= imgPth+result.data.profile_path;
-         agent.add(new Card({
-           title: name,
-           imageUrl: image,
-           text: cardText,
-         }));
+         agent.add(new Card({title: "Detalles" ,text: `Mostrando detalles para ${name}`}));
+         agent.add(new Card({title: name,imageUrl: image,text: cardText}));
        });
     }
+    /*Show Details*/
     if(mediatype=="tv"){
        return axios.get(`${endpoint}/tv/${mediaid}?api_key=${tmdbKey}&language=es`)
       .then((result)=>{
-         var name = result.data.name;
-         var posterPath = imgPth+result.data.poster_path;
-         var genres = "";
-         var direction = "";
-         var inProduction = result.data.in_production;
-         result.data.genres.map((genre) => {
-          genres = genres+genre.name+"|";
-         });
-         result.data.created_by.map((director)=>{
-          direction=direction+director.name+"|";
-         });
-         var cardText = 
-         "**Puntuación media:** "+result.data.vote_average+"\n"+
-         "**Dirigida por:** "+direction+"\n"+
-         "**Próximo Episodio:** "+result.data.next_episode_to_air+"\n"+
-         "**Total de episodios:** "+result.data.number_of_episodes+"\n"+
-         "**Total de temporadas:** "+result.data.number_of_seasons+"\n"+
-         "**Fecha de estreno:** "+result.data.first_air_date+"\n"+
-         "**Estado actual:** "+result.data.status+"\n"+
-         "**Fecha de fin:** "+result.data.last_air_date+"\n"+
-         "**Idioma original:** "+result.data.original_language+"\n"+
-         "**Géneros:** "+genres+"\n"+    
-         "**Resumen:** "+result.data.overview;
-       	 agent.add(new Card({
-           title: name,
-           imageUrl: posterPath,
-           text: cardText,
-         }));	 
+         var show = result.data;
+         var name = show.name;
+         var voteAverage = show.vote_average==0?"":"Puntuación media: "+show.vote_average+"\n";
+         var nextEpisode = show.next_episode_to_air==null?"":"Próximo episodio: "+show.next_episode_to_air+"\n";
+         var totalEpisodes = show.number_of_episodes==0?"":"Total de episodios: "+show.number_of_episodes+"\n";
+         var totalSeasons = show.number_of_seasons==0?"":"Total de temporadas: "+show.number_of_seasons+"\n";
+         var airDate = show.first_air_date==null?"":"Fecha de estreno: "+show.first_air_date+"\n";
+         var status ;
+         if(show.status=="Ended"){status="Estado: Finalizada \n";}
+         if(show.status=="Returning Series"){status="Estado: Renovada \n";}
+         if(show.status=="Canceled"){status="Estado: Cancelada \n";}
+         var lastAirDate = show.last_air_date==null?"":"Última fecha de emisión: "+show.last_air_date+"\n";
+         var originalLanguage = "Idioma original: "+show.original_language+"\n";
+         var overview = show.overview==""?"":"Resumen: "+show.overview+"\n";
+         var inProduction = show.in_production;
+         var genres =show.genres.length>0?"Géneros: \n":"";
+         show.genres.map((genre) => {genres = genres+genre.name+"\n";});
+         var direction = show.created_by.length>0?"Dirección: \n":"";
+         show.created_by.map((director)=>{direction=direction+director.name+"\n";});
+         var posterPath = imgPth+show.poster_path;
+         var cardText = voteAverage+nextEpisode+totalEpisodes+
+             totalSeasons+airDate+status+lastAirDate+originalLanguage+overview+direction+genres;
+       	 agent.add(new Card({title: name,imageUrl: posterPath,text: cardText}));	 
        });
     }
+    /*Movie Details*/
     if(mediatype=="movie"){
       return axios.get(`${endpoint}/movie/${mediaid}?api_key=${tmdbKey}&language=es`)
       .then((result)=>{
-        var name= result.data.title;
-        var genres = "";
-        result.data.genres.map((genre) => {
-          genres = genres+genre.name+"|";
-        });
-        var cardText=
-           	"__"+result.data.tagline+"__ \n"+
-            "**Puntuación media:** "+result.data.vote_average+"\n"+
-           	"**Fecha de estreno:** "+result.data.release_date+"\n"+
-            "**Idioma original:** "+result.data.original_language+"\n"+
-            "**Estado:** "+result.data.status+"\n"+
-            "**Presupuesto:** "+result.data.budget+"\n"+
-            "**Recaudado:** "+result.data.revenue+"\n"+
-            "**Géneros:** "+genres+"\n"+
-            "**Resumen:** "+result.data.overview+"\n";
+        var movie = result.data;
+        var name= movie.title;
+        var tagline= tagline==""?"":"__"+movie.tagline+"__ \n";
+        var voteAverage = movie.vote_average==0?"":"Puntuación media: "+movie.vote_average+"\n";
+        var releaseDate = movie.release_date==null?"":"Fecha de estreno: "+movie.release_date+"\n";
+        var originalLanguage = "Idioma original: "+movie.original_language+"\n";
+        var status;
+        if(movie.status=="Released"){status="Estado: Estrenada \n";}
+        if(movie.status=="Post Production"){status="Estado: Post-Producción \n";}
+        if(movie.status=="In Production"){status="Estado: En Producción \n";}
+        if(movie.status=="Planned"){status="Estado: Planeada \n";}
+        var runtime = movie.runtime==0?"":"Duración: "+movie.runtime+"minutos \n";
+        var budget= movie.budget==0?"":"Presupuesto: "+movie.budget+"\n";
+        var revenue = movie.revenue==0?"":"Recaudado: "+movie.revenue+"\n";
+        var homepage = movie.homepage==""?"":"Página oficial: "+movie.homepage+"\n";
+        var overview = movie.overview==""?"":"Resumen: "+movie.overview+"\n";
+        var genres = movie.genres.length>0?"Géneros: \n":"";
+        result.data.genres.map((genre) => {genres = genres+genre.name+"\n";});
+        var cardText = tagline+voteAverage+releaseDate+originalLanguage+
+            status+budget+runtime+revenue+genres+overview;
         var posterPath = imgPth+result.data.poster_path;
-        agent.add(new Card({
-           title: name,
-           imageUrl: posterPath,
-           text: cardText,
-         }));
+        agent.add(new Card({title: name,imageUrl: posterPath,text: cardText}));
       });
     }
   }
@@ -246,7 +278,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   function handleNowShowing(){
     var mediatype = agent.parameters.mediatype;
     var location = agent.parameters.location;
-    
     return axios.get(`${endpoint}/movie/now_playing?api_key=${tmdbKey}&language=es&page=1`)
         .then((result)=>{
         console.log("RESULTTS",result.data.results[0]);
@@ -279,8 +310,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
               "**Idioma original:** "+movie.original_language+"\n"+
               "**Resumen:** "+movie.overview+"\n";
               var posterPath = imgPth+movie.poster_path;
-              
-             agent.add(new Card({
+              agent.add(new Card({
                title: name,
                imageUrl: posterPath,
                text: cardText
@@ -316,7 +346,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     const medianame = agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
- 
     return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
       .then((result)=>{
       if(result!=null){
@@ -341,7 +370,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     const medianame = agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
- 
     return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
       .then((result)=>{
       if(result!=null){
@@ -1447,6 +1475,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('LoginIntroducePasswordIntent', handleLoginPassword);
   intentMap.set('CorrectAccessIntent', handleCorrectAccess);
   intentMap.set('LoginFirstActionIntent', handleUserAlias);
+  intentMap.set('LoginFirstEmailIntent', handleUserEmail);
   intentMap.set('SearchInfoIntent', handleMediaSearch);
   intentMap.set('ViewMediaDetails', handleViewMediaDetails);
   intentMap.set('SearchNowShowing', handleNowShowing);
