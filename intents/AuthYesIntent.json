@@ -18,44 +18,22 @@
       "parameters": [],
       "messages": [
         {
-          "type": "4",
+          "type": "1",
           "platform": "telegram",
-          "title": "",
-          "payload": {
-            "telegram": {
-              "reply_markup": {
-                "keyboard": [
-                  [
-                    {
-                      "text": "Por supuesto que si 😊",
-                      "callback_data": "si"
-                    }
-                  ],
-                  [
-                    {
-                      "callback_data": "no",
-                      "text": "No 🤔"
-                    }
-                  ]
-                ],
-                "one_time_keyboard": true,
-                "resize_keyboard": true
-              },
-              "text": "¿Estás registrado? 🤔"
+          "subtitle": "¿Estás registrado? 🤔",
+          "title": "De acuerdo",
+          "buttons": [
+            {
+              "postback": "si",
+              "text": "Claro que si😊"
+            },
+            {
+              "postback": "no",
+              "text": "No🤔"
             }
-          },
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "es",
-          "speech": [
-            "Está bien, ¿estás registrado?"
           ],
+          "textToSpeech": "",
+          "lang": "es",
           "condition": ""
         }
       ],

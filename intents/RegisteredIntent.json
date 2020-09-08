@@ -20,7 +20,18 @@
         {
           "type": "1",
           "platform": "telegram",
-          "title": "Está bien, entonces lo próximo que puedes hacer es logearte. ¿Quieres Continuar?",
+          "subtitle": "¿Quieres Continuar?",
+          "title": "Está bien, entonces ahora puedes logearte.",
+          "buttons": [
+            {
+              "postback": "si",
+              "text": "¡Adelante!"
+            },
+            {
+              "postback": "no",
+              "text": "No, gracias"
+            }
+          ],
           "textToSpeech": "",
           "lang": "es",
           "condition": ""

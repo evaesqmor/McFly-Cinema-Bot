@@ -1,5 +1,20 @@
 [
   {
+    "id": "9df89a51-503d-4039-9729-654b580b0312",
+    "data": [
+      {
+        "text": "Andrea",
+        "meta": "@sys.person",
+        "alias": "alias",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
     "id": "771ff8cf-c97d-4810-9b16-e5149e7f97f3",
     "data": [
       {
@@ -22,7 +37,7 @@
       },
       {
         "text": "Claudia",
-        "meta": "@sys.any",
+        "meta": "@sys.person",
         "alias": "alias",
         "userDefined": false
       }
@@ -41,7 +56,7 @@
       },
       {
         "text": "María",
-        "meta": "@sys.any",
+        "meta": "@sys.person",
         "alias": "alias",
         "userDefined": true
       }

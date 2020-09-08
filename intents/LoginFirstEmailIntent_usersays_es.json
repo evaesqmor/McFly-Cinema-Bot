@@ -1,0 +1,32 @@
+[
+  {
+    "id": "a553d9f6-ddcb-4a9f-bcbc-b38de52bc366",
+    "data": [
+      {
+        "text": "analopez@gmail.com",
+        "meta": "@sys.email",
+        "alias": "email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "e74ff0ce-d8a8-417d-a9aa-3f9fd729e3f2",
+    "data": [
+      {
+        "text": "mariaperez@gmail.com",
+        "meta": "@sys.email",
+        "alias": "email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

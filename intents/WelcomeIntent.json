@@ -19,39 +19,18 @@
           "type": "1",
           "platform": "telegram",
           "imageUrl": "https://i.imgur.com/wSEoIuR.png",
-          "subtitle": "Estás a poco pasos de poder buscar toda la información que desees sobre tus películas y series favoritas, comprar entradas de cine, y crear tus propias listas. ¡Adelante! 😊",
+          "subtitle": "Estás a poco pasos de poder buscar toda la información que desees sobre tus películas y series favoritas, comprar entradas de cine, y crear tus propias listas. ¡Adelante! 😊 ¿Quieres autenticarte?",
           "title": "Bienvenid@ a McFly Entertainment Bot",
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        },
-        {
-          "type": "4",
-          "platform": "telegram",
-          "title": "",
-          "payload": {
-            "telegram": {
-              "reply_markup": {
-                "one_time_keyboard": true,
-                "resize_keyboard": true,
-                "keyboard": [
-                  [
-                    {
-                      "text": "Si, claro 😊",
-                      "callback_data": "si"
-                    }
-                  ],
-                  [
-                    {
-                      "callback_data": "no",
-                      "text": "Quizá más tarde 🤔"
-                    }
-                  ]
-                ]
-              },
-              "text": "¿Quieres autenticarte?😄"
+          "buttons": [
+            {
+              "postback": "si",
+              "text": "Por supuesto"
+            },
+            {
+              "postback": "no",
+              "text": "Quizá más tarde"
             }
-          },
+          ],
           "textToSpeech": "",
           "lang": "es",
           "condition": ""

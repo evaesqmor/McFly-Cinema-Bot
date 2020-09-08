@@ -1,9 +1,9 @@
 {
-  "id": "8e7ce2d2-0dbe-4bfe-b97d-382cffd8effa",
-  "name": "RegisteredNextIntent",
+  "id": "53e38ddc-6975-41b1-bcff-a673bb2c2c2f",
+  "name": "LogoutIntent",
   "auto": true,
   "contexts": [
-    "registered_followup"
+    "correct_access_followup"
   ],
   "responses": [
     {
@@ -11,19 +11,20 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "proceed_to_login_followup",
+          "name": "WelcomeIntent-followup",
           "lifespan": 1
         }
       ],
       "parameters": [],
       "messages": [
         {
-          "type": "1",
-          "platform": "telegram",
-          "subtitle": "De acuerdo, ¿Cuál es tu usuario?",
-          "title": "Usuario",
+          "type": "0",
+          "title": "",
           "textToSpeech": "",
           "lang": "es",
+          "speech": [
+            "Cerrando sesión. ¡Hasta pronto!"
+          ],
           "condition": ""
         }
       ],
@@ -37,5 +38,6 @@
   "events": [],
   "conditionalResponses": [],
   "condition": "",
-  "conditionalFollowupEvents": []
+  "conditionalFollowupEvents": [],
+  "endInteraction": true
 }

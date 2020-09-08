@@ -20,20 +20,10 @@
         {
           "type": "1",
           "platform": "telegram",
-          "subtitle": "En tal caso, procedamos a registrarte. Escribe tu usuario a continuación:",
+          "subtitle": "En tal caso, procedamos a registrarte. Escribe un usuario a continuación",
           "title": "Email",
           "textToSpeech": "",
           "lang": "es",
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "es",
-          "speech": [
-            "En tal caso, procedamos a registrarte. Escribe un nombre de usuario:"
-          ],
           "condition": ""
         },
         {

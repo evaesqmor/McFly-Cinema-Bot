@@ -1,0 +1,56 @@
+[
+  {
+    "id": "9ed99c1d-bc09-41c2-9e91-d355ef7f1cbe",
+    "data": [
+      {
+        "text": "Cerrar sesión",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "fbe0f746-d36b-4abc-a978-b2b8c63c59d5",
+    "data": [
+      {
+        "text": "Log Out",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "3a6861fa-2bf7-4b0e-bb73-79701bcf47a9",
+    "data": [
+      {
+        "text": "logout",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "79c99319-e181-4be7-bc8e-89be43f5640e",
+    "data": [
+      {
+        "text": "salir",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

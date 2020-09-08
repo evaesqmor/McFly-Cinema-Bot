@@ -3,7 +3,7 @@
   "name": "SearchInfoIntent",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -11,17 +11,17 @@
       "action": "input.medianame",
       "affectedContexts": [
         {
-          "name": "search_info_followup",
+          "name": "searching_followup",
           "lifespan": 1
         },
         {
-          "name": "correct_access_followup",
+          "name": "search_info_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "55167a7f-beaf-420d-8276-02f87d238d10",
+          "id": "0da4ad10-26d8-47cc-82da-d61549fe2102",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -35,7 +35,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "d8ed3b60-4ee7-4554-aa85-bba8f9e5805f",
+          "id": "323cc659-2570-45d8-b4b8-e368dfa646f0",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -49,7 +49,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "c2a076f4-66c1-4914-a7cc-69cdc4c245c3",
+          "id": "6c956ba7-7bd4-4ca3-85f1-1f1cbddaf726",
           "name": "alias",
           "required": false,
           "dataType": "",
@@ -63,7 +63,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "e1af473a-cec8-4566-be4b-859c96b25ca3",
+          "id": "b187727f-966a-4c36-abee-88a5126fe05f",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",

@@ -1,9 +1,9 @@
 {
-  "id": "8e7ce2d2-0dbe-4bfe-b97d-382cffd8effa",
-  "name": "RegisteredNextIntent",
+  "id": "9370d9a3-60df-4fd6-9601-b738e03ac308",
+  "name": "TicketsIntent",
   "auto": true,
   "contexts": [
-    "registered_followup"
+    "correct_access_followup"
   ],
   "responses": [
     {
@@ -11,17 +11,15 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "proceed_to_login_followup",
+          "name": "tickets_followup",
           "lifespan": 1
         }
       ],
       "parameters": [],
       "messages": [
         {
-          "type": "1",
-          "platform": "telegram",
-          "subtitle": "De acuerdo, ¿Cuál es tu usuario?",
-          "title": "Usuario",
+          "type": "0",
+          "title": "",
           "textToSpeech": "",
           "lang": "es",
           "condition": ""

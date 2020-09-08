@@ -17,7 +17,7 @@
       ],
       "parameters": [
         {
-          "id": "2c90f750-0deb-4298-bf51-c05a4cb73564",
+          "id": "47897e59-2505-4e3b-b221-8883168c3e8e",
           "name": "username",
           "required": false,
           "dataType": "@sys.any",
@@ -36,7 +36,7 @@
           "type": "1",
           "platform": "telegram",
           "subtitle": "Genial,  ¿cuál es tu contraseña?",
-          "title": "Login - Contraseña",
+          "title": "Contraseña",
           "textToSpeech": "",
           "lang": "es",
           "condition": ""
@@ -46,9 +46,6 @@
           "title": "",
           "textToSpeech": "",
           "lang": "es",
-          "speech": [
-            "Genial,  ¿cuál es tu contraseña?"
-          ],
           "condition": ""
         }
       ],

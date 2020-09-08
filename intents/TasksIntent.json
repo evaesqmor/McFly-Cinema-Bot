@@ -1,21 +1,21 @@
 {
-  "id": "e4cff9f6-3d5d-4e35-ad2d-3288c4c3b569",
-  "name": "CorrectAccessIntent",
+  "id": "96edd956-704c-4471-bcaf-f492594f1dd0",
+  "name": "TasksIntent",
   "auto": true,
   "contexts": [],
   "responses": [
     {
       "resetContexts": false,
-      "action": "get.access",
+      "action": "",
       "affectedContexts": [
         {
-          "name": "correct_access_followup",
+          "name": "tasks_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "305950b8-95ce-477f-9299-080dd3dc261a",
+          "id": "5cbb3bab-6e37-46af-bfc8-1eeeb06ebe8f",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -28,7 +28,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "3f899393-834d-495c-8453-181b1a350b49",
+          "id": "dea8a3f6-108d-4326-9e80-1c5740a9e75e",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -41,21 +41,8 @@
           "outputDialogContexts": []
         },
         {
-          "id": "def67fca-1063-421c-9019-46ce38ac72d8",
+          "id": "e61e2807-fa5a-442b-8078-02144dfe05b2",
           "name": "alias",
-          "required": false,
-          "dataType": "",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "44fb68db-ebd6-4716-9dd0-b117885403fa",
-          "name": "email",
           "required": false,
           "dataType": "",
           "defaultValue": "",
@@ -67,17 +54,40 @@
           "outputDialogContexts": []
         }
       ],
-      "messages": [],
+      "messages": [
+        {
+          "type": "1",
+          "platform": "telegram",
+          "subtitle": "¿qué te gustaría hacer?",
+          "title": "Buenas $alias",
+          "buttons": [
+            {
+              "postback": "buscar información",
+              "text": "Buscar información"
+            }
+          ],
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        }
+      ],
       "speech": []
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [
     {
-      "name": "correctaccess"
+      "name": "tasks"
     }
   ],
   "conditionalResponses": [],
