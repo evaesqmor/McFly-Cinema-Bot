@@ -3,7 +3,7 @@
   "name": "SearchMovieDirectors",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -11,17 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_media_directors_followup",
+          "name": "searching_followup",
           "lifespan": 1
         },
         {
-          "name": "correct_access_followup",
+          "name": "search_movie_directors_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "92734505-0756-4230-bc7b-033b72d778bd",
+          "id": "a92cf971-0ff5-46b3-bd12-561cf2f73b6b",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",

@@ -3,7 +3,7 @@
   "name": "SearchTvDirectors",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -15,13 +15,13 @@
           "lifespan": 1
         },
         {
-          "name": "correct_access_followup",
+          "name": "searching_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "ac3ad055-3850-48e2-9ce6-7b7b1feb8f4f",
+          "id": "79e1f3e6-feb9-4e10-9c5a-3722121b5476",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",

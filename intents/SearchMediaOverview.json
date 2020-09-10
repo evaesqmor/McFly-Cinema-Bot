@@ -3,7 +3,7 @@
   "name": "SearchMediaOverview",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -15,13 +15,13 @@
           "lifespan": 1
         },
         {
-          "name": "correct_access_followup",
+          "name": "searching_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "b3fcfe80-5baf-4567-b4b3-2f66b805a6c5",
+          "id": "3528e182-b519-49bf-bb84-9eacdbe094f8",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
@@ -35,7 +35,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "609c81b9-4e93-431c-9f9f-4c61999146ce",
+          "id": "869e2a95-0809-4d10-8376-82bd6efda7e7",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -49,7 +49,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "96d3c837-e752-4606-a065-e564224a6c53",
+          "id": "9ebf048e-2505-4d43-8b58-b4b083bf4459",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -63,7 +63,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "9ba75a6e-a153-4ec9-8759-3e4bd2c9e3aa",
+          "id": "1255e239-7376-49f9-b224-159cd7564b0a",
           "name": "alias",
           "required": false,
           "dataType": "",

@@ -1,121 +1,9 @@
 [
   {
-    "id": "6f153b55-f4f0-4980-be2b-b2bc244e96fc",
-    "data": [
-      {
-        "text": "Personajes de la serie ",
-        "userDefined": false
-      },
-      {
-        "text": "Space Force",
-        "meta": "@sys.any",
-        "alias": "medianame",
-        "userDefined": true
-      }
-    ],
-    "isTemplate": false,
-    "count": 0,
-    "lang": "es",
-    "updated": 0
-  },
-  {
-    "id": "adfbee76-d6e1-4992-9965-26c973f68c02",
-    "data": [
-      {
-        "text": "¿Quién aparece en la serie ",
-        "userDefined": false
-      },
-      {
-        "text": "The Office",
-        "meta": "@sys.any",
-        "alias": "medianame",
-        "userDefined": true
-      },
-      {
-        "text": "?",
-        "userDefined": false
-      }
-    ],
-    "isTemplate": false,
-    "count": 0,
-    "lang": "es",
-    "updated": 0
-  },
-  {
-    "id": "8e35e025-23b4-4137-85b4-59a1ec51f5f4",
-    "data": [
-      {
-        "text": "Actores que aparecen en la serie ",
-        "userDefined": false
-      },
-      {
-        "text": "The OA",
-        "meta": "@sys.any",
-        "alias": "medianame",
-        "userDefined": true
-      }
-    ],
-    "isTemplate": false,
-    "count": 0,
-    "lang": "es",
-    "updated": 0
-  },
-  {
-    "id": "2e02af2f-95f7-47d4-832f-976c872520b7",
+    "id": "4ff38921-b325-4102-918d-63dd0c990548",
     "data": [
       {
         "text": "Reparto de la serie ",
-        "userDefined": false
-      },
-      {
-        "text": "Ozark",
-        "meta": "@sys.any",
-        "alias": "medianame",
-        "userDefined": true
-      }
-    ],
-    "isTemplate": false,
-    "count": 0,
-    "lang": "es",
-    "updated": 0
-  },
-  {
-    "id": "c45a8471-fd2b-4607-97f9-558f57030689",
-    "data": [
-      {
-        "text": "¿Cuáles son ",
-        "userDefined": false
-      },
-      {
-        "text": "los personajes",
-        "meta": "@sys.ignore",
-        "userDefined": false
-      },
-      {
-        "text": " de la serie ",
-        "userDefined": false
-      },
-      {
-        "text": "Stranger Things",
-        "meta": "@sys.any",
-        "alias": "medianame",
-        "userDefined": true
-      },
-      {
-        "text": "?",
-        "userDefined": false
-      }
-    ],
-    "isTemplate": false,
-    "count": 0,
-    "lang": "es",
-    "updated": 0
-  },
-  {
-    "id": "7b61f263-b76a-4b91-9121-dfc5d84307ff",
-    "data": [
-      {
-        "text": "¿Cuál es el reparto de la serie ",
         "userDefined": false
       },
       {
@@ -123,10 +11,6 @@
         "meta": "@sys.any",
         "alias": "medianame",
         "userDefined": true
-      },
-      {
-        "text": "?",
-        "userDefined": false
       }
     ],
     "isTemplate": false,

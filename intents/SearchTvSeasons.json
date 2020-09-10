@@ -3,7 +3,7 @@
   "name": "SearchTvSeasons",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -15,13 +15,13 @@
           "lifespan": 1
         },
         {
-          "name": "correct_access_followup",
+          "name": "searching_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "415ab803-25a2-49a3-b8f7-b72eb595b76c",
+          "id": "f97c2d01-d8e2-4b09-8e31-b7eed998280b",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",

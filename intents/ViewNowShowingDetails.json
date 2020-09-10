@@ -1,17 +1,17 @@
 {
-  "id": "30943f28-f40d-4f59-9750-6a46c310a8b1",
-  "name": "ViewMediaDetails",
+  "id": "fd7bbe42-2bad-439e-bbf8-1b1ec20749b9",
+  "name": "ViewNowShowingDetails",
   "auto": true,
   "contexts": [
-    "search_info_followup"
+    "search_now_showing_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.mediaelement",
+      "action": "",
       "affectedContexts": [
         {
-          "name": "view_media_details_followup",
+          "name": "search_now_showing_followup",
           "lifespan": 1
         },
         {
@@ -19,19 +19,19 @@
           "lifespan": 1
         },
         {
-          "name": "search_info_followup",
+          "name": "view_now_showing_details_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "7529e2b4-8eaf-4c1e-a32f-eeb4b2da77d1",
-          "name": "mediaelement",
+          "id": "ebcea876-6528-443d-9a0b-5c84dd22257b",
+          "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
-          "value": "$mediaelement",
+          "value": "$medianame",
           "defaultValue": "",
-          "isList": true,
+          "isList": false,
           "prompts": [],
           "promptMessages": [],
           "noMatchPromptMessages": [],
@@ -39,7 +39,21 @@
           "outputDialogContexts": []
         },
         {
-          "id": "2fd3f6ec-f706-4a25-8e1d-3df1c13e27ad",
+          "id": "4f655a44-c221-45d1-917b-19a85baf2817",
+          "name": "mediaid",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$mediaid",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "fbf67451-57a9-4172-bfdc-3652c9f21141",
           "name": "mediatype",
           "required": false,
           "dataType": "@sys.any",
@@ -53,39 +67,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "2a96487d-197b-4cfb-a0d8-554ded7ab647",
-          "name": "mediaid",
-          "required": false,
-          "dataType": "@sys.number",
-          "value": "$mediaid",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "4dec9b1a-d7cd-4f54-9d06-a412f5f917e4",
-          "name": "medianame",
-          "required": false,
-          "dataType": "",
-          "value": "#search_info_followup.medianame",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "97d2ee99-d7f5-4983-87c1-e9b92ae9e1c0",
+          "id": "6580c1b9-15b8-4226-8e14-243134ed33f8",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#search_info_followup.username",
+          "value": "#search_now_showing_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -95,11 +81,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "c75a66ed-beac-46dd-a2b1-c394bb2299ba",
+          "id": "4c4292fe-ad8e-44e8-b3e1-80580d2a1997",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#search_info_followup.password",
+          "value": "#search_now_showing_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -109,11 +95,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "a4d52c77-49be-475d-be4c-cda8354a9553",
+          "id": "c040cb91-4c5a-4eab-8f08-eecff05cce1f",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#search_info_followup.alias",
+          "value": "#search_now_showing_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
