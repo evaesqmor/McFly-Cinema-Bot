@@ -1,0 +1,45 @@
+[
+  {
+    "id": "1845803b-c564-40d4-9043-573f2e253c50",
+    "data": [
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "La La Land",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": " (",
+        "userDefined": false
+      },
+      {
+        "text": "movie",
+        "meta": "@sys.any",
+        "alias": "mediatype",
+        "userDefined": true
+      },
+      {
+        "text": " : ",
+        "userDefined": false
+      },
+      {
+        "text": "5432",
+        "meta": "@sys.any",
+        "alias": "mediaid",
+        "userDefined": true
+      },
+      {
+        "text": ")",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

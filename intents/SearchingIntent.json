@@ -17,7 +17,7 @@
       ],
       "parameters": [
         {
-          "id": "d2871510-9be7-48d7-a795-f078a9f5326e",
+          "id": "ab3607c8-5583-49b6-ad46-6e49391eafec",
           "name": "alias",
           "required": false,
           "dataType": "",
@@ -31,7 +31,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "7ebd5c68-31cf-4747-9a98-28dd206a6e4e",
+          "id": "799a02a9-6d06-40bd-a4d4-2675b0f558e4",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -45,7 +45,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "cdc4323e-39d1-4d74-b2ba-0f739e1a3d34",
+          "id": "ab442919-f1aa-49a2-a953-1673f5a1c33e",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -67,6 +67,49 @@
           "title": "Búsqueda",
           "textToSpeech": "",
           "lang": "es",
+          "condition": ""
+        },
+        {
+          "type": "1",
+          "platform": "telegram",
+          "subtitle": "Algunas sugerencias de búsqueda",
+          "title": "Búsquedas de películas",
+          "buttons": [
+            {
+              "postback": "peliculas en el cine",
+              "text": "En cines"
+            },
+            {
+              "postback": "peliculas más populares",
+              "text": "Más populares"
+            },
+            {
+              "postback": "peliculas mejor valoradas",
+              "text": "Mejor valoradas"
+            }
+          ],
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        },
+        {
+          "type": "1",
+          "platform": "telegram",
+          "subtitle": "Algunas sugerencias de búsqueda",
+          "title": "Búsquedas de series",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "platform": "telegram",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "O también puedes hacer una búsqueda sobre algún detalle en concreto de una serie, película o persona que participe en ellas"
+          ],
           "condition": ""
         }
       ],

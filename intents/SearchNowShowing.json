@@ -3,7 +3,7 @@
   "name": "SearchNowShowing",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -15,26 +15,11 @@
           "lifespan": 1
         },
         {
-          "name": "correct_access_followup",
+          "name": "searching_followup",
           "lifespan": 1
         }
       ],
-      "parameters": [
-        {
-          "id": "89939d2d-9cf8-446e-b240-489b33a10805",
-          "name": "location",
-          "required": false,
-          "dataType": "@sys.location",
-          "value": "$location",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        }
-      ],
+      "parameters": [],
       "messages": [
         {
           "type": "0",

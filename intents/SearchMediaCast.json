@@ -1,6 +1,6 @@
 {
-  "id": "9aba1b54-ef45-4270-b99b-d2402736acb2",
-  "name": "SearchTopRatedMovies",
+  "id": "1d2f5d0b-bae7-44b5-bfe3-27b10e45c1c4",
+  "name": "SearchMediaCast",
   "auto": true,
   "contexts": [
     "searching_followup"
@@ -11,17 +11,31 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_top_rated_movies_followup",
+          "name": "searching_followup",
           "lifespan": 1
         },
         {
-          "name": "searching_followup",
+          "name": "search_media_cast_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "c1539582-0c23-418b-8de0-591cb5be6dc0",
+          "id": "c06a8467-3364-41a3-8ef0-155e0d67a7d6",
+          "name": "medianame",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "f0818b3f-0046-4503-89ce-8930db85377c",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -35,7 +49,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "95f99810-9617-42df-b8db-f5c552c37e4c",
+          "id": "f95dc9a5-3be6-412a-9d78-14f2bf555aa7",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -49,7 +63,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "13c07be0-bd1e-4cd8-a0ed-aa96031bcd4c",
+          "id": "c8abe6e0-74b6-4bbf-89ce-1b5e08dce7a7",
           "name": "alias",
           "required": false,
           "dataType": "",

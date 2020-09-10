@@ -1,17 +1,17 @@
 {
-  "id": "30943f28-f40d-4f59-9750-6a46c310a8b1",
-  "name": "ViewMediaDetails",
+  "id": "bd536ef4-8692-4720-9ec8-5c6f88f4c4dc",
+  "name": "ViewMostPopularMoviesDetails",
   "auto": true,
   "contexts": [
-    "search_info_followup"
+    "search_most_popular_movies_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.mediaelement",
+      "action": "",
       "affectedContexts": [
         {
-          "name": "view_media_details_followup",
+          "name": "search_most_popular_movies_followup",
           "lifespan": 1
         },
         {
@@ -19,19 +19,19 @@
           "lifespan": 1
         },
         {
-          "name": "search_info_followup",
+          "name": "view_most_popular_movies_details",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "7529e2b4-8eaf-4c1e-a32f-eeb4b2da77d1",
-          "name": "mediaelement",
+          "id": "2a1a6e22-dc9c-4ce4-9b6f-64ac67eb707a",
+          "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
-          "value": "$mediaelement",
+          "value": "$medianame",
           "defaultValue": "",
-          "isList": true,
+          "isList": false,
           "prompts": [],
           "promptMessages": [],
           "noMatchPromptMessages": [],
@@ -39,7 +39,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "2fd3f6ec-f706-4a25-8e1d-3df1c13e27ad",
+          "id": "4e8b6235-0844-4db9-940e-35ff2d6e4d7e",
           "name": "mediatype",
           "required": false,
           "dataType": "@sys.any",
@@ -53,10 +53,10 @@
           "outputDialogContexts": []
         },
         {
-          "id": "2a96487d-197b-4cfb-a0d8-554ded7ab647",
+          "id": "2b605528-c62b-41e2-be89-b4ad1b1286c6",
           "name": "mediaid",
           "required": false,
-          "dataType": "@sys.number",
+          "dataType": "@sys.any",
           "value": "$mediaid",
           "defaultValue": "",
           "isList": false,
@@ -67,25 +67,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "4dec9b1a-d7cd-4f54-9d06-a412f5f917e4",
-          "name": "medianame",
-          "required": false,
-          "dataType": "",
-          "value": "#search_info_followup.medianame",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "97d2ee99-d7f5-4983-87c1-e9b92ae9e1c0",
+          "id": "e78c1bfb-f1cd-4b9f-ac61-69afa973811f",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#search_info_followup.username",
+          "value": "#search_most_popular_movies_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -95,11 +81,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "c75a66ed-beac-46dd-a2b1-c394bb2299ba",
+          "id": "630f1cf2-4da1-46c0-b8e7-591e5d35b75f",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#search_info_followup.password",
+          "value": "#search_most_popular_movies_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -109,11 +95,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "a4d52c77-49be-475d-be4c-cda8354a9553",
+          "id": "27ff3be0-5050-4b61-8f5c-a340229f6645",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#search_info_followup.alias",
+          "value": "#search_most_popular_movies_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

@@ -3,7 +3,7 @@
   "name": "SearchMediaLanguage",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -15,13 +15,13 @@
           "lifespan": 1
         },
         {
-          "name": "correct_access_followup",
+          "name": "searching_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "127a67a1-ca63-4a71-b026-d6fb7a26733c",
+          "id": "558e73c3-1b7d-4006-9e66-da83038faa49",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
