@@ -7,6 +7,8 @@
 const functions = require('firebase-functions');
 const {Text, Card, WebhookClient, Image, Suggestion, Payload} = require('dialogflow-fulfillment');
 const axios = require('axios');
+const cheerio = require('cheerio');
+const request = require('request');
 var nodemailer = require('nodemailer');
 
 //Conection to Firebase Database
@@ -801,31 +803,44 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
      });
   }
 
-  /*Tv networks*/
-  function handleSearchTvNetworks(){
-    var medianame =agent.parameters.medianame;
+  /*Media networks*/
+  function handleSearchNetworks(){
+   	var medianame =agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
     return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{   
-      var element = result.data.results[0];
-      var tvId = element.id;
-       return axios.get(`${endpoint}/tv/${tvId}?api_key=${tmdbKey}&language=en-US`)
-      .then((series)=>{
-         var name = series.data.name;
-         agent.add(`La serie ${name} se puede ver en las plataformas: `);
-         series.data.networks.map((network)=>{
-           var networkName = network.name;
-           var networkLogo = imgPth+network.logo_path;
-           agent.add(new Card({
-             title: networkName,
-             imageUrl: networkLogo, 
-           }));
-         });
-       });
+      .then((result)=>{
+      if(result.data.results.length>0){
+        var element = result.data.results[0];
+        var id = element.id;
+        var mediaelement = element.media_type;
+      return axios.get(`https://www.themoviedb.org/${mediaelement}/${id}-${queryName}/watch?language=es`)
+      .then((response)=>{
+      const $ = cheerio.load(response.data);
+      var providers = $('.right_column').children('div.ott_provider').first().find('ul.providers').children('.ott_filter_best_price');
+      if(providers.length>0){
+        var count = 0;
+        providers.each((index,element)=>{
+        var link = $(element).find('a');
+        var linkReference = link.attr('href');
+        var linkTitle = link.attr('title');
+        var image = link.find('img').attr('src');
+        var arrayTitle =linkTitle.split(" ");
+        var length = arrayTitle.length;
+        var platform= arrayTitle[length-2]=="en"?arrayTitle[length-1]:arrayTitle.slice(length-2,length).join(" ");
+        if(platform=="Netflix"||platform=="Disney Plus"||platform=="Prime Video"||platform=="HBO"){
+      	agent.add(new Card({title: `${platform}` ,imageUrl:linkReference, text: ``,buttonText: `Ver en ${platform}`,
+         buttonUrl: linkReference}));
+          count++;
+        }
+      });
+        if(count==0){agent.add(new Card({title: "Sin resultados" , text: `No hay plataformas disponibles para visualizar ${medianame}`}));}
+      }else{agent.add(new Card({title: "Sin resultados" , text: `No hay plataformas disponibles para visualizar ${medianame}`}));}
+    });
+      }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
     });
   }
-  
+
   /*Genres*/
   function handleSearchMovieGenres(){
     var medianame =agent.parameters.medianame;
@@ -1744,7 +1759,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('SearchTvDirectors', handleSearchTvDirectors);
   intentMap.set('SearchMediaLanguage', handleSearchMediaLanguage);
   intentMap.set('SearchTvSeasons', handleSearchTvSeasons);
-  intentMap.set('SearchTvNetworks', handleSearchTvNetworks);
+  intentMap.set('SearchNetworks', handleSearchNetworks);
   intentMap.set('SearchMovieGenres', handleSearchMovieGenres);
   intentMap.set('SearchTvGenres', handleSearchTvGenres);
   intentMap.set('SearchMediaOriginalTitle', handleSearchMediaOriginalTitle);
