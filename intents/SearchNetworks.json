@@ -1,0 +1,100 @@
+{
+  "id": "266104f1-f0c2-45a7-aa9e-c4e4674cccfb",
+  "name": "SearchNetworks",
+  "auto": true,
+  "contexts": [
+    "searching_followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "searching_followup",
+          "lifespan": 1
+        },
+        {
+          "name": "search_networks",
+          "lifespan": 1
+        }
+      ],
+      "parameters": [
+        {
+          "id": "de412e63-580d-431b-9f16-78c1098da305",
+          "name": "medianame",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "ba93dd0e-3706-4a68-b6b9-72044f49c28f",
+          "name": "username",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.username",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "05e0f733-481f-4c5a-9d6b-b13d80f5d6e8",
+          "name": "password",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.password",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "e96d3ad4-29dc-4495-b07b-3b95cc03c8de",
+          "name": "alias",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.alias",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

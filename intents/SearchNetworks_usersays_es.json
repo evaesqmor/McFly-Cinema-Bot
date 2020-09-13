@@ -1,0 +1,21 @@
+[
+  {
+    "id": "09b6d4b9-9d0c-4623-a58f-4a6e9b788fcd",
+    "data": [
+      {
+        "text": "Ver ",
+        "userDefined": false
+      },
+      {
+        "text": "Stranger Things",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
