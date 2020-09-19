@@ -1,27 +1,36 @@
 {
-  "id": "9370d9a3-60df-4fd6-9601-b738e03ac308",
-  "name": "TicketsIntent",
+  "id": "4738ab07-3d70-4068-981d-e5b6767d3fad",
+  "name": "IntroduceCity",
   "auto": true,
   "contexts": [
-    "tasks_followup"
+    "showtimes_by_city_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
       "action": "",
-      "affectedContexts": [
-        {
-          "name": "tickets_followup",
-          "lifespan": 1
-        }
-      ],
+      "affectedContexts": [],
       "parameters": [
         {
-          "id": "d08440ef-6377-4e7f-bb5c-a730afa965a2",
+          "id": "b17c3f0d-f3f7-4671-9216-150d74b30725",
+          "name": "city",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$city",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "f58da619-29b5-4743-9207-2d18e578c740",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.username",
+          "value": "#showtimes_by_city_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -31,11 +40,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "84c6acb8-b243-4ffe-b0ab-4895b3c69022",
+          "id": "db8cdb0e-848e-4947-a126-ca7d526d3934",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.password",
+          "value": "#showtimes_by_city_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -45,11 +54,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "9a2424bd-65b3-4a04-8752-4ea29913b814",
+          "id": "a56baad5-0284-475f-9d39-1b7cf540bf39",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.alias",
+          "value": "#showtimes_by_city_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -59,39 +68,12 @@
           "outputDialogContexts": []
         }
       ],
-      "messages": [
-        {
-          "type": "1",
-          "platform": "telegram",
-          "subtitle": "¿Cómo deseas buscar?",
-          "title": "Tipo de búsqueda",
-          "buttons": [
-            {
-              "postback": "por ciudad",
-              "text": "Por ciudad"
-            },
-            {
-              "postback": "por película",
-              "text": "Por película"
-            }
-          ],
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        }
-      ],
+      "messages": [],
       "speech": []
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [],

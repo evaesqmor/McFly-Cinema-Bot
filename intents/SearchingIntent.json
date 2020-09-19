@@ -17,7 +17,7 @@
       ],
       "parameters": [
         {
-          "id": "ab3607c8-5583-49b6-ad46-6e49391eafec",
+          "id": "f1059600-31de-4535-b71f-b2ebd6a0f530",
           "name": "alias",
           "required": false,
           "dataType": "",
@@ -31,7 +31,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "799a02a9-6d06-40bd-a4d4-2675b0f558e4",
+          "id": "56d83bd5-6c43-4f54-a70a-4be40f9c46d2",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -45,7 +45,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "ab442919-f1aa-49a2-a953-1673f5a1c33e",
+          "id": "016ac899-8cd2-4cb6-a1d7-8a4b10cae39f",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -60,6 +60,16 @@
         }
       ],
       "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "¿Qué quieres buscar, $alias?"
+          ],
+          "condition": ""
+        },
         {
           "type": "1",
           "platform": "telegram",

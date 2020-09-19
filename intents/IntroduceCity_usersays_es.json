@@ -1,0 +1,47 @@
+[
+  {
+    "id": "12422a93-9bb6-4427-b960-a6767231c1dc",
+    "data": [
+      {
+        "text": "Málaga",
+        "meta": "@sys.any",
+        "alias": "city",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "50d777ba-d7bc-4c59-a0ed-8d54b9107af7",
+    "data": [
+      {
+        "text": "Madrid",
+        "meta": "@sys.any",
+        "alias": "city",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "ec19b973-cd1c-4832-bd71-d56537699f07",
+    "data": [
+      {
+        "text": "Sevilla",
+        "meta": "@sys.any",
+        "alias": "city",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

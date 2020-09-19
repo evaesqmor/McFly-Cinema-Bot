@@ -1,0 +1,20 @@
+[
+  {
+    "id": "417b0b56-5b7f-4c8d-ae40-fec76f7d8c62",
+    "data": [
+      {
+        "text": "Sesiones de ",
+        "userDefined": false
+      },
+      {
+        "text": "cine",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  }
+]

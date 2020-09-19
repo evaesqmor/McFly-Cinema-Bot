@@ -1,0 +1,25 @@
+[
+  {
+    "id": "c9d2134b-c972-4b95-a99b-f712a188e33a",
+    "data": [
+      {
+        "text": " (",
+        "userDefined": false
+      },
+      {
+        "text": "/play/cine/cartelera/cinesur-nervion-plaza-3d-1524/",
+        "meta": "@sys.any",
+        "alias": "cinemalink",
+        "userDefined": true
+      },
+      {
+        "text": ")",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

@@ -17,7 +17,7 @@
       ],
       "parameters": [
         {
-          "id": "47897e59-2505-4e3b-b221-8883168c3e8e",
+          "id": "5adfd1c7-efd9-4a9d-a5d6-0d1c9937222c",
           "name": "username",
           "required": false,
           "dataType": "@sys.any",
@@ -46,6 +46,9 @@
           "title": "",
           "textToSpeech": "",
           "lang": "es",
+          "speech": [
+            "Genial,  ¿cuál es tu contraseña?"
+          ],
           "condition": ""
         }
       ],

@@ -1,9 +1,9 @@
 {
-  "id": "8e7ce2d2-0dbe-4bfe-b97d-382cffd8effa",
-  "name": "RegisteredNextIntent",
+  "id": "e7fabcc2-66cb-42c8-9bc9-5b031a4890fb",
+  "name": "ShowtimesByMovie",
   "auto": true,
   "contexts": [
-    "registered_followup"
+    "tickets_followup"
   ],
   "responses": [
     {
@@ -11,29 +11,29 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "proceed_to_login_followup",
+          "name": "showtimes_by_movie_followup",
           "lifespan": 1
         }
       ],
       "parameters": [],
       "messages": [
         {
+          "type": "1",
+          "platform": "telegram",
+          "subtitle": "¿Qué película quieres buscar?",
+          "title": "Búsqueda por película",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        },
+        {
           "type": "0",
           "title": "",
           "textToSpeech": "",
           "lang": "es",
           "speech": [
-            "De acuerdo, ¿Cuál es tu usuario?"
+            "¿Qué película te gustaría buscar?"
           ],
-          "condition": ""
-        },
-        {
-          "type": "1",
-          "platform": "telegram",
-          "subtitle": "De acuerdo, ¿Cuál es tu usuario?",
-          "title": "Usuario",
-          "textToSpeech": "",
-          "lang": "es",
           "condition": ""
         }
       ],

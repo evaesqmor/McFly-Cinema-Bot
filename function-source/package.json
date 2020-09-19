@@ -23,6 +23,8 @@
     "nodemailer": "^4.4.2",
     "apiai": "^4.0.3",
     "request": "^2.88.2",
-    "cheerio": "^1.0.0-rc.3"
+    "cheerio": "^1.0.0-rc.3",
+    "translate": "^1.1.2",
+    "get-age":"^1.0.1"
   }
 }

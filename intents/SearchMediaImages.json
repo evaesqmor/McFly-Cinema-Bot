@@ -1,9 +1,9 @@
 {
-  "id": "9370d9a3-60df-4fd6-9601-b738e03ac308",
-  "name": "TicketsIntent",
+  "id": "d9b69b80-d006-4b32-9b35-e77153efe6d9",
+  "name": "SearchMediaImages",
   "auto": true,
   "contexts": [
-    "tasks_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -11,17 +11,35 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "tickets_followup",
+          "name": "searching_followup",
+          "lifespan": 1
+        },
+        {
+          "name": "search_media_images_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "d08440ef-6377-4e7f-bb5c-a730afa965a2",
+          "id": "b2bc21cb-c3d4-4e3d-9a79-ad9a1399bc2d",
+          "name": "medianame",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "7e9e667c-556c-4483-8a24-69df22f86fe9",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.username",
+          "value": "#searching_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -31,11 +49,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "84c6acb8-b243-4ffe-b0ab-4895b3c69022",
+          "id": "f6952c8e-0061-4f4f-ad2f-66cc1767a6ba",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.password",
+          "value": "#searching_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -45,11 +63,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "9a2424bd-65b3-4a04-8752-4ea29913b814",
+          "id": "692398da-3313-40c0-9933-5323f004096d",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.alias",
+          "value": "#searching_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -60,25 +78,6 @@
         }
       ],
       "messages": [
-        {
-          "type": "1",
-          "platform": "telegram",
-          "subtitle": "¿Cómo deseas buscar?",
-          "title": "Tipo de búsqueda",
-          "buttons": [
-            {
-              "postback": "por ciudad",
-              "text": "Por ciudad"
-            },
-            {
-              "postback": "por película",
-              "text": "Por película"
-            }
-          ],
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        },
         {
           "type": "0",
           "title": "",
@@ -91,7 +90,7 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [],

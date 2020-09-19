@@ -3,7 +3,7 @@
   "name": "SearchMovieDuration",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -12,12 +12,16 @@
       "affectedContexts": [
         {
           "name": "search_movie_duration",
-          "lifespan": 5
+          "lifespan": 1
+        },
+        {
+          "name": "searching_followup",
+          "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "24cd36b7-faa5-4bf2-ae6c-2e6d4375dbfa",
+          "id": "973c9096-b0b5-4b00-bf89-3a75acf720f4",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",

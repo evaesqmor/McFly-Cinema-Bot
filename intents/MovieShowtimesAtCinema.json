@@ -1,0 +1,97 @@
+{
+  "id": "b27b2213-b1c6-46c0-9e61-2e4d520a4739",
+  "name": "MovieShowtimesAtCinema",
+  "auto": true,
+  "contexts": [
+    "introduce_cinema_followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "e30f8f05-a1ef-456b-811b-6678f86b86e3",
+          "name": "moviename",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$moviename",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "1d7cc85b-9284-48fa-a7f8-368ec15dabef",
+          "name": "cinemalink",
+          "required": false,
+          "dataType": "",
+          "value": "#introduce_cinema_followup.cinemalink",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "18200170-964e-44a9-977b-7233bbf4e7f4",
+          "name": "username",
+          "required": false,
+          "dataType": "",
+          "value": "#introduce_cinema_followup.username",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "2c4b8844-843e-4f53-ad6f-72ac1072ce3d",
+          "name": "password",
+          "required": false,
+          "dataType": "",
+          "value": "#introduce_cinema_followup.password",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "19847c85-a6e0-44db-996c-32ff61f81026",
+          "name": "alias",
+          "required": false,
+          "dataType": "",
+          "value": "#introduce_cinema_followup.alias",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

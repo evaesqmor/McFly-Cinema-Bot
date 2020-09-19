@@ -1,0 +1,40 @@
+[
+  {
+    "id": "956cf6ae-47ce-4b07-999c-3bb3b4e284b9",
+    "data": [
+      {
+        "text": "Similares a ",
+        "userDefined": false
+      },
+      {
+        "text": "Guardianes de la galaxia",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7fcc7ea9-6b9f-4245-a663-9652569d8111",
+    "data": [
+      {
+        "text": "Recomendaciones ",
+        "userDefined": false
+      },
+      {
+        "text": "Thor",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

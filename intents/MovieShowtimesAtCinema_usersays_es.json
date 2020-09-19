@@ -1,15 +1,15 @@
 [
   {
-    "id": "43d0d77b-8314-480f-88a6-5c9feb98da0b",
+    "id": "9bbea679-6c93-4201-ac51-7f6a200f8366",
     "data": [
       {
-        "text": "Calificacion de edad ",
+        "text": "horarios ",
         "userDefined": false
       },
       {
-        "text": "Joker",
+        "text": "Tenet",
         "meta": "@sys.any",
-        "alias": "medianame",
+        "alias": "moviename",
         "userDefined": true
       }
     ],
