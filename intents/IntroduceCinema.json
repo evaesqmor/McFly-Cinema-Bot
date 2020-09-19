@@ -1,9 +1,9 @@
 {
-  "id": "9370d9a3-60df-4fd6-9601-b738e03ac308",
-  "name": "TicketsIntent",
+  "id": "6d4668db-5a74-43ce-b3ba-e8ade2742a3a",
+  "name": "IntroduceCinema",
   "auto": true,
   "contexts": [
-    "tasks_followup"
+    "introduce_city_followup"
   ],
   "responses": [
     {
@@ -11,17 +11,45 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "tickets_followup",
+          "name": "introduce_cinema_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "d08440ef-6377-4e7f-bb5c-a730afa965a2",
+          "id": "f70e9556-20ef-402f-9f2f-40a75571c7b1",
+          "name": "cinemalink",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$cinemalink",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "9dca271c-97be-4eab-ac65-25e834fc65b1",
+          "name": "city",
+          "required": false,
+          "dataType": "",
+          "value": "#introduce_city_followup.city",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "5dbe613e-4105-4e6a-afcb-8bf46424cd33",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.username",
+          "value": "#introduce_city_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -31,11 +59,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "84c6acb8-b243-4ffe-b0ab-4895b3c69022",
+          "id": "8503a7f6-da9e-4b1f-bd40-a28db1a48e3a",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.password",
+          "value": "#introduce_city_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -45,11 +73,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "9a2424bd-65b3-4a04-8752-4ea29913b814",
+          "id": "38313654-81fb-482d-bc64-67a8a4e99ceb",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.alias",
+          "value": "#introduce_city_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -60,25 +88,6 @@
         }
       ],
       "messages": [
-        {
-          "type": "1",
-          "platform": "telegram",
-          "subtitle": "¿Cómo deseas buscar?",
-          "title": "Tipo de búsqueda",
-          "buttons": [
-            {
-              "postback": "por ciudad",
-              "text": "Por ciudad"
-            },
-            {
-              "postback": "por película",
-              "text": "Por película"
-            }
-          ],
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        },
         {
           "type": "0",
           "title": "",
@@ -91,7 +100,7 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [],

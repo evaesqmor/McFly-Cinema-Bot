@@ -1,27 +1,36 @@
 {
-  "id": "9370d9a3-60df-4fd6-9601-b738e03ac308",
-  "name": "TicketsIntent",
+  "id": "e6993946-f6a1-4e55-bf99-2015207fd240",
+  "name": "IntroduceMovie",
   "auto": true,
   "contexts": [
-    "tasks_followup"
+    "showtimes_by_movie_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
       "action": "",
-      "affectedContexts": [
-        {
-          "name": "tickets_followup",
-          "lifespan": 1
-        }
-      ],
+      "affectedContexts": [],
       "parameters": [
         {
-          "id": "d08440ef-6377-4e7f-bb5c-a730afa965a2",
+          "id": "2f42138d-cad7-42bf-a7cb-29a02b5c91bd",
+          "name": "moviename",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$moviename",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "ff8df121-a602-4b7a-926e-70ca745e3a8a",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.username",
+          "value": "#showtimes_by_movie_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -31,11 +40,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "84c6acb8-b243-4ffe-b0ab-4895b3c69022",
+          "id": "a83ebf5a-71e4-4b23-950b-4b189aadb5e4",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.password",
+          "value": "#showtimes_by_movie_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -45,11 +54,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "9a2424bd-65b3-4a04-8752-4ea29913b814",
+          "id": "b6652315-d433-46bd-a57c-1b9de34ba3c9",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.alias",
+          "value": "#showtimes_by_movie_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -59,39 +68,12 @@
           "outputDialogContexts": []
         }
       ],
-      "messages": [
-        {
-          "type": "1",
-          "platform": "telegram",
-          "subtitle": "¿Cómo deseas buscar?",
-          "title": "Tipo de búsqueda",
-          "buttons": [
-            {
-              "postback": "por ciudad",
-              "text": "Por ciudad"
-            },
-            {
-              "postback": "por película",
-              "text": "Por película"
-            }
-          ],
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        },
-        {
-          "type": "0",
-          "title": "",
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        }
-      ],
+      "messages": [],
       "speech": []
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [],

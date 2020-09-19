@@ -1,0 +1,106 @@
+{
+  "id": "355eef1a-1395-4967-b6fb-f2622623a81f",
+  "name": "SearchPersonRoleInMedia",
+  "auto": true,
+  "contexts": [
+    "searching_followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "searching_followup",
+          "lifespan": 1
+        },
+        {
+          "name": "search_actor_role_in_media_followup",
+          "lifespan": 1
+        }
+      ],
+      "parameters": [
+        {
+          "id": "98b27c59-d017-43b0-bc09-4934e51fefba",
+          "name": "personname",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$personname",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "835a0948-45a5-4a0f-80a8-1f34076c3cec",
+          "name": "medianame",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "1fe69015-a3de-4178-93de-0441ef9356f0",
+          "name": "username",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.username",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "b52fec51-ec2c-4e3e-bc92-2721a14938b4",
+          "name": "password",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.password",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "8ece3f19-adee-4d98-a50e-e428a2568f4e",
+          "name": "alias",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.alias",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

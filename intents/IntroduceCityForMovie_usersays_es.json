@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cbe30283-0e20-48cb-a615-3abc39131974",
+    "data": [
+      {
+        "text": "Sevilla",
+        "meta": "@sys.any",
+        "alias": "cityname",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

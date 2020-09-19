@@ -1,0 +1,40 @@
+[
+  {
+    "id": "17b9c35a-5bd5-4cac-980f-168ce8e82b37",
+    "data": [
+      {
+        "text": "Página oficial de ",
+        "userDefined": false
+      },
+      {
+        "text": "Tenet",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "3fb38097-f9aa-4153-af21-e254f73922f6",
+    "data": [
+      {
+        "text": "Web oficial de ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

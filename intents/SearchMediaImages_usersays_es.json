@@ -1,0 +1,40 @@
+[
+  {
+    "id": "11c9568c-2495-42c9-9832-e7a9d8804eba",
+    "data": [
+      {
+        "text": "Fotos de ",
+        "userDefined": false
+      },
+      {
+        "text": "Alison Brie",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "82bf9a4b-8c13-4b64-b061-e3f73f4fc226",
+    "data": [
+      {
+        "text": "Fotos de ",
+        "userDefined": false
+      },
+      {
+        "text": "Glow",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

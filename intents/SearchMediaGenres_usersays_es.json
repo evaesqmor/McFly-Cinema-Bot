@@ -1,0 +1,40 @@
+[
+  {
+    "id": "02a8dd2e-19c7-4dfa-a692-9fa8d124d907",
+    "data": [
+      {
+        "text": "Géneros ",
+        "userDefined": false
+      },
+      {
+        "text": "101 Dálmatas",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "bec93130-cf7e-49a4-907f-93e398ec8675",
+    "data": [
+      {
+        "text": "Géneros de ",
+        "userDefined": false
+      },
+      {
+        "text": "Tenet",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

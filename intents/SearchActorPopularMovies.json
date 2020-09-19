@@ -3,7 +3,7 @@
   "name": "SearchActorPopularMovies",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -15,13 +15,13 @@
           "lifespan": 1
         },
         {
-          "name": "correct_access_followup",
+          "name": "searching_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "60957cb5-f0c2-4bf7-998a-f9e5df71da92",
+          "id": "b96b4234-2da1-49be-839c-5e8f12a32c26",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",

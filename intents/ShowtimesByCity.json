@@ -1,9 +1,9 @@
 {
-  "id": "9370d9a3-60df-4fd6-9601-b738e03ac308",
-  "name": "TicketsIntent",
+  "id": "24e99095-9ff3-4c9f-af3b-bf822ac1f2a5",
+  "name": "ShowtimesByCity",
   "auto": true,
   "contexts": [
-    "tasks_followup"
+    "tickets_followup"
   ],
   "responses": [
     {
@@ -11,17 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "tickets_followup",
+          "name": "showtimes_by_city_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "d08440ef-6377-4e7f-bb5c-a730afa965a2",
+          "id": "ee2e478a-39db-4fa4-ba9c-f9ac49b69bcf",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.username",
+          "value": "#tickets_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -31,11 +31,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "84c6acb8-b243-4ffe-b0ab-4895b3c69022",
+          "id": "52397120-3fec-4c0c-b8e4-299af0112459",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.password",
+          "value": "#tickets_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -45,11 +45,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "9a2424bd-65b3-4a04-8752-4ea29913b814",
+          "id": "090646c0-b4c7-4543-8b2e-263f7e1e47c5",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#tasks_followup.alias",
+          "value": "#tickets_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -63,18 +63,8 @@
         {
           "type": "1",
           "platform": "telegram",
-          "subtitle": "¿Cómo deseas buscar?",
-          "title": "Tipo de búsqueda",
-          "buttons": [
-            {
-              "postback": "por ciudad",
-              "text": "Por ciudad"
-            },
-            {
-              "postback": "por película",
-              "text": "Por película"
-            }
-          ],
+          "subtitle": "¿Qué ciudad quieres buscar?",
+          "title": "Búsqueda por ciudad",
           "textToSpeech": "",
           "lang": "es",
           "condition": ""

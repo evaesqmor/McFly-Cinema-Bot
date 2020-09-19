@@ -9,7 +9,9 @@ const {Text, Card, WebhookClient, Image, Suggestion, Payload} = require('dialogf
 const axios = require('axios');
 const cheerio = require('cheerio');
 const request = require('request');
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
+const translate = require('translate');
+const getAge = require('get-age');
 
 //Conection to Firebase Database
 const admin = require('firebase-admin');
@@ -27,6 +29,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   var tmdbKey = "5de10ffec3fea5b06d8713b047977f01";
   var imgPth = "http://image.tmdb.org/t/p/w500/";
   var endpoint = "https://api.themoviedb.org/3";
+  var abcPth = "https://www.abc.es/"; 
  
   /*Registering: Checking that it is a new user*/
   function handleUsernameRegistered(){
@@ -86,6 +89,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     const alias= agent.parameters.alias;
     const username = agent.parameters.username;
     const password = agent.parameters.password;
+    console.log(""+alias);
+    agent.add(`${alias}`);
     if(alias == ""){
       agent.setFollowupEvent({ "name": "askalias", "parameters" : { "username": username, "password":password, "alias":alias}});
     }else{
@@ -828,11 +833,11 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         var arrayTitle =linkTitle.split(" ");
         var length = arrayTitle.length;
         var platform= arrayTitle[length-2]=="en"?arrayTitle[length-1]:arrayTitle.slice(length-2,length).join(" ");
-        if(platform=="Netflix"||platform=="Disney Plus"||platform=="Prime Video"||platform=="HBO"){
+        //if(platform=="Netflix"||platform=="Disney Plus"||platform=="Prime Video"||platform=="HBO"){
       	agent.add(new Card({title: `${platform}` ,imageUrl:linkReference, text: ``,buttonText: `Ver en ${platform}`,
          buttonUrl: linkReference}));
           count++;
-        }
+        //}
       });
         if(count==0){agent.add(new Card({title: "Sin resultados" , text: `No hay plataformas disponibles para visualizar ${medianame}`}));}
       }else{agent.add(new Card({title: "Sin resultados" , text: `No hay plataformas disponibles para visualizar ${medianame}`}));}
@@ -840,62 +845,49 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
       }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
     });
   }
+  
+   /*Media genres*/
+  function handleSearchMediaGenres(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+     return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+      .then((result)=>{
+        if(result.data.results.length>0){
+          var type = element.media_type;
+          var element = result.data.results[0];
+          var elementname = type=="tv"?element.name:element.title;
+          var mediaid = element.id;
+          var posterPath = imgPth+element.backdrop_path;
+          return axios.get(`${endpoint}/${type}/${mediaid}?api_key=${tmdbKey}&language=es`)
+      		.then((media)=>{
+            if(media!=null){
+              var cardText = "Los géneros de "+elementname+" son: ";
+              media.data.genres.map((genre)=>{cardText=cardText+genre.name+" ";});
+              agent.add(new Card({title: `Géneros de ${elementname}` , text: `${cardText}`, imageUrl: posterPath}));
+            }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+          });
+        }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+     });
+  }
 
-  /*Genres*/
-  function handleSearchMovieGenres(){
-    var medianame =agent.parameters.medianame;
-    var arrayName = medianame.split(" ");
-    var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/movie?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var movieId= element.id;
-      return axios.get(`${endpoint}/movie/${movieId}?api_key=${tmdbKey}&language=es`)
-      .then((movie)=>{
-       agent.add(`Los generos de la película ${movie.data.title} son: `);
-       movie.data.genres.map((genre)=>{
-         agent.add(`${genre.name}`);
-       });
-      });
-     });
-  }
-  
-  function handleSearchTvGenres(){
-    var medianame =agent.parameters.medianame;
-    var arrayName = medianame.split(" ");
-    var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/tv?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var tvId= element.id;
-      return axios.get(`${endpoint}/tv/${tvId}?api_key=${tmdbKey}&language=es`)
-      .then((series)=>{
-       agent.add(`Los generos de la serie ${series.data.name} son: `);
-       series.data.genres.map((genre)=>{
-         agent.add(`${genre.name}`);
-       });
-     });
-     });
-  }
-  
+  /*Original title*/
   function handleSearchMediaOriginalTitle(){
     var medianame =agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
     return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
       .then((result)=>{
+      if(result.data.results.length>0){
       var element = result.data.results[0];
-      console.log("Element",element);
-      var title = element.title==null?element.name:element.title;
       var mediaType = element.media_type;
-      var originalTitle= element.original_name;
-      agent.add(`Titulo orig: ${originalTitle}`);
-      if(mediaType=="tv"){
-        agent.add(`El título original de la serie ${title} es ${originalTitle}.`);
-      } 
-      if(mediaType=="movie"){
-        agent.add(`El título original de la película ${title} es ${originalTitle}.`);
-      }
+      var title = mediaType == "tv"?element.name:element.title;
+      var originalTitle= mediaType=="tv"?element.original_name:element.original_title;
+      var translation = mediaType == "tv"?"serie":"película";
+      var posterPath = imgPth+element.backdrop_path;
+      var cardText = "El título original de la "+translation+" es "+originalTitle;
+      agent.add(new Card({title: `Título original de ${title}` , text: `${cardText}`, imageUrl: posterPath}));
+     }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
     });
   }
   
@@ -959,359 +951,475 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     }); 
   }
   
-  function handleSearchTvOfficialPage(){
+  /*Official web page of series or movie*/
+  function handleSearchMediaOfficialPage(){
     var medianame =agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/tv?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+     return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
       .then((result)=>{
-      var element = result.data.results[0];
-      var tvId = element.id;
-      return axios.get(`${endpoint}/tv/${tvId}?api_key=${tmdbKey}&language=es`)
-      .then((result)=>{
-        var series = result.data;
-        agent.add(`La página oficial de la serie ${series.name} es ${series.homepage}`);
-      });
-    });
+       if(result.data.results.length>0){
+       var element = result.data.results[0];
+       var elementid = element.id;
+       var type = element.media_type;
+       var translation = type=="tv"?"serie":"película";
+       var elementname = type =="tv"?element.name:element.title;
+       var posterPath = imgPth+element.backdrop_path;
+       return axios.get(`${endpoint}/${type}/${elementid}?api_key=${tmdbKey}&language=es`)
+      .then((media)=>{
+         if(media!=null){
+           var homepage = media.data.homepage;
+           if(homepage!=""){
+           agent.add(new Card({title: `Página web de ${elementname}`,imageUrl: posterPath,text:`La página web de la ${translation} ${elementname} es ${homepage}`}));
+           }else{agent.add(`La ${translation} ${elementname} no tiene página web`);}         
+         }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+       });
+      }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+     });
   }
   
-  function handleSearchMovieOfficialPage(){
+ /*Searching similar media*/
+ function handleSearchSimilarMedia(){
     var medianame =agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/movie?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var movieId = element.id;
-      return axios.get(`${endpoint}/movie/${movieId}?api_key=${tmdbKey}&language=es`)
-      .then((result)=>{
-        var movie = result.data;
-        agent.add(`La página oficial de la película ${movie.title} es ${movie.homepage}`);
-      });
+    return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+    .then((result)=>{
+       if(result.data.results.length>0){
+         var element = result.data.results[0];
+         var elementid = element.id;
+         var type = element.media_type;
+         var translation = type=="tv"?"serie":"película";
+         var elementname = type =="tv"?element.name:element.title;
+         var backdropPath = imgPth+element.backdrop_path;
+         agent.add(new Card({title: "Similares a "+elementname,imageUrl: backdropPath, text:`Resultados:`}));
+         return axios.get(`${endpoint}/${type}/${elementid}/similar?api_key=${tmdbKey}&language=es&page=1`)
+      		.then((media)=>{
+             if(media!=null){
+               var count = 0;
+               media.data.results.map((element)=>{
+               if(count<4){
+               	count++;
+                var name = type=="tv"?element.name:element.title;
+                var posterPath = imgPth+element.poster_path;
+                var overview = element.overview==""?"":"Resumen:\n"+element.overview;
+                var releasedate = type=="tv"?element.first_air_date:element.release_date;
+                var cardText="Fecha de estreno: "+releasedate+"\n"+overview;
+                agent.add(new Card({title: name+" ("+translation+")",imageUrl: posterPath, text:cardText}));
+               }
+              });
+             }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+         });
+       }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
     });
   }
-  
-  function handleSearchSimilarTvShows(){
-    var medianame =agent.parameters.medianame;
-    var arrayName = medianame.split(" ");
-    var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/tv?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var tvId = element.id;
-      return axios.get(`${endpoint}/tv/${tvId}/similar?api_key=${tmdbKey}&language=es&page=1`)
-      .then((series)=>{
-        var count = 0;
-        series.data.results.map((element)=>{
-          if(count<4){
-          count++;
-          var name = element.name;
-          var posterPath = imgPth+element.poster_path;
-           agent.add(new Card({
-              title: name,
-              imageUrl: posterPath
-            }));
-          }
-        });
-      });
-    });
-  }
-  
-  function handleSearchSimilarMovies(){
-    var medianame =agent.parameters.medianame;
-    var arrayName = medianame.split(" ");
-    var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/movie?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var movieId = element.id;
-      return axios.get(`${endpoint}/movie/${movieId}/similar?api_key=${tmdbKey}&language=es&page=1`)
-      .then((movie)=>{
-        var count = 0;
-        movie.data.results.map((element)=>{
-          if(count<4){
-          count++;
-          var name = element.title;
-          var posterPath = imgPth+element.poster_path;
-           agent.add(new Card({
-              title: name,
-              imageUrl: posterPath
-            }));
-          }
-        });
-      });
-    });
-  }
-  
+
+  /*Age recommendation for movie or series*/
   function handleSearchMediaIsAdult(){
     var medianame =agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
     return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
+    .then((result)=>{
+      if(result.data.results.length>0){
       var element = result.data.results[0];
-      var title = element.title==null?element.name:element.title;
-      var mediaType =  element.media_type;
-      var adult = element.adult;
-      if(mediaType=="tv"){
-        if(adult){
-          agent.add(`La serie ${title} es para mayores de edad.`);
-        }else{
-          agent.add(`La serie ${title} es para todos los públicos.`);
+      var elementid = element.id;
+      var type = element.media_type;
+      var elementname = type=="tv"?element.name:element.title;
+      var translation = type=="tv"?"serie":"película";
+      var posterPath = imgPth+element.backdrop_path;
+      var certification;
+      return axios.get(`https://www.themoviedb.org/${type}/${elementid}-${queryName}?language=es`)
+      .then((res)=>{
+        const $ = cheerio.load(res.data);
+        var meaning="";
+        if(type=="tv"){
+        certification = $('div.page_wrap.tv_wrap')
+        .find('main.smaller.subtle.show_search_false')
+        .find('section.inner_content.tv_content.backdrop.poster')
+        .find('div.header.large.border.first')
+        .find('div.single_column').find('section.images.inner')
+        .find('div.header_poster_wrapper.true')
+        .find('section.header.poster').find('div.title.ott_true')
+        .find('div.facts').find('span.certification').text();
+         certification = certification.trim();
+         if(certification=="NR"||certification=="Exempt"||certification=="-"||
+             certification=="Unrated"||certification=="X"){
+              meaning="No hay calificación de edad para esta serie.";
+          }
+          if(certification=="0+"||certification=="TV-Y"||certification=="TV-G"||
+             certification=="G"||certification=="P"||certification=="0"||
+             certification=="ส"||certification=="ท"||certification=="ALL"||
+             certification=="U"||certification=="L"||certification=="AL"||
+             certification=="T"||certification=="Children"||certification=="Infantil"||
+             certification=="TP"){
+            	meaning="La serie es para todos los públicos.";
+          }
+          if(certification=="6+"||certification=="C"||certification=="6"){
+            	meaning="La serie es recomendada para niños mayores de 6 años.";
+          }
+          if(certification=="TV-Y7"||certification=="TV-PG"||certification=="C8"||
+             certification=="7"||certification=="8+"||certification=="N-7"){
+            	meaning="La serie es recomendada para niños mayores de 7 años.";
+          }
+          if(certification=="10"||certification=="9"||certification=="10AP"){
+            	meaning="La serie es recomendada para niños mayores de 10 años.";
+          }
+          if(certification=="12+"||certification=="PG"||certification=="M"||
+             certification=="12"||certification=="12A"||certification=="12AP"||
+            certification=="13"){
+              meaning="La serie es recomendada para niños mayores de 12 años.";
+          }
+          if(certification=="TV-14"||certification=="14+"||certification=="น 13+"||
+             certification=="14"||certification=="13+"||certification=="N-14"||
+             certification=="15"){
+            	meaning="La serie es recomendada para mayores de 14 años.";
+          }
+          if(certification=="16+"||certification=="TV-MA"||certification=="MA15+"||
+             certification=="AV15+"||certification=="16"||certification=="น 15+"||
+             certification=="15"||certification=="SPG"){
+            	meaning="La serie es recomendada para mayores de 16 años.";
+          }
+          if(certification=="18+"||certification=="R18"||certification=="น 18+"||
+             certification=="ฉ 20-"||certification=="19"||certification=="S"){
+            	meaning="La serie es recomendada para mayores de 18 años.";
+          }
+        }
+        if(type=="movie"){
+        certification=$('div.page_wrap.movie_wrap')
+        .find('main.smaller.subtle.show_search_false')
+        .find('section.inner_content.movie_content.backdrop.poster')
+        .find('div.header.large.border.first').find('div.keyboard_s.custom_bg')
+        .find('div.single_column').find('section.images.inner')
+        .find('div.header_poster_wrapper.true').find('section.header.poster')
+        .find('div.title.ott_true').find('div.facts').find('span.certification').text();
+         certification = certification.trim();
+        if(certification=="NR"||certification=="E"||certification=="RC"||
+           certification=="KK"||certification=="F"){
+             meaning="No existe calificación de edad para esta película";
+        }
+        if(certification=="G"||certification=="0"||certification=="U"||
+           certification=="AL"||certification=="S"||certification=="A"||
+           certification=="B"||certification=="APTA"||certification=="Públicos"||
+           certification=="M/3"||certification=="Btl"||certification=="KN"||
+           certification=="V"||certification=="0+"||certification=="T"){
+             meaning="La película es para todos los públicos.";
+        }
+        if(certification=="6"||certification=="K-7"||certification=="7"||
+           certification=="M/6"||certification=="N-7"||certification=="6+"){
+             meaning="La película es para mayores de 7 años.";
+        }
+        if(certification=="PG"||certification=="10"||certification=="9"||
+           certification=="11"){
+             meaning="La película es para mayores de 10 años.";
+        }
+        if(certification=="PG-13"||certification=="14A"||certification=="12"||
+           certification=="13"||certification=="UA"||certification=="12A"||
+           certification=="L"||certification=="14"||certification=="K-12"||
+           certification=="C"||certification=="M/12"||certification=="M/14"||
+           certification=="P13"||certification=="13+"||certification=="N-13"||
+           certification=="12+"||certification=="R-13"||certification=="VM14"){
+             meaning="La película es para mayores de 13 años.";
+        }
+        if(certification=="M"||certification=="MA15+"||certification=="16"||
+           certification=="15"||certification=="K-16"||certification=="D"||
+           certification=="M/16"||certification=="16+"||certification=="N-16"||
+           certification=="R-16"){
+             meaning="La película es para mayores de 16 años.";
+        }
+        if(certification=="R"||certification=="NC-17"||certification=="18A"||
+           certification=="A"||certification=="R18+"||certification=="X18+"||
+           certification=="18"||certification=="R18"||certification=="K-18"||
+           certification=="X"||certification=="M/18"||certification=="P"||
+           certification=="18SG"||certification=="18SX"||certification=="18PA"||
+           certification=="18PL"||certification=="18+"||certification=="N-18"||
+           certification=="R-18"||certification=="VM18"){
+             meaning="La película es para mayores de 18 años.";
         }
       }
-      if(mediaType=="movie"){
-        if(adult){
-          agent.add(`La película ${title} es para mayores de edad.`);
-        }else{
-          agent.add(`La película ${title} es para todos los públicos. `);
-        }
-      }
-    });  
+      agent.add(new Card({title:`Calificación de edad de ${elementname}`,text:`${meaning} `,imageUrl:posterPath}));  
+      });
+     }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+    });
   }
-  
+
+  /*Popular movies of actor*/
   function handleSearchActorPopularMovies(){
-    var medianame =agent.parameters.medianame;
+    var medianame =agent.parameters.medianame.toLowerCase();
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
     return axios.get(`${endpoint}/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1&include_adult=true`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var personId = element.id;
-      return axios.get(`${endpoint}/person/${personId}/movie_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
-      .then((credits)=>{
-        var count = 0;
-        credits.data.cast.map((element)=>{
-          if(count<7){
-          count++;
-          var name = element.title;
-          var posterPath = imgPth+element.poster_path;
-          var character = "Personaje: "+element.character;
-           agent.add(new Card({
-              title: name,
-              imageUrl: posterPath,
-              text: character
-            }));
-          }
-        });
-      });
-    });
-  }
+    .then((result)=>{
+      if(result.data.results.length>0){
+        var element = result.data.results[0];
+        var personId = element.id;
+        var personName = element.name;
+        var posterPath = imgPth+element.profile_path; 
+        return axios.get(`${endpoint}/person/${personId}/movie_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
+        .then((credits)=>{
+          if(credits.data.cast.length>0){
+            agent.add(new Card({title: `Películas de ${personName}`,imageUrl: posterPath,text: `Estas son algunas películas de ${personName}`}));
+            var count = 0;
+            credits.data.cast.map((movie)=>{
+            if(count<12){
+              count++;
+              var name = movie.title;
+              var posterPath = imgPth+movie.poster_path;
+              var character = movie.character==""?"":personName+" interpreta a "+movie.character+"\n";
+              var voteAverage = movie.vote_average==0?"":"Puntuación media: "+movie.vote_average+"\n";
+              var releaseDate = "Fecha de estreno: "+movie.release_date+"\n";
+              var overview = movie.overview==""?"":"Resumen: "+movie.overview;
+              var cardText=character+voteAverage+releaseDate+overview;
+              agent.add(new Card({title: name,imageUrl: posterPath,text: cardText}));
+            }
+          });
+         }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+       });
+      }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+  });
+}
   
+  /*Popular shows of actor*/
   function handleSearchActorPopularTvShows(){
-    var medianame =agent.parameters.medianame;
+    var medianame =agent.parameters.medianame.toLowerCase();
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
     return axios.get(`${endpoint}/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1&include_adult=true`)
+    .then((result)=>{
+      if(result.data.results.length>0){
+        var element = result.data.results[0];
+        var personId = element.id;
+        var personName = element.name;
+        var posterPath = imgPth+element.profile_path; 
+        return axios.get(`${endpoint}/person/${personId}/tv_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
+        .then((credits)=>{
+          if(credits.data.cast.length>0){
+            agent.add(new Card({title: `Series de ${personName}`,imageUrl: posterPath,text: `Algunas series famosas de ${personName} son:`}));
+            var count = 0;
+            credits.data.cast.map((serie)=>{
+            if(count<12){
+              count++;
+              var name = serie.name;
+              var posterPath = imgPth+serie.poster_path;
+              var character = serie.character==""?"":personName+" interpreta a "+serie.character+"\n";
+              character = serie.character.trim()=="Herself"?"Como ella misma":personName+" interpreta a "+serie.character+"\n";
+              character = serie.character.trim()=="Himself"?"Como él mismo":personName+" interpreta a "+serie.character+"\n";
+              var voteAverage = serie.vote_average==0?"":"Puntuación media: "+serie.vote_average+"\n";
+              var releaseDate = "Fecha de estreno: "+serie.first_air_date+"\n";
+              var episodes = serie.episode_count==0?"":"Aparece en "+serie.episode_count+" episodios \n";
+              var overview = serie.overview==""?"":"Resumen: "+serie.overview;
+              var cardText=character+voteAverage+releaseDate+episodes+overview;
+              agent.add(new Card({title: name,imageUrl: posterPath,text: cardText}));
+            }
+          });
+         }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+       });
+      }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+    });
+  }
+  
+  /*Searching media reviews*/
+  function handleSearchMediaReviews(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
       .then((result)=>{
+      if(result.data.results.length>0){
+        var element = result.data.results[0];
+        var elementid = element.id;
+        var type = element.media_type;
+        var translation = type=="tv"?"serie":"película";
+        var posterPath = imgPth+element.poster_path;
+        var elementname = type=="tv"?element.name:element.title;
+        return axios.get(`${endpoint}/${type}/${elementid}/reviews?api_key=${tmdbKey}&language=es&page=1`)
+      	.then((reviews)=>{
+          if(reviews.data.results.length>0){
+           agent.add(new Card({title: "Reseñas para la "+type+" "+elementname,imageUrl:posterPath,text: "Estas son algunas reseñas: "}));
+           reviews.data.results.map((review)=>{ 
+             var reviewAuthor = review.author;
+             var content = review.content;
+             agent.add(new Card({title: "Reseña de "+reviewAuthor,text: ""+content+""}));
+           });
+          }else{agent.add(new Card({title: "Sin reseñas" , text: `No hay reseñas para ${elementname}.`}));}
+        });
+      }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+    });
+  }
+  
+  /*Seach actor biography*/
+  function handleSearchPersonBiography(){
+    var medianame =agent.parameters.medianame;
+    var arrayName = medianame.toLowerCase().split(" ");
+    var queryName = arrayName.join('-');
+    return axios.get(`${endpoint}/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1&include_adult=false`)
+      .then((result)=>{
+      if(result.data.results.length>0){
       var element = result.data.results[0];
       var personId = element.id;
-      return axios.get(`${endpoint}/person/${personId}/tv_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
-      .then((credits)=>{
-        var count = 0;
-        credits.data.cast.map((element)=>{
-          if(count<7){
-          count++;
-          var name = element.name;
-          var posterPath = imgPth+element.poster_path;
-          var character = element.character;
-          var numberOfEpisodes = element.episode_count;
-          var cardText = "Personaje: "+character+"\n"+
-              "Aparece en "+numberOfEpisodes+" episodios";
-           agent.add(new Card({
-              title: name,
-              imageUrl: posterPath,
-              text: cardText
-            }));
+      return axios.get(`${endpoint}/person/${personId}?api_key=${tmdbKey}&language=es`)
+      .then((person)=>{
+         if(person!=null){
+          var prs =person.data;
+          var personname = prs.name;
+          var biography = prs.biography;
+          var gender = prs.gender;
+          var department = prs.known_for_department;
+          var profession;
+          if(department=="Acting"){
+            if(gender=="1"){profession="Actriz";}
+            if(gender=="2"){profession="Actor";}
           }
-        });
+          if(department=="Production"){
+            if(gender=="1"){profession="Productora";}
+            if(gender=="2"){profession="Productor";}
+          }
+          if(department=="Directing"){
+            if(gender=="1"){profession="Directora";}
+            if(gender=="2"){profession="Director";}
+          }
+          if(department=="Writing"){
+            profession="Guionista";
+          }
+          var cardTitle = "Biografía de "+personname+" ("+profession+")";
+          var cardText=biography==""?"La biografía de "+personname+" no está registrada.":biography;
+          var posterPath=imgPth+person.data.profile_path;
+          agent.add(`${personname}`);
+          agent.add(new Card({title: cardTitle,imageUrl:posterPath,text: cardText}));
+        }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
       });
+     }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
     });
   }
   
-  function handleSearchMovieReviews(){
-    var medianame =agent.parameters.medianame;
-    var arrayName = medianame.split(" ");
-    var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/movie?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var movieId = element.id;
-      var title = element.title;
-      agent.add(`Reseñas para la película ${title}`);
-      return axios.get(`${endpoint}/movie/${movieId}/reviews?api_key=${tmdbKey}&language=es&page=1`)
-      .then((movie)=>{
-        movie.data.results.map((review)=>{
-          var reviewAuthor = review.author;
-          var content = review.content;   
-          agent.add(new Card({
-              title: "Autor: "+reviewAuthor,
-              text: content
-            }));
-        });
-      });
-    });
-  }
-  
-  function handleSearchTvReviews(){
-    var medianame =agent.parameters.medianame;
-    var arrayName = medianame.split(" ");
-    var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/tv?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var tvId = element.id;
-      var name = element.name;
-      agent.add(`Tv Id: ${tvId}`);
-      agent.add(`Reseñas para la serie ${name}`);
-      return axios.get(`${endpoint}/tv/${tvId}/reviews?api_key=${tmdbKey}&language=es&page=1`)
-      .then((series)=>{
-        series.data.results.map((review)=>{
-          var reviewAuthor = review.author;
-          var content = review.content;   
-          agent.add(new Card({
-              title: "Autor: "+reviewAuthor,
-              text: content
-            }));
-        });
-      });
-    });
-  }
-  
-  function handleSearchActorBiography(){
+  /*Birthday and age of a person*/
+  function handleSearchPersonBirthdate(){
     var medianame =agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
     return axios.get(`${endpoint}/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1&include_adult=false`)
       .then((result)=>{
+      if(result.data.results.length>0){
       var element = result.data.results[0];
       var personId = element.id;
       return axios.get(`${endpoint}/person/${personId}?api_key=${tmdbKey}&language=es`)
       .then((person)=>{
-        var name = person.data.name;
-        var biography = person.data.biography;
-        var gender = person.data.gender;
-        var cardTitle = "";
-        var posterPath=imgPth+person.data.profile_path;
-        if(gender=="1"){
-          cardTitle="Biografía de la actriz "+name+":\n";
-        }
-        if(gender=="2"){
-          cardTitle="Biografía del actor "+name+":\n";
-        }
-        agent.add(new Card({
-              title: cardTitle,
-          	  imageUrl:posterPath,
-              text: biography
-            }));
+         if(person!=null){
+          var prs =person.data;
+          var personname = prs.name;
+          var birthday = prs.birthday;
+          var age = getAge(birthday);
+          var placebirth = prs.place_of_birth; 
+          var gender = prs.gender;
+          var posterPath=imgPth+prs.profile_path;
+          var department = prs.known_for_department;
+          var profession;
+          if(department=="Acting"){
+            if(gender=="1"){profession="Actriz";}
+            if(gender=="2"){profession="Actor";}
+          }
+          if(department=="Production"){
+            if(gender=="1"){profession="Productora";}
+            if(gender=="2"){profession="Productor";}
+          }
+          if(department=="Directing"){
+            if(gender=="1"){profession="Directora";}
+            if(gender=="2"){profession="Director";}
+          }
+          if(department=="Writing"){
+            profession="Guionista";
+          }
+          var cardTitle = "Fecha de nacimiento de "+personname+" ("+profession+")";
+          var cardText = personname+" es "+profession+" y tiene "+age+" años. Nació el "+birthday+" en "+placebirth; 
+          agent.add(new Card({title: cardTitle,imageUrl:posterPath,text: cardText}));
+        }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
       });
+      }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
     });
   }
   
-  function handleSearchActorBirthdate(){
+  /*Search Person role in media*/
+  function handleSearchPersonRoleInMedia(){
     var medianame =agent.parameters.medianame;
-    var arrayName = medianame.split(" ");
-    var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1&include_adult=false`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var personId = element.id;
-      return axios.get(`${endpoint}/person/${personId}?api_key=${tmdbKey}&language=es`)
-      .then((person)=>{
-        var name = person.data.name;
-        var birthdate = person.data.birthday;
-        var placeOfBirth = person.data.place_of_birth;
-        var gender = person.data.gender;
-        var posterPath=imgPth+person.data.profile_path;
-        var cardText = "";
-        if(gender=="1"){
-          cardText="La actriz "+name+" nació el "+birthdate+" en "+placeOfBirth;
-        }
-        if(gender=="2"){
-          cardText="El actor "+name+" nació el "+birthdate+" en "+placeOfBirth;
-        }
-        agent.add(new Card({
-              title: "Fecha de nacimiento de "+name,
-          	  imageUrl:posterPath,
-              text: cardText
-            }));
-      });
-    });
-  }
-  
-  function handleSearchActorRoleInMovie(){
-    var medianame =agent.parameters.medianame;
-    var person = agent.parameters.person;
-    var arrayName = person.split(" ");
+    var personname = agent.parameters.personname;
+    var arrayName = personname.split(" ");
     var arrayMovie = medianame.split(" ");
     var queryName = arrayName.join('-');
     var queryMovie = arrayMovie.join('-');
     return axios.get(`${endpoint}/search/person?api_key=${tmdbKey}&query=${queryName}&language=es&page=1`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var personId = element.id;
-      var personName = element.name;
-      return axios.get(`${endpoint}/search/movie?api_key=${tmdbKey}&query=${queryMovie}&language=es&page=1`)
-      .then((movies)=>{
-        var movie = movies.data.results[0];
-        var title = movie.title;
-        var originalTitle = movie.original_title;
-      return axios.get(`${endpoint}/person/${personId}/movie_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
-      .then((credits)=>{
-        credits.data.cast.map((credit)=>{
-          var creditTitle=credit.title;
-          var creditOriginalTitle =credit.original_title;
-          if(title==creditTitle||originalTitle==creditOriginalTitle){
-            var posterPath = imgPth+credit.backdrop_path;
-            var character = credit.character;
-            var cardText = "El papel que interpreta "+personName+" en "+title+" es "+character+".";
-            agent.add(new Card({
-              title: title,
-          	  imageUrl:posterPath,
-              text: cardText
-            }));
-          }
+    .then((result)=>{
+      if(result.data.results.length>0){
+        var person = result.data.results[0];
+        var personId = person.id;
+        var gender = person.gender;
+        var personName = person.name;
+        var profession = gender=="1"?"actriz":"actor";
+        return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryMovie}&language=es&page=1`)
+      	.then((media)=>{
+          if(media.data.results.length>0){
+          var med = media.data.results[0];
+          var type = med.media_type;
+          var translation = type=="tv"?"serie":"película";
+          var mediaid = med.id;
+          var title = type=="tv"?med.name:med.title;
+          var originalTitle = type=="tv"?med.original_name:med.original_title;
+          return axios.get(`${endpoint}/person/${personId}/${type}_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
+      	  .then((credits)=>{
+          var isActor=false;
+          var isCrew=false;
+          if(credits.data.cast.length>0){
+            credits.data.cast.map((cast)=>{
+               var creditTitle=type=="tv"?cast.name:cast.title;
+          	   var creditOriginalTitle =type=="tv"?cast.original_name:cast.original_title;
+               if(title==creditTitle||originalTitle==creditOriginalTitle){
+                 isActor=true;
+                 var posterPath = imgPth+cast.backdrop_path;
+            	 var character = cast.character;
+                 var cardText = personName+" es "+profession+" en la "+translation+" "+title+
+                 " e interpreta a "+character+".";
+                 agent.add(new Card({title: `Personaje de ${personName} en ${title}`,imageUrl:posterPath,text: cardText}));
+               }
+             });
+           }
+           if(credits.data.crew.length>0){
+             credits.data.crew.map((crew)=>{
+               var creditTitle=type=="tv"?crew.name:crew.title;
+          	   var creditOriginalTitle =type=="tv"?crew.original_name:crew.original_title;
+               var posterPath = imgPth+crew.backdrop_path;
+               var job = crew.job;
+               var jobTranslation;
+               if(job=="Director"){
+                 if(gender==1){jobTranslation="directora";}
+                 if(gender==2){jobTranslation="director";}
+               }
+               if(job=="Executive Producer"){
+                 if(gender==1){jobTranslation="productora ejecutiva";}
+                 if(gender==2){jobTranslation="productor ejecutivo";}
+               }
+               if(job=="Producer"){
+                 if(gender==1){jobTranslation="productora";}
+                 if(gender==2){jobTranslation="productor";}
+               }
+               if(job=="Writer"||job=="Screenplay"||job=="Teleplay"){
+                 jobTranslation="guionista";
+               }
+               if(title==creditTitle||originalTitle==creditOriginalTitle){
+                 isCrew=true;
+                 var cardText = personName+" es "+jobTranslation+" en la "+translation+" "+title;
+                 if(!isActor){
+                   agent.add(new Image(posterPath));
+                 }
+                 agent.add(new Card({title: `${personName} en el equipo de ${creditTitle}`,text: cardText}));
+                }
+             });
+           }
+           if(!isActor && !isCrew){
+             agent.add(new Card({title: "No aparece" , text: `${personName} no aparece en ${title}.`}));
+           }
+          });
+         }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
         });
-      });
-    });
-    });
-  }
-
-  function handleSearchActorRoleInTvShow(){
-    var person = agent.parameters.person;
-    var medianame = agent.parameters.medianame;
-    var arrayPerson = person.split(" ");
-    var arrayMedia = medianame.split(" ");
-    var queryPerson = arrayPerson.join('-');
-    var queryMedia = arrayMedia.join('-');
-     return axios.get(`${endpoint}/search/person?api_key=${tmdbKey}&query=${queryPerson}&language=es&page=1`)
-      .then((result)=>{
-       var element = result.data.results[0];
-       var personId = element.id;
-       var personName = element.name;
-       return axios.get(`${endpoint}/search/tv?api_key=${tmdbKey}&query=${queryMedia}&language=es&page=1`)
-      .then((series)=>{
-         var show = series.data.results[0];
-         var title = show.name;
-         var originalTitle = show.original_name;
-         return axios.get(`${endpoint}/person/${personId}/tv_credits?api_key=${tmdbKey}&language=es&sort_by=popularity.desc`)
-         .then((credits)=>{
-          credits.data.cast.map((credit)=>{
-          var creditTitle=credit.name;
-          var creditOriginalTitle =credit.original_name;
-          if(title==creditTitle||originalTitle==creditOriginalTitle){
-            var posterPath = imgPth+credit.backdrop_path;
-            var character = credit.character;
-            var cardText = "El papel que interpreta "+personName+" en "+title+" es "+character+".";
-            agent.add(new Card({
-              title: title,
-          	  imageUrl:posterPath,
-              text: cardText
-            }));
-          }
-        });
-       });
-      });
+      }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${personname}. Vuelve a intentarlo`}));}
     });
   }
 
@@ -1320,79 +1428,83 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     const medianame = agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/movie?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+    return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
       .then((result)=>{
-      var element = result.data.results[0];
-      var movieId = element.id;
-      var movieName = element.title;
-       return axios.get(`${endpoint}/movie/${movieId}?api_key=${tmdbKey}`)
-      .then((movie)=>{
-       var runtime = movie.data.runtime;
-       agent.add(`La duración de la película ${movieName} es ${runtime} minutos.`);
+      if(result.data.results.length>0){
+        var element = result.data.results[0];
+        var type = element.media_type;
+      	var movieId = element.id;
+      	var mediaName = type=="tv"?element.name:element.title;
+        var posterPath=imgPth+element.backdrop_path;
+        if(type=="movie"){
+        return axios.get(`${endpoint}/movie/${movieId}?api_key=${tmdbKey}`)
+      	.then((movie)=>{
+          if(movie!=null){
+            var runtime = movie.data.runtime;
+            var cardText=`La duración de la película ${mediaName} es ${runtime} minutos.`;
+            agent.add(new Card({title:`Duración de ${mediaName}`,text:cardText,imageUrl:posterPath}));
+          }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
        });
+      }else{agent.add(new Card({title: `Serie ${mediaName}` ,imageUrl:posterPath, text: `${mediaName} es una serie. Prueba a buscar por número de episodios.`}));}
+     }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}  
     });
   }
   
-  /*Actor Info: Images*/
-  function handleSearchActorImages(){
-    const medianame = agent.parameters.medianame;
+
+  /*Media images*/
+  function handleSearchMediaImages(){
+    var medianame = agent.parameters.medianame;
     var arrayName = medianame.split(" ");
     var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/person?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var personId = element.id;
-      var personName = element.name;
-      return axios.get(`${endpoint}/person/${personId}/images?api_key=${tmdbKey}`)
-      .then((photos)=>{
-        agent.add(`Estas son algunas imágenes de ${personName}: `);
-      	photos.data.profiles.map((photo)=>{
-          var image=imgPth+photo.file_path;
-          agent.add(new Image(image));
-        });
-      });
-    });
-  }
-  
-  /*Movie Info: images*/
-  function handleSearchMovieImages(){
-    const medianame = agent.parameters.medianame;
-    var arrayName = medianame.split(" ");
-    var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/movie?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var movieId = element.id;
-      var movieName = element.title;
-      return axios.get(`${endpoint}/movie/${movieId}/images?api_key=${tmdbKey}&language=es`)
-      .then((photos)=>{
-        agent.add(`Estas son algunas imágenes de ${movieName}: `);
-      	photos.data.posters.map((photo)=>{
-          var image=imgPth+photo.file_path;
-          agent.add(new Image(image));
-        });
-      });
-    });
-  }
- 
-  /*Tv Show Info: Images*/
-  function handleSearchTvShowImages(){
-    const medianame = agent.parameters.medianame;
-    var arrayName = medianame.split(" ");
-    var queryName = arrayName.join('-');
-    return axios.get(`${endpoint}/search/tv?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
-      .then((result)=>{
-      var element = result.data.results[0];
-      var showId = element.id;
-      var showName = element.name;
-      return axios.get(`${endpoint}/tv/${showId}/images?api_key=${tmdbKey}&language=es`)
-      .then((photos)=>{
-        agent.add(`Estas son algunas imágenes de ${showName}: `);
-      	photos.data.posters.map((photo)=>{
-          var image=imgPth+photo.file_path;
-          agent.add(new Image(image));
-        });
-      });
+    return axios.get(`${endpoint}/search/multi?api_key=${tmdbKey}&query=${queryName}&page=1&include_adult=false&language=es`)
+    .then((result)=>{
+      if(result.data.results.length>0){
+        var element = result.data.results[0];
+        var type = element.media_type;
+        var elementid = element.id;
+        var elementname = type=="movie"?element.title:element.name;
+        var count=0;
+        return axios.get(`${endpoint}/${type}/${elementid}/images?api_key=${tmdbKey}&language=es`)
+      	.then((photos)=>{
+          console.log("IMAGES: "+JSON.stringify(photos.data));
+          if(type=="movie"||type=="tv"){
+            var backdrops = photos.data.backdrops;
+            var posters = photos.data.posters;
+            if(backdrops.length>0){
+              agent.add(new Card({title:`Imágenes de ${elementname}`,text:`Estas son algunas fotos de ${elementname}`}));
+              posters.map((backdrop)=>{
+                if(count<4){
+                count++;
+                agent.add(new Image(imgPth+backdrop.file_path));
+                }
+              });
+            }else{
+              if(posters.length>0){
+                agent.add(new Card({title:`Posters de ${elementname}`,text:`Estos son algunos posters de ${elementname}`}));
+                posters.map((poster)=>{
+                  if(count<4){
+                  count++;
+                  agent.add(new Image(imgPth+poster.file_path));
+                  }
+                });
+              }else{agent.add(new Card({title: "Sin imágenes" , text: `No se han encontrado fotos para ${elementname}`}));}
+            }
+          }else{
+            if(type=="person"){
+              if(photos.data.profiles.length>0){
+                agent.add(new Card({title:`Fotos de ${elementname}`,text:`Estas son algunas imágenes de ${elementname}`}));
+                photos.data.profiles.map((profile)=>{
+                  if(count<4){
+                  count++;
+                  agent.add(new Image(imgPth+profile.file_path));
+                  }
+                });
+              }else{agent.add(new Card({title: "Sin imágenes" , text: `No se han encontrado fotos para ${elementname}`}));}
+            
+            }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
+          }
+         });
+      }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
     });
   }
   
@@ -1732,6 +1844,159 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     });
   }
   
+  /*Showtimes: Getting cinemas*/
+  function handleSearchIntroduceCity(){
+    var city = agent.parameters.city.toLowerCase();
+    agent.setContext({ "name": "introduce_city_followup","lifespan":1,"parameters":{"city":city}});  
+    return axios.get(`https://www.abc.es/play/cine/cartelera/${city}/`)
+      .then((response)=>{
+      const $ = cheerio.load(response.data);
+      var cinemas = $('span.contenedor').find('main').find('span.seccion.clear.cine')
+      .find('span.tarjeta.w4').find('ul.cartelera-listado').children();
+      cinemas.each((index,element)=>{
+        var locality = $(element);
+        var localityName = locality.find('h3').find('a').attr('title').toLowerCase();
+        if(localityName.trim()==city.trim()){
+        var cinemasInLocality = locality.find('ul.listado-cines').children();
+        cinemasInLocality.each((ind,elm)=>{
+          var cinemaLink = $(elm).find('a');
+          var cinemaRef = cinemaLink.attr('href');
+          var cinema = cinemaLink.attr('title');
+          agent.add(new Card({title: `${cinema}`,text:`Cine`,buttonText: `Ver cartelera`,    
+                         buttonUrl: `(${cinemaRef})`}));
+        });
+        }
+      });
+    });
+  }
+  
+  /*Showtimes: Getting Movies*/
+  function handleSearchIntroduceCinema(){
+    var city = agent.parameters.city;
+    var cinemaLink = agent.parameters.cinemalink;
+    var cinemaPath = abcPth+cinemaLink;
+    return axios.get(`${cinemaPath}`)
+      .then((response)=>{
+      const $ = cheerio.load(response.data);
+      var mainDiv = $('span.contenedor').find('main').find('span.seccion.clear.cine');
+      var data = mainDiv.find('span.tarjeta.w6').find('dl.datos-cine').children();
+      var movies = mainDiv.find('span.tarjeta.w4').find('span.caja-cartelera').children();      
+      var cardText = "";
+      data.each((ind,elm)=>{
+       cardText = cardText+$(elm).text()+"\n";
+      });
+      agent.add(new Card({title: "Cartelera",text:cardText}));
+      movies.each((ind,elm)=>{
+        var image = $(elm).find('img').attr('data-src');
+        var movieinfo = $(elm).find('span');
+        var movietitle = movieinfo.find('h3').text();
+        var moviedata = movieinfo.find('dl.datos-pelicula').children();
+     	var moviecast = movieinfo.find('ul.reparto').children();
+        var movietext = "";
+        moviedata.each((id,el)=>{
+          movietext = movietext+$(el).text()+"\n";
+        });
+        movietext=movietext+"\nReparto: \n";
+        moviecast.each((id,el)=>{
+          var personlink = $(el).find('a').attr('title');
+          movietext = movietext+personlink+"\n";
+        });
+        agent.add(`horarios ${movietitle}`);
+        agent.add(new Card({title: `${movietitle}`,text:`${movietext}`,imageUrl:image,
+            buttonText: `Ver horarios para ${movietitle}`, buttonUrl: `horarios ${movietitle}`}));
+      });
+    });
+  }
+  
+  /*Showtimes at a cinema*/
+  function handleMovieShowtimesAtCinema(){
+    var cinemaLink = agent.parameters.cinemalink;
+    var cinemaPath = abcPth+cinemaLink;
+    var moviename = agent.parameters.moviename;
+    var arraydates = [];
+    return axios.get(`${cinemaPath}`)
+      .then((response)=>{
+      const $ = cheerio.load(response.data);
+      var mainDiv = $('span.contenedor').find('main').find('span.seccion.clear.cine');
+      var movies = mainDiv.find('span.tarjeta.w4').find('span.caja-cartelera').children();      
+      var dates = mainDiv.find('span.tarjeta.w4').find('div.pestanas-cartelera').children();
+      dates.each((ind, elm)=>{
+        var date = $(elm).text();
+      	arraydates.push(date);
+      });
+      var count = 0;
+      movies.each((ind,elm)=>{
+        var movieinfo = $(elm).find('span');
+        var movietitle = movieinfo.find('h3').text().toLowerCase();   
+        if(movietitle.trim() == moviename.toLowerCase().trim()){
+          	var date = arraydates[count];
+          	count++;
+          	var showtimes = movieinfo.find('ul.pases').children();
+          	var textshowtimes = "";
+          	showtimes.each((i,el)=>{
+              var showtime = $(el).find('span').text();
+              textshowtimes = textshowtimes + showtime + "\n";
+            });
+          agent.add(new Card({title: `Horarios para ${date}`,text:`${textshowtimes}`})); 
+        }
+    });
+   });
+  }
+  
+  /*Introduce a movie to find cinemas*/
+  function handleSearchIntroduceMovie(){
+    var moviename = agent.parameters.moviename;
+    agent.add(`Pelicula: ${moviename}`);
+    var moviespath = abcPth+"/play/cine/cartelera/sevilla/";
+    return axios.get(`${moviespath}`)
+      .then((response)=>{
+      const $ = cheerio.load(response.data);
+      var movies = $('span.contenedor').find('main').find('span.seccion.clear.cine')
+        .find('span.tarjeta.w4').find('span.grid-peliculas')
+        .find('ul.mosaico.cuatro.blanco.peliculas.clear').children();
+      movies.each((ind, elm)=>{
+        var movielink = $(elm).find('h3').find('a');
+        var moviereference = movielink.attr('href');
+        var element = movielink.attr('title').toLowerCase().trim();
+        if(element == moviename.toLowerCase().trim()){
+           agent.add(`Print ${element}`);
+           agent.add(`Reference: ${moviereference}`);
+          	var arrayref = moviereference.split('/');
+          	var aux = arrayref[arrayref.length-2].split('-');
+          	var movieid = aux[aux.length-1];
+          	agent.add(`ID: ${movieid}`);
+          	agent.setContext({ "name": "introduce_movie_followup","lifespan":1,"parameters":{"movieid":movieid}});  
+        	agent.add(new Card({title: `¿Para qué ciudad quieres buscar?`})); 
+        }
+      });
+    });
+  }
+  
+  /*Introduce city name to search movie showtimes*/
+  function handleSearchIntroduceCityForMovie(){
+    var cityname = agent.parameters.cityname;
+    var movieid = agent.parameters.movieid;
+    var path = abcPth+"/play/cine/cartelera/cines-donde-ver/pelicula-"+movieid+"/"+cityname;
+    return axios.get(`${path}`).then((response)=>{
+      const $ = cheerio.load(response.data);
+      var cinemas = $('span.contenedor').find('main')
+      .find('span.seccion.clear.cine')
+      .find('span.tarjeta.w4').children('article');
+      cinemas.each((ind, elm)=>{
+        var section = $(elm).find('span.info');
+        var cinemaname = section.find('h3.nombre-pelicula')
+        .find('a').attr('title');
+        var showtimes = section.find('ul.pases').children();
+        var shwtlist = "";
+        showtimes.each((i, el)=>{
+          var showtime = $(el).find('span').text();
+          shwtlist = shwtlist+showtime+" ";
+        });
+	 	agent.add(new Card({title: `Horarios en ${cinemaname}`,text:`${shwtlist}`})); 
+      });
+    });
+  }
+  
   /******* MAPING INTENTS *******/
   let intentMap = new Map();
   intentMap.set('GetUserUsernameIntent', handleUsernameRegistered);
@@ -1760,28 +2025,21 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('SearchMediaLanguage', handleSearchMediaLanguage);
   intentMap.set('SearchTvSeasons', handleSearchTvSeasons);
   intentMap.set('SearchNetworks', handleSearchNetworks);
-  intentMap.set('SearchMovieGenres', handleSearchMovieGenres);
-  intentMap.set('SearchTvGenres', handleSearchTvGenres);
+  intentMap.set('SearchMediaGenres', handleSearchMediaGenres);
   intentMap.set('SearchMediaOriginalTitle', handleSearchMediaOriginalTitle);
   intentMap.set('SearchTvVideos', handleSearchTvVideos);
   intentMap.set('SearchMovieVideos', handleSearchMovieVideos);
-  intentMap.set('SearchTvOfficialPage', handleSearchTvOfficialPage);
-  intentMap.set('SearchMovieOfficialPage', handleSearchMovieOfficialPage);
-  intentMap.set('SearchSimilarTvShows', handleSearchSimilarTvShows);
-  intentMap.set('SearchSimilarMovies', handleSearchSimilarMovies);
+  intentMap.set('SearchMediaOfficialPage', handleSearchMediaOfficialPage);
+  intentMap.set('SearchSimilarMedia', handleSearchSimilarMedia);
   intentMap.set('SearchMediaIsAdult', handleSearchMediaIsAdult);
   intentMap.set('SearchActorPopularMovies', handleSearchActorPopularMovies);
   intentMap.set('SearchActorPopularTvShows', handleSearchActorPopularTvShows);
-  intentMap.set('SearchMovieReviews', handleSearchMovieReviews);
-  intentMap.set('SearchTvReviews', handleSearchTvReviews);
-  intentMap.set('SearchActorBiography', handleSearchActorBiography);
-  intentMap.set('SearchActorBirthdate', handleSearchActorBirthdate);
-  intentMap.set('SearchActorRoleInMovie', handleSearchActorRoleInMovie);
-  intentMap.set('SearchActorRoleInTvShow', handleSearchActorRoleInTvShow);
+  intentMap.set('SearchMediaReviews', handleSearchMediaReviews);
+  intentMap.set('SearchPersonBiography', handleSearchPersonBiography);
+  intentMap.set('SearchPersonBirthdate', handleSearchPersonBirthdate);
+  intentMap.set('SearchPersonRoleInMedia', handleSearchPersonRoleInMedia);
   intentMap.set('SearchMovieDuration', handleSearchMovieDuration);
-  intentMap.set('SearchActorImages', handleSearchActorImages);
-  intentMap.set('SearchMovieImages', handleSearchMovieImages);
-  intentMap.set('SearchTvShowImages', handleSearchTvShowImages);
+  intentMap.set('SearchMediaImages', handleSearchMediaImages);
   intentMap.set('SearchMovieBudget', handleSearchMovieBudget);
   intentMap.set('SearchMovieRevenue', handleSearchMovieRevenue);
   intentMap.set('SearchMostPopularTvShows', handleSearchMostPopularTvShows);
@@ -1794,5 +2052,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('SearchGenreYearMostPopularMovies', handleSearchGenreYearMostPopularMovies);
   intentMap.set('SearchYearActorMostPopularMovies', handleSearchYearActorMostPopularMovies);
   intentMap.set('SearchGenreActorMostPopularMovies', handleSearchGenreActorMostPopularMovies);
+  intentMap.set('IntroduceCity', handleSearchIntroduceCity);
+  intentMap.set('IntroduceCinema', handleSearchIntroduceCinema);
+  intentMap.set('MovieShowtimesAtCinema', handleMovieShowtimesAtCinema);
+  intentMap.set('IntroduceMovie', handleSearchIntroduceMovie);
+  intentMap.set('IntroduceCityForMovie', handleSearchIntroduceCityForMovie);
   agent.handleRequest(intentMap);
 });

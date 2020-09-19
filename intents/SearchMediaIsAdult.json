@@ -3,7 +3,7 @@
   "name": "SearchMediaIsAdult",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -15,13 +15,13 @@
           "lifespan": 1
         },
         {
-          "name": "correct_access_followup",
+          "name": "searching_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "d712db19-1d48-4c0b-951e-c209c138d826",
+          "id": "a02c1c45-a09b-453b-bfc4-3279357f6dc4",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",

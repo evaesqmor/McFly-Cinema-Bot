@@ -15,7 +15,7 @@
       ],
       "parameters": [
         {
-          "id": "5cbb3bab-6e37-46af-bfc8-1eeeb06ebe8f",
+          "id": "cdd1ffb0-e866-4532-b6e8-988d72aab433",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -28,7 +28,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "dea8a3f6-108d-4326-9e80-1c5740a9e75e",
+          "id": "15cdf0b9-b239-4668-9606-ab372a976653",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -41,7 +41,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "e61e2807-fa5a-442b-8078-02144dfe05b2",
+          "id": "87358135-59e7-44b7-b181-0765a582d898",
           "name": "alias",
           "required": false,
           "dataType": "",
@@ -64,6 +64,10 @@
             {
               "postback": "buscar información",
               "text": "Buscar información"
+            },
+            {
+              "postback": "sesiones de cine",
+              "text": "Sesiones de cine"
             }
           ],
           "textToSpeech": "",
@@ -75,6 +79,9 @@
           "title": "",
           "textToSpeech": "",
           "lang": "es",
+          "speech": [
+            "¿qué te gustaría hacer?"
+          ],
           "condition": ""
         }
       ],
