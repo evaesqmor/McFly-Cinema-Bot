@@ -838,7 +838,7 @@ function handleSearchPersonPopularTvShows(){
             var name = serie.name;
             var serieid =serie.id;
             var posterPath = imgPth+serie.poster_path;
-            var job = serie.job==serie.job;
+            var job = serie.job;
             var jobTranslation;
                if(job=="Director"){
                  if(gender==1){jobTranslation="directora";}
