@@ -13,6 +13,16 @@
         "userDefined": true
       },
       {
+        "text": " en el cine ",
+        "userDefined": false
+      },
+      {
+        "text": "cinesur nervion plaza",
+        "meta": "@sys.any",
+        "alias": "cinemaname",
+        "userDefined": true
+      },
+      {
         "text": ")",
         "userDefined": false
       }

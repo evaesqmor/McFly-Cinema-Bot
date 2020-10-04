@@ -11,17 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_media_original_title_followup",
+          "name": "searching_followup",
           "lifespan": 1
         },
         {
-          "name": "searching_followup",
+          "name": "search_info_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "5b460b93-fb80-4cda-aa3e-3275e5242843",
+          "id": "24021811-6709-4791-9d1b-f8e58e7d9c78",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",

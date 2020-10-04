@@ -12,7 +12,7 @@
       "affectedContexts": [],
       "parameters": [
         {
-          "id": "02711626-5335-4e47-a5cc-0a86993d5cd2",
+          "id": "cc5b27be-5390-4a73-a22f-65ed9e98953e",
           "name": "email",
           "required": false,
           "dataType": "@sys.email",
@@ -26,7 +26,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "17cfed42-909a-45a3-a759-cebd85720a30",
+          "id": "252474ad-ab36-4dbd-a7e3-4cf6a3202af6",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -40,7 +40,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "9e49df55-72c8-444b-9f95-83ed8f3ecdfb",
+          "id": "fb7a72af-504e-43a2-9d78-cf0f519362b2",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -54,7 +54,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "33e38308-b760-40da-9958-cafdd72a511f",
+          "id": "dd0d0b18-453a-4ec8-96ba-f0598f6c2f24",
           "name": "alias",
           "required": false,
           "dataType": "",

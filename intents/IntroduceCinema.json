@@ -17,7 +17,7 @@
       ],
       "parameters": [
         {
-          "id": "f70e9556-20ef-402f-9f2f-40a75571c7b1",
+          "id": "5fe29ffa-515f-4bcc-a31b-594de4273c77",
           "name": "cinemalink",
           "required": false,
           "dataType": "@sys.any",
@@ -31,7 +31,21 @@
           "outputDialogContexts": []
         },
         {
-          "id": "9dca271c-97be-4eab-ac65-25e834fc65b1",
+          "id": "0545a64b-83a7-40e6-a026-e7e6195ec464",
+          "name": "cinemaname",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$cinemaname",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "13fe0605-9427-41b4-b277-62180c0fc94b",
           "name": "city",
           "required": false,
           "dataType": "",
@@ -45,7 +59,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "5dbe613e-4105-4e6a-afcb-8bf46424cd33",
+          "id": "69750811-9e11-4274-aed4-ca1f52d9e84c",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -59,7 +73,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "8503a7f6-da9e-4b1f-bd40-a28db1a48e3a",
+          "id": "c9f98b6a-9afb-468b-9e71-2ee338baeb78",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -73,7 +87,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "38313654-81fb-482d-bc64-67a8a4e99ceb",
+          "id": "71ddf3fd-b924-4780-84cf-66944a953a35",
           "name": "alias",
           "required": false,
           "dataType": "",

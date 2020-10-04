@@ -11,17 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_most_popular_movies_followup",
+          "name": "searching_followup",
           "lifespan": 1
         },
         {
-          "name": "searching_followup",
+          "name": "search_info_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "801912a2-b14a-454e-8a56-2d9299688516",
+          "id": "8128eddf-acbf-48b3-b197-ca922cafba6c",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -35,7 +35,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "b4793d8f-b3c2-4ba2-a136-4581a59d51f1",
+          "id": "91636db5-129b-4602-8213-bce0ae502fd9",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -49,7 +49,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "96ba4d3d-7aef-49fc-82c5-88b110ca9289",
+          "id": "d59c423f-c24a-487a-b278-90425cf07801",
           "name": "alias",
           "required": false,
           "dataType": "",

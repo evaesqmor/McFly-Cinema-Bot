@@ -1,9 +1,9 @@
 {
-  "id": "b81895ca-0c32-4c5d-8319-c33f681d004b",
-  "name": "SearchMediaIsAdult",
+  "id": "a93152a1-e761-4734-9930-9098a1ec9b64",
+  "name": "ProceedToPayment",
   "auto": true,
   "contexts": [
-    "searching_followup"
+    "create_payment_followup"
   ],
   "responses": [
     {
@@ -11,21 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "searching_followup",
-          "lifespan": 1
-        },
-        {
-          "name": "search_info_followup",
+          "name": "proceed_to_payment_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "0a901f84-0ece-411e-8056-be8f67e82b24",
-          "name": "medianame",
+          "id": "58936b59-ff6c-4a38-b2cf-2dcba128f40c",
+          "name": "username",
           "required": false,
-          "dataType": "@sys.any",
-          "value": "$medianame",
+          "dataType": "",
+          "value": "#create_payment_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -54,5 +50,6 @@
   "events": [],
   "conditionalResponses": [],
   "condition": "",
-  "conditionalFollowupEvents": []
+  "conditionalFollowupEvents": [],
+  "endInteraction": true
 }

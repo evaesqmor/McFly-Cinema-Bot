@@ -11,17 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_top_rated_movies_followup",
+          "name": "searching_followup",
           "lifespan": 1
         },
         {
-          "name": "searching_followup",
+          "name": "search_info_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "c1539582-0c23-418b-8de0-591cb5be6dc0",
+          "id": "45473c5c-1772-405d-9aec-313e3ea90d1c",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -35,7 +35,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "95f99810-9617-42df-b8db-f5c552c37e4c",
+          "id": "79dc830d-0642-49bb-a072-dc13abb0742e",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -49,7 +49,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "13c07be0-bd1e-4cd8-a0ed-aa96031bcd4c",
+          "id": "ba747c3a-4a71-4fd0-86a7-40c41b9767ec",
           "name": "alias",
           "required": false,
           "dataType": "",
