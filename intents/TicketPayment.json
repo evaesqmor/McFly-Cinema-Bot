@@ -1,6 +1,6 @@
 {
-  "id": "96edd956-704c-4471-bcaf-f492594f1dd0",
-  "name": "TasksIntent",
+  "id": "3d718a2b-71e0-4328-bbeb-dbc7f5b190d5",
+  "name": "TicketPayment",
   "auto": true,
   "contexts": [],
   "responses": [
@@ -9,16 +9,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "tasks_followup",
+          "name": "ticket_payment_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "97081aff-0e30-4c32-8baa-c85bf8ebbfbf",
+          "id": "eef99050-9edc-44cb-8a5e-5915a9e36786",
           "name": "username",
           "required": false,
           "dataType": "",
+          "value": "#movie_showtimes_at_cinema_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -28,10 +29,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "99540fd9-821e-4fc6-bf93-df9eecba09c7",
+          "id": "8c958204-0cda-48f2-a3ba-81712c6c1c65",
           "name": "password",
           "required": false,
           "dataType": "",
+          "value": "#movie_showtimes_at_cinema_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -41,10 +43,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "eee77900-0362-4b06-8c7a-03388755fe72",
+          "id": "01b378fb-3ab3-40f3-9f64-3379fd3f305d",
           "name": "alias",
           "required": false,
           "dataType": "",
+          "value": "#movie_showtimes_at_cinema_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -56,36 +59,10 @@
       ],
       "messages": [
         {
-          "type": "1",
-          "platform": "telegram",
-          "subtitle": "¿qué te gustaría hacer?",
-          "title": "Buenas $alias",
-          "buttons": [
-            {
-              "postback": "buscar información",
-              "text": "Buscar información"
-            },
-            {
-              "postback": "sesiones de cine",
-              "text": "Sesiones de cine"
-            },
-            {
-              "postback": "mi perfil",
-              "text": "Mi perfil"
-            }
-          ],
-          "textToSpeech": "",
-          "lang": "es",
-          "condition": ""
-        },
-        {
           "type": "0",
           "title": "",
           "textToSpeech": "",
           "lang": "es",
-          "speech": [
-            "¿qué te gustaría hacer?"
-          ],
           "condition": ""
         }
       ],
@@ -93,14 +70,10 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
-  "events": [
-    {
-      "name": "tasks"
-    }
-  ],
+  "events": [],
   "conditionalResponses": [],
   "condition": "",
   "conditionalFollowupEvents": []

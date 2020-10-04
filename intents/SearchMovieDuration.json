@@ -11,17 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_movie_duration",
+          "name": "searching_followup",
           "lifespan": 1
         },
         {
-          "name": "searching_followup",
+          "name": "search_info_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "973c9096-b0b5-4b00-bf89-3a75acf720f4",
+          "id": "abedb55b-21ab-4b8c-b35a-d7fc457d2742",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",

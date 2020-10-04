@@ -1,9 +1,9 @@
 {
-  "id": "0883167a-b088-4343-9b7a-a19e7f3a55ba",
-  "name": "SearchTvShowEpisodeInfo",
+  "id": "feb44a8a-812d-46d5-84e4-54b5e717bfa9",
+  "name": "CreatePayment",
   "auto": true,
   "contexts": [
-    "searching_followup"
+    "ticket_payment_followup"
   ],
   "responses": [
     {
@@ -11,21 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "searching_followup",
-          "lifespan": 1
-        },
-        {
-          "name": "search_info_followup",
+          "name": "create_payment_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "5be72c06-ce67-4a95-8a19-576ec0e012e2",
-          "name": "medianame",
+          "id": "d2bf85fc-3a99-47e6-8376-4865ca21ce0e",
+          "name": "cardnumber",
           "required": false,
           "dataType": "@sys.any",
-          "value": "$medianame",
+          "value": "$cardnumber",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -35,39 +31,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "654f191e-4697-4385-94dd-7ec042fbc46f",
-          "name": "episodeNumber",
-          "required": false,
-          "dataType": "@sys.any",
-          "value": "$episodeNumber",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "4d7b554f-f1fc-437f-8687-230fc8a1cf2d",
-          "name": "seasonNumber",
-          "required": false,
-          "dataType": "@sys.any",
-          "value": "$seasonNumber",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "4f7cf114-e338-4b06-a1cc-d5039d7e8404",
+          "id": "fe21b694-913f-413f-98f8-81f163edf35a",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#searching_followup.username",
+          "value": "#creating_payment.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -77,11 +45,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "d6d7e7cf-f40a-4ee2-8a90-698ea4f423b1",
+          "id": "9c49027a-9414-413e-8a8d-1827510cb5c1",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#searching_followup.password",
+          "value": "#creating_payment.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -91,11 +59,53 @@
           "outputDialogContexts": []
         },
         {
-          "id": "d786e17e-8211-4d7c-adf9-7795b075ec3d",
+          "id": "ff518d5f-3631-4bef-83d5-c852a1c53c10",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#searching_followup.alias",
+          "value": "#creating_payment.alias",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "be98816a-3d00-4ed7-bd33-a815899372fb",
+          "name": "email",
+          "required": false,
+          "dataType": "",
+          "value": "#creating_payment.email",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "24fa79e8-e6a8-48d3-8e98-03435d924716",
+          "name": "showtime",
+          "required": false,
+          "dataType": "",
+          "value": "#creating_payment.showtime",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "291f8d5a-b837-444f-9266-8ca8f90526f8",
+          "name": "movietitle",
+          "required": false,
+          "dataType": "",
+          "value": "#creating_payment.movietitle",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

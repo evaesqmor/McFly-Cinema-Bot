@@ -9,10 +9,15 @@
     {
       "resetContexts": false,
       "action": "",
-      "affectedContexts": [],
+      "affectedContexts": [
+        {
+          "name": "movie_showtimes_at_cinema_followup",
+          "lifespan": 1
+        }
+      ],
       "parameters": [
         {
-          "id": "e30f8f05-a1ef-456b-811b-6678f86b86e3",
+          "id": "e4d64f56-2c78-40c6-a129-e00359b7ab7f",
           "name": "moviename",
           "required": false,
           "dataType": "@sys.any",
@@ -26,7 +31,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "1d7cc85b-9284-48fa-a7f8-368ec15dabef",
+          "id": "7e9495d7-0cb6-4e62-a689-1ca7e0d72f30",
           "name": "cinemalink",
           "required": false,
           "dataType": "",
@@ -40,7 +45,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "18200170-964e-44a9-977b-7233bbf4e7f4",
+          "id": "62080575-745e-48f1-a6bd-6ee767e54233",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -54,7 +59,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "2c4b8844-843e-4f53-ad6f-72ac1072ce3d",
+          "id": "14d3a94b-8a57-4e69-9d1c-873b58ab194f",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -68,11 +73,39 @@
           "outputDialogContexts": []
         },
         {
-          "id": "19847c85-a6e0-44db-996c-32ff61f81026",
+          "id": "f5757479-f4fa-4524-9840-1c1a9e6e610f",
           "name": "alias",
           "required": false,
           "dataType": "",
           "value": "#introduce_cinema_followup.alias",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "aba5d358-28e0-4e56-bf05-406493003129",
+          "name": "city",
+          "required": false,
+          "dataType": "",
+          "value": "#introduce_cinema_followup.city",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "ede6552b-6efb-47da-beef-fefcb67a88e1",
+          "name": "cinemaname",
+          "required": false,
+          "dataType": "",
+          "value": "#introduce_cinema_followup.cinemaname",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

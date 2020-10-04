@@ -1,9 +1,9 @@
 {
-  "id": "59deb28c-10f7-4ec6-a69a-814889d943fe",
-  "name": "SearchTopRatedTvShows",
+  "id": "86a5f975-6fcb-430c-b826-83255c8cba64",
+  "name": "CancelPayment",
   "auto": true,
   "contexts": [
-    "searching_followup"
+    "proceed_to_payment"
   ],
   "responses": [
     {
@@ -11,11 +11,7 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "searching_followup",
-          "lifespan": 1
-        },
-        {
-          "name": "search_info_followup",
+          "name": "proceed_to_payment_followup",
           "lifespan": 1
         }
       ],
@@ -33,7 +29,7 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
   "fallbackIntent": false,
   "events": [],

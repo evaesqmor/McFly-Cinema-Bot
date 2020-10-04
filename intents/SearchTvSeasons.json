@@ -11,21 +11,63 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_tv_seasons_followup",
+          "name": "searching_followup",
           "lifespan": 1
         },
         {
-          "name": "searching_followup",
+          "name": "search_info_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "f97c2d01-d8e2-4b09-8e31-b7eed998280b",
+          "id": "ecd1a397-4072-46e7-b217-3364eed7eef2",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
           "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "d38371f9-e132-41c9-bd62-bc986da4fc75",
+          "name": "username",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.username",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "e99e8bde-260f-4f66-9583-242287c7b35e",
+          "name": "password",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.password",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "a3e042ff-ccb9-46cc-8191-4de33b5eadbe",
+          "name": "alias",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

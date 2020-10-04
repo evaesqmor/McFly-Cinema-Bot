@@ -1,5 +1,24 @@
 [
   {
+    "id": "7f0b8e81-682e-4a08-a447-ae6086986f70",
+    "data": [
+      {
+        "text": "horarios para ",
+        "userDefined": false
+      },
+      {
+        "text": "La La Land",
+        "meta": "@sys.any",
+        "alias": "moviename",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
     "id": "9bbea679-6c93-4201-ac51-7f6a200f8366",
     "data": [
       {

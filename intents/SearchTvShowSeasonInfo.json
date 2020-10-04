@@ -3,7 +3,7 @@
   "name": "SearchTvShowSeasonInfo",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -11,17 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_tv_show_season_info_followup",
+          "name": "searching_followup",
           "lifespan": 1
         },
         {
-          "name": "correct_access_followup",
+          "name": "search_info_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "f2534324-97e7-4436-b05b-ada5a1bd1b2c",
+          "id": "0b7b07b7-69d7-4d87-9aab-a15e76fa4ebf",
           "name": "seasonNumber",
           "required": false,
           "dataType": "@sys.number",
@@ -35,11 +35,53 @@
           "outputDialogContexts": []
         },
         {
-          "id": "500d9b66-3ddb-473d-a7c2-2e1fe467d2a3",
+          "id": "9f42294d-6aa6-4caf-b351-e2d1f86f2158",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
           "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "7adb6bc3-efd8-4409-a8c7-39b6c24a2004",
+          "name": "username",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.username",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "6be4448c-fa51-4ea1-b49e-75c08e192b4a",
+          "name": "password",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.password",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "d64266d1-2a4b-45dd-99cc-b6dfc186bb75",
+          "name": "alias",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

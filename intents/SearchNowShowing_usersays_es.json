@@ -1,51 +1,10 @@
 [
   {
-    "id": "5d098eb8-4d3b-4a06-8b7e-26155bf5cb33",
+    "id": "3a2ad1c7-6e9a-4874-a8c1-e98e7a78d8cc",
     "data": [
       {
-        "text": "películas en el cine",
+        "text": "peliculas nuevas",
         "userDefined": false
-      }
-    ],
-    "isTemplate": false,
-    "count": 0,
-    "lang": "es",
-    "updated": 0
-  },
-  {
-    "id": "aed31e30-4677-4ea8-89f9-ce58221c69b1",
-    "data": [
-      {
-        "text": "Películas actualmente ",
-        "userDefined": false
-      },
-      {
-        "text": "en el cine",
-        "meta": "@sys.ignore",
-        "userDefined": false
-      }
-    ],
-    "isTemplate": false,
-    "count": 0,
-    "lang": "es",
-    "updated": 0
-  },
-  {
-    "id": "5875aba0-df38-43d7-92e4-bb0a0ce9f42c",
-    "data": [
-      {
-        "text": "buscar peliculas",
-        "meta": "@sys.ignore",
-        "userDefined": true
-      },
-      {
-        "text": " ",
-        "userDefined": false
-      },
-      {
-        "text": "en el cine",
-        "meta": "@sys.ignore",
-        "userDefined": true
       }
     ],
     "isTemplate": false,

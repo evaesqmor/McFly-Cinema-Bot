@@ -17,7 +17,7 @@
       ],
       "parameters": [
         {
-          "id": "f1059600-31de-4535-b71f-b2ebd6a0f530",
+          "id": "781f5619-7821-4233-9c08-c62c6929fd88",
           "name": "alias",
           "required": false,
           "dataType": "",
@@ -31,7 +31,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "56d83bd5-6c43-4f54-a70a-4be40f9c46d2",
+          "id": "0773793c-1c56-4d5e-bf1f-7bd6aa53fc6b",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -45,7 +45,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "016ac899-8cd2-4cb6-a1d7-8a4b10cae39f",
+          "id": "2b0f39dc-729d-4dff-948e-3bfc9df7acdd",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -82,12 +82,13 @@
         {
           "type": "1",
           "platform": "telegram",
+          "imageUrl": "https://i.imgur.com/WFj6goO.jpg",
           "subtitle": "Algunas sugerencias de búsqueda",
           "title": "Búsquedas de películas",
           "buttons": [
             {
-              "postback": "peliculas en el cine",
-              "text": "En cines"
+              "postback": "peliculas nuevas",
+              "text": "Más recientes"
             },
             {
               "postback": "peliculas más populares",
@@ -105,8 +106,19 @@
         {
           "type": "1",
           "platform": "telegram",
+          "imageUrl": "https://i.imgur.com/WFj6goO.jpg",
           "subtitle": "Algunas sugerencias de búsqueda",
           "title": "Búsquedas de series",
+          "buttons": [
+            {
+              "postback": "Series populares",
+              "text": "Más populares"
+            },
+            {
+              "postback": "Series mejor valoradas",
+              "text": "Mejor valoradas"
+            }
+          ],
           "textToSpeech": "",
           "lang": "es",
           "condition": ""

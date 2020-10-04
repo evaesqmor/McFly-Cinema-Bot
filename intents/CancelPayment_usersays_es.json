@@ -1,9 +1,9 @@
 [
   {
-    "id": "85e71393-9a2b-412a-b7ad-d0e0f256799e",
+    "id": "a6b74fa3-8bd8-4395-8fa7-866a85796769",
     "data": [
       {
-        "text": "Series populares",
+        "text": "denegar",
         "userDefined": false
       }
     ],
@@ -13,10 +13,10 @@
     "updated": 0
   },
   {
-    "id": "57b0aecd-fba7-40f8-a29f-8e1bdf7c04f9",
+    "id": "1cdfacf8-0203-4814-81c0-33e0a4105975",
     "data": [
       {
-        "text": "¿Qué series son las más populares?",
+        "text": "no",
         "userDefined": false
       }
     ],
@@ -26,10 +26,11 @@
     "updated": 0
   },
   {
-    "id": "bece1db2-105d-4332-b4b4-8a60e38366e3",
+    "id": "e81cb818-4e3c-4407-a009-3ed4bd12ce43",
     "data": [
       {
-        "text": "Series más populares",
+        "text": "cancelar",
+        "meta": "@sys.ignore",
         "userDefined": false
       }
     ],

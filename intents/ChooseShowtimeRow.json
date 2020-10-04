@@ -1,9 +1,9 @@
 {
-  "id": "0883167a-b088-4343-9b7a-a19e7f3a55ba",
-  "name": "SearchTvShowEpisodeInfo",
+  "id": "89dda9ed-c72a-4eda-8a0d-ce72496a03e9",
+  "name": "ChooseShowtimeRow",
   "auto": true,
   "contexts": [
-    "searching_followup"
+    "movie_showtimes_at_cinema_followup"
   ],
   "responses": [
     {
@@ -11,21 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "searching_followup",
-          "lifespan": 1
-        },
-        {
-          "name": "search_info_followup",
+          "name": "choose_row_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "5be72c06-ce67-4a95-8a19-576ec0e012e2",
-          "name": "medianame",
+          "id": "6c1ad1b0-2c1a-44b8-8f94-cce6720aa3c9",
+          "name": "movietitle",
           "required": false,
           "dataType": "@sys.any",
-          "value": "$medianame",
+          "value": "$movietitle",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -35,11 +31,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "654f191e-4697-4385-94dd-7ec042fbc46f",
-          "name": "episodeNumber",
+          "id": "b3f18280-3dd9-4991-8b99-2b934288b57e",
+          "name": "showtime",
           "required": false,
           "dataType": "@sys.any",
-          "value": "$episodeNumber",
+          "value": "$showtime",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -49,53 +45,67 @@
           "outputDialogContexts": []
         },
         {
-          "id": "4d7b554f-f1fc-437f-8687-230fc8a1cf2d",
-          "name": "seasonNumber",
-          "required": false,
-          "dataType": "@sys.any",
-          "value": "$seasonNumber",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "4f7cf114-e338-4b06-a1cc-d5039d7e8404",
-          "name": "username",
-          "required": false,
-          "dataType": "",
-          "value": "#searching_followup.username",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "d6d7e7cf-f40a-4ee2-8a90-698ea4f423b1",
-          "name": "password",
-          "required": false,
-          "dataType": "",
-          "value": "#searching_followup.password",
-          "defaultValue": "",
-          "isList": false,
-          "prompts": [],
-          "promptMessages": [],
-          "noMatchPromptMessages": [],
-          "noInputPromptMessages": [],
-          "outputDialogContexts": []
-        },
-        {
-          "id": "d786e17e-8211-4d7c-adf9-7795b075ec3d",
+          "id": "dc780e04-0a8d-401b-b918-d72a83c52315",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#searching_followup.alias",
+          "value": "#movie_showtimes_at_cinema_followup.alias",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "2d0c63fa-97df-4548-8ef0-55477d602cfd",
+          "name": "cinemaname",
+          "required": false,
+          "dataType": "",
+          "value": "#movie_showtimes_at_cinema_followup.cinemaname",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "3e0ad26e-db42-4507-95f4-436daac75f03",
+          "name": "city",
+          "required": false,
+          "dataType": "",
+          "value": "#movie_showtimes_at_cinema_followup.city",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "2a386750-9a6a-46ce-af29-5dc98e9d426d",
+          "name": "password",
+          "required": false,
+          "dataType": "",
+          "value": "#movie_showtimes_at_cinema_followup.password",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "cdb3a11a-f73c-4857-8c69-6d0a8776ee75",
+          "name": "username",
+          "required": false,
+          "dataType": "",
+          "value": "#movie_showtimes_at_cinema_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

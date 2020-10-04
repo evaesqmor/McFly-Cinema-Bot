@@ -11,17 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_actor_biography_followup",
+          "name": "searching_followup",
           "lifespan": 1
         },
         {
-          "name": "searching_followup",
+          "name": "search_info_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "a9d313c7-416a-4eb1-a744-0e664a2f87fe",
+          "id": "b02e0224-77c2-48d4-a87b-443f8035824b",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
@@ -35,7 +35,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "3f06d31f-b8d1-4c6d-b2f3-6e6d32e396b7",
+          "id": "30d8ae90-9118-47a0-9f9a-c608976521fc",
           "name": "username",
           "required": false,
           "dataType": "",
@@ -49,7 +49,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "5ccfc6cb-d41d-4112-8904-a6f786ce804c",
+          "id": "8be82fa0-2ad9-4f68-a1b2-8a299503d1ee",
           "name": "password",
           "required": false,
           "dataType": "",
@@ -63,7 +63,7 @@
           "outputDialogContexts": []
         },
         {
-          "id": "d0ab2bac-ee63-416c-94d7-63d79567897f",
+          "id": "6f43e90e-1286-49af-8394-1224895deb96",
           "name": "alias",
           "required": false,
           "dataType": "",

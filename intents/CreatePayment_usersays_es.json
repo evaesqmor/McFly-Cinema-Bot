@@ -1,0 +1,17 @@
+[
+  {
+    "id": "abd3845b-278c-48d9-9020-fa468de299d0",
+    "data": [
+      {
+        "text": "4242424242424242",
+        "meta": "@sys.any",
+        "alias": "cardnumber",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

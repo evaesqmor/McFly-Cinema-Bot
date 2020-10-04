@@ -3,7 +3,7 @@
   "name": "SearchMovieBudget",
   "auto": true,
   "contexts": [
-    "correct_access_followup"
+    "searching_followup"
   ],
   "responses": [
     {
@@ -11,21 +11,63 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "search_movie_budget_followup",
+          "name": "searching_followup",
           "lifespan": 1
         },
         {
-          "name": "correct_access_followup",
+          "name": "search_info_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "44c0b627-30fe-4c6c-b495-99babded2bc3",
+          "id": "901940d7-4ddc-4d58-b066-fd17baad69c6",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
           "value": "$medianame",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "3b7674ee-0e0f-4a63-90a6-72ec81698e10",
+          "name": "username",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.username",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "11fb8132-7689-492d-adea-b080acdb0b6b",
+          "name": "password",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.password",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "b92f47dc-e671-4bd0-a049-4c0cef554eb1",
+          "name": "alias",
+          "required": false,
+          "dataType": "",
+          "value": "#searching_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

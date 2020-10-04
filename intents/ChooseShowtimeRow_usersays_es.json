@@ -1,0 +1,89 @@
+[
+  {
+    "id": "002bec5e-918a-4327-9414-3b1d87852099",
+    "data": [
+      {
+        "text": "Comprar entrada  para ",
+        "userDefined": false
+      },
+      {
+        "text": "La La Land",
+        "meta": "@sys.any",
+        "alias": "movietitle",
+        "userDefined": true
+      },
+      {
+        "text": " en el horario ",
+        "userDefined": false
+      },
+      {
+        "text": "20:00",
+        "meta": "@sys.any",
+        "alias": "showtime",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7ed9a3e4-a11d-4c56-adfa-e59a352ebbcf",
+    "data": [
+      {
+        "text": "Comprar entrada  para ",
+        "userDefined": false
+      },
+      {
+        "text": "La La Land",
+        "meta": "@sys.any",
+        "alias": "movietitle",
+        "userDefined": true
+      },
+      {
+        "text": " horario ",
+        "userDefined": false
+      },
+      {
+        "text": "20:00",
+        "meta": "@sys.any",
+        "alias": "showtime",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "cfccf070-22b6-490e-96cd-88ecca848a32",
+    "data": [
+      {
+        "text": "Comprar entrada  ",
+        "userDefined": false
+      },
+      {
+        "text": "La La Land",
+        "meta": "@sys.any",
+        "alias": "movietitle",
+        "userDefined": true
+      },
+      {
+        "text": " horario ",
+        "userDefined": false
+      },
+      {
+        "text": "20:00",
+        "meta": "@sys.any",
+        "alias": "showtime",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
