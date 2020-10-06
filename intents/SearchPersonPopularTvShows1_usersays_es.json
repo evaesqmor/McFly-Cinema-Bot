@@ -1,0 +1,330 @@
+[
+  {
+    "id": "03adc0e5-7d7b-4a26-8770-4a979882ce8e",
+    "data": [
+      {
+        "text": "¿En qué series sale ",
+        "userDefined": false
+      },
+      {
+        "text": "Kit Harington",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "592301f6-15da-456c-8600-68618c21201c",
+    "data": [
+      {
+        "text": "¿En qué series sale la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Alyson Hannigan",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "cff02272-cd60-4893-86b6-f9fe7d7836f1",
+    "data": [
+      {
+        "text": "¿En qué series sale el actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Jason Segel",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b07478bc-cc31-4346-b205-8280a6b82374",
+    "data": [
+      {
+        "text": "Series en las que aparece ",
+        "userDefined": false
+      },
+      {
+        "text": "Neil Patrick Harris",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f0d2c17c-482d-46dc-bdb3-186fc2208bbb",
+    "data": [
+      {
+        "text": "Series en las que aparece la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Ginnifer Goodwin",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "51114212-ffa9-4837-b2c4-4d41cc790ce4",
+    "data": [
+      {
+        "text": "Series en las que aparece el actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Matthew Fox",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "23037de3-716e-42fb-9e93-797b17dfd609",
+    "data": [
+      {
+        "text": "Series de ",
+        "userDefined": false
+      },
+      {
+        "text": "Evangeline Lilly",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "bc76bd2a-5e7c-4583-a0a7-5a87436d0ff0",
+    "data": [
+      {
+        "text": "Series conocidas de ",
+        "userDefined": false
+      },
+      {
+        "text": "Kaley Cuoco",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "78632bd1-c690-4245-86a0-4104e2d575e9",
+    "data": [
+      {
+        "text": "Series conocidas de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Emma Watson",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "33b6571f-a57c-43d4-9127-62379796ef0b",
+    "data": [
+      {
+        "text": "Series conocidas del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Brad Pitt",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c49c9544-6d20-4a28-8b91-57561e965576",
+    "data": [
+      {
+        "text": "Series famosas de ",
+        "userDefined": false
+      },
+      {
+        "text": "Sophia Lillis",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "03d0ffe1-43be-4d6b-b2e8-c4d24fb32f81",
+    "data": [
+      {
+        "text": "Series famosas de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Alison Brie",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "32a08d8e-046c-4718-b5d5-08d11497b877",
+    "data": [
+      {
+        "text": "Series famosas del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Jason Bateman",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "a183b47b-1cef-4efe-ae48-b57cc93a565f",
+    "data": [
+      {
+        "text": "¿Por qué series se conoce a ",
+        "userDefined": false
+      },
+      {
+        "text": "Dylan Minnette",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0eae4c4b-b70e-4d25-b977-9005dc1fcb3a",
+    "data": [
+      {
+        "text": "¿Por qué series se conoce a la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Winona Ryder",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "9ce4b884-73c6-40ca-be72-5890f9206907",
+    "data": [
+      {
+        "text": "¿Por qué series se conoce al actor ",
+        "userDefined": false
+      },
+      {
+        "text": "David Harbour",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

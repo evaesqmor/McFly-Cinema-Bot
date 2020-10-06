@@ -1,22 +1,31 @@
 {
-  "id": "f1151460-56e4-4611-b1b2-1bd98d83ffcd",
-  "name": "LoginFirstEmailIntent",
+  "id": "ff60b7f8-ad68-4f2c-9173-be95aa940176",
+  "name": "SearchPersonPopularMovies",
   "auto": true,
   "contexts": [
-    "login_first_action_followup"
+    "searching_followup"
   ],
   "responses": [
     {
       "resetContexts": false,
       "action": "",
-      "affectedContexts": [],
+      "affectedContexts": [
+        {
+          "name": "searching_followup",
+          "lifespan": 1
+        },
+        {
+          "name": "search_info_followup",
+          "lifespan": 1
+        }
+      ],
       "parameters": [
         {
-          "id": "9b490650-d519-4687-b49a-94ea4b12d548",
-          "name": "email",
+          "id": "814b69c2-0cfe-4101-8eb9-1c6ad7ec3b31",
+          "name": "medianame",
           "required": false,
-          "dataType": "@sys.email",
-          "value": "$email",
+          "dataType": "@sys.any",
+          "value": "$medianame",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -26,11 +35,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "f8db939f-809e-4897-84b5-8b0dbcc4f0a6",
+          "id": "4f01484c-eb95-47ec-89c7-076f291fddf8",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#login_first_action_followup.username",
+          "value": "#searching_followup.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -40,11 +49,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "bf417f7d-8447-4627-8791-03cbe6ef093e",
+          "id": "e489308f-0746-4710-8471-ef7b3efa5e3f",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#login_first_action_followup.password",
+          "value": "#searching_followup.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -54,11 +63,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "087b8723-7987-4519-a7ab-9874cb987268",
+          "id": "70f63af8-e677-43c7-b14e-5986d2e8d83e",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#login_first_action_followup.alias",
+          "value": "#searching_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -74,9 +83,6 @@
           "title": "",
           "textToSpeech": "",
           "lang": "es",
-          "speech": [
-            "Okey, $email"
-          ],
           "condition": ""
         }
       ],

@@ -1,0 +1,361 @@
+[
+  {
+    "id": "d749c931-712a-4709-a08f-74c027572a82",
+    "data": [
+      {
+        "text": "Lugar de nacimiento del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Joaquin Phoenix",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "927c2ec2-8fd8-4ab3-beff-6cdd1bc30b38",
+    "data": [
+      {
+        "text": "Lugar de nacimiento de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Rooney Mara",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "532d12fa-94c1-4323-9f97-42615a59739e",
+    "data": [
+      {
+        "text": "¿Dónde nació ",
+        "userDefined": false
+      },
+      {
+        "text": "George Clooney",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "26ad5156-da8d-410d-9646-f42bb139aeb4",
+    "data": [
+      {
+        "text": "¿Dónde nació la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Emilia Clarke",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "90a718cb-258d-47aa-8a4f-808506112f0b",
+    "data": [
+      {
+        "text": "¿Dónde nació el actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Neil Patrick Harris",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "6bdea6e3-f846-42c4-a753-dcaf6c86a29b",
+    "data": [
+      {
+        "text": "Cumpleaños de ",
+        "userDefined": false
+      },
+      {
+        "text": "Colin Farrell",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "a55a65fd-5c22-4c9e-a8db-105e4c9d33ee",
+    "data": [
+      {
+        "text": "Cumpleaños de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Katherine Langford",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "ceb78bbb-2056-4cc8-a16f-1d0770f655b2",
+    "data": [
+      {
+        "text": "Cumpleaños del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Gerald Butler",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "2547efd0-7c42-42c3-8d71-9e4b7ec86a69",
+    "data": [
+      {
+        "text": "¿Cuándo nació el actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Ralph Fiennes",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "18ce0ec8-c8b6-4850-86b4-cc1353ac5bcb",
+    "data": [
+      {
+        "text": "¿Cuándo nació la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Penélope Cruz",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0cae9f1f-ca8d-491e-9889-1d641b798784",
+    "data": [
+      {
+        "text": "¿Cuándo nació ",
+        "userDefined": false
+      },
+      {
+        "text": "Steve Carrell",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "9c6e1f91-805e-445a-916c-9c88c1d7fe9a",
+    "data": [
+      {
+        "text": "Fecha de nacimiento de ",
+        "userDefined": false
+      },
+      {
+        "text": "Dakota Johnson",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "6233e9b5-6027-490d-90fe-2300acfbe3be",
+    "data": [
+      {
+        "text": "Fecha de nacimiento de ",
+        "userDefined": false
+      },
+      {
+        "text": "Jamie Dornan",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "255b4605-f233-4fbd-b7eb-accf1ec9c7ab",
+    "data": [
+      {
+        "text": "Fecha de nacimiento del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Antonio Banderas",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "05377d18-ab87-4ac1-b2ef-c97cfb1833b9",
+    "data": [
+      {
+        "text": "¿Cuál es la fecha de nacimiento de ",
+        "userDefined": false
+      },
+      {
+        "text": "Ana De Armas",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f979467f-0ad2-4723-9869-51ce0e2ab582",
+    "data": [
+      {
+        "text": "¿Cuál es la fecha de nacimiento de la actriz ",
+        "userDefined": false
+      },
+      {
+        "text": "Emilia Clarke",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b77004ef-741d-427b-be76-ad7e0c77dbb8",
+    "data": [
+      {
+        "text": "¿Cuál es la fecha de nacimiento del actor ",
+        "userDefined": false
+      },
+      {
+        "text": "Chris Evans",
+        "meta": "@sys.any",
+        "alias": "medianame",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
