@@ -2,7 +2,6 @@
 // for Dialogflow fulfillment library docs, samples, and to report issues
 'use strict';
  
-//Define Firebase
 const functions = require('firebase-functions');
 const {Text, Card, WebhookClient, Image, Suggestion, Payload} = require('dialogflow-fulfillment');
 const axios = require('axios');
@@ -22,13 +21,12 @@ const cc = require('currency-codes');
 const data = require('currency-codes/data');
 const currency = require( 'country-to-currency' );
 const stripe = require('stripe')('sk_test_51HWh0hKfScpaeE9Gpm75eNKgRKMPtY4o7szLdum0ywZmUJ01oXrYmtCzDVHWRqH7STZtSevYYPVUayLmgRfSVPBz005o1X0efw');
-const screenshot = require('screenshot-desktop');
 
 //Conection to Firebase Database
 const admin = require('firebase-admin');
 admin.initializeApp({
 	credential: admin.credential.applicationDefault(),
-  	databaseURL: 'ws://mcflyentertainmentbot-bxcc.firebaseio.com/'
+  	databaseURL: 'ws://mcflyentertainmentbot-nwne.firebaseio.com/'
 });
  
 process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
@@ -37,6 +35,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   const agent = new WebhookClient({ request, response });
   var database = admin.database();
   var generalRef = database.ref("users");
+  var sessionsRef = database.ref("sessions");
   var tmdbKey = "5de10ffec3fea5b06d8713b047977f01";
   var imgPth = "http://image.tmdb.org/t/p/w500/";
   var endpoint = "https://api.themoviedb.org/3";
@@ -118,6 +117,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 	const password = agent.parameters.password;    
     generalRef.child(username).update({
       alias: alias,
+      email: ""
     });
   }
   
@@ -127,8 +127,11 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     const username = agent.parameters.username;
 	const password = agent.parameters.password;
     const email = agent.parameters.email;
+    agent.add(`${email}`);
+	console.log("USERNAME: "+username);
     generalRef.child(username).update({
-      email: email,
+      alias: alias,
+      email: email
     });
     agent.setFollowupEvent({ "name": "tasks", "parameters" : { "username": username, "password":password, "alias":alias, "email":email}});
   }
@@ -2059,8 +2062,8 @@ function handleSearchGenreActorMostPopularMovies(){
       }else{agent.add(new Card({title: "Sin resultados" , text: `No se han encontrado resultados para ${medianame}. Vuelve a intentarlo`}));}
     });
   }
-   
-/***********************************************/
+  
+  /***********************************************/
 /************SHOWTIMES***********/
   /*Showtimes searching type by CITY*/
   /*Showtimes: Getting cinemas*/
@@ -2255,9 +2258,10 @@ function handleSearchGenreActorMostPopularMovies(){
     var movietitle = agent.parameters.movietitle.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     var moviequery = movietitle.split(" ").join('-');
     var city = agent.parameters.city;
+    var cityquery = city.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().split(" ").join('-');
     var cinemaname = agent.parameters.cinemaname;
     var shwt = agent.parameters.showtime;
-    return axios.get(`https://cine.entradas.com/p/${moviequery}`).then((response)=>{
+    return axios.get(`https://cine.entradas.com/cine-${cityquery}/p/${moviequery}`).then((response)=>{
       var found=false;
       const $ = cheerio.load(response.data);
       var cinemas = $('div.page.page--portal').find('article')
@@ -2283,32 +2287,89 @@ function handleSearchGenreActorMostPopularMovies(){
             if(shwtime==shwt){
               found=true;
               shwtlink = ticketsPth+showtime.find('a').attr('href');
-              agent.add(`${shwtlink}`);
-              agent.add(`${found}`);
             }
           });
        }
       });
-      agent.add(`${shwtlink}`);
-      return axios.get(`${shwtlink}`).then((result)=>{
+      //agent.add(`${shwtlink}`);
+      return axios.get(`${shwtlink}`)
+        .then((result)=>{
         const $ = cheerio.load(result.data);
-        console.log("DATA:: "+$('div.page.page--portal')
+        var sallesection = $('div.page.page--portal')
         .find('div.page__wrapper.page__wrapper--grow.page__wrapper--light')
         .find('div.page__content.grid')
         .find('div.grid__col-12.u-no-overflow')
-        .find('div.panel-panes')
-        .find('section.panel-pane.panel-pane--seats.is-active').html());
-        /*.find('div.panel-pane__content')
-        .find('div.seatplan.auditorium-6533.flex.flex-wrap')
-        .find('div.w-full').html());*/
-        
+        .find('div.panel-panes') //shows -->conseguir la sala de la sesión
+        .find('section.panel-pane.panel-pane--shows.is-active')
+        .find('span.panel-pane__head__summary').text();
+        var arraysalle = sallesection.split(",");
+        var salle = arraysalle[arraysalle.length-1].split(" ")[2].split(" ")[0].split(" ");
+        agent.add(new Card({title:`Sesión de las ${shwt}`,text:`Sala ${salle[0]}`}));
+        //SESSIONID
+        var shwtquery = shwt.split(":").join('-');
+        var cinemaquery = parsecinema.split(" ").join('-');
+        var sessionid =cinemaquery+"_"+moviequery+"_"+shwtquery;
+        //Buscar el id en la bdd
+        return sessionsRef.once("value").then((snapshot)=>{
+          var complete =snapshot.child(`${sessionid}/complete`).val();
+          var rows = 14;
+          var columns = 20;  
+          //Creando matriz en BDD
+          if(complete==null){
+            agent.add(`Ahora mismo está la sala vacía.`);
+            sessionsRef.child(sessionid).set({time: shwt, movie:movietitle, complete:false});
+            for(var i =1;i<=rows;i++){
+              var rowname = "row_"+i;
+              sessionsRef.child(`${sessionid}/matrix/${rowname}`).set({taken:0, full:false});
+              for(var j = 1; j<=columns;j++){
+                var seatname = "seat_"+j; 
+                sessionsRef.child(`${sessionid}/matrix/${rowname}/${seatname}`).set({number:j,status:"available"});
+              }
+            } 
+          }
+          if(complete=="false"){
+          //Filas disponibles
+          agent.add(`Estas son las filas que hay disponibles: `);
+          for(var x = 0;x<=rows;x++){
+            var rowid = "row_"+x;
+            var isfull =snapshot.child(`${sessionid}/matrix/complete`).val();
+            if(isfull==false){
+              agent.add(new Card({title:`Fila ${x}`,text:`Hay asientos disponibles`,
+              buttonText:`Ver disponibles`,buttonUrl:`Asientos fila ${x} (${sessionid})`}));
+            }
+          }
+          }
+          if(complete=="true"){
+          	agent.add(new Card({title:`La sala está completa`,text:`Prueba en otro horario`}));
+          }
         if(!found){
           agent.add(`No se han encontrado resultados para dicha sesión en ${cinemaname}`);
         }
+        });
      });
     });
   }
   
+  /*Available seats*/
+  function handleChooseShowtimeSeat(){
+    var sessionid = agent.parameters.sessionid;
+    var rownumber = agent.parameters.rownumber;
+    var columns = 20;
+    return sessionsRef.once("value").then((snapshot)=>{
+      var matrix =snapshot.child(`${sessionid}/matrix`).val();
+      for(var i =1;i<=columns;i++){
+        var rowid= "row_"+rownumber;
+        var seatid = "seat_"+i;
+        var status = snapshot.child(`${sessionid}/matrix/${rowid}/${seatid}/status`).val();
+        if(status=="available"){
+          var seatnumber = snapshot.child(`${sessionid}/matrix/${rowid}/${seatid}/number`).val();
+          agent.add(`Asiento ${seatnumber}`);
+        
+        }
+      }
+     });
+  }
+ 
   /*Request payment*/
   function handleTicketPayment(){
     var username = agent.parameters.username;
@@ -2439,5 +2500,6 @@ function handleSearchGenreActorMostPopularMovies(){
   intentMap.set('CreatePayment',handleCreatePayment);
   intentMap.set('ProceedToPayment',handleProceedToPayment);
   intentMap.set('ChooseShowtimeRow',handleChooseShowtimeRow);
+  intentMap.set('ChooseShowtimeSeat',handleChooseShowtimeSeat);
   agent.handleRequest(intentMap);
 });

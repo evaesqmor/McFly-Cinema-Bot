@@ -1,9 +1,9 @@
 {
-  "id": "3c591a1d-d243-44a4-ba56-7f2cc3d2be74",
-  "name": "SearchPersonPopularTvShows",
+  "id": "f8c272d7-e2f8-4221-9ad0-501d4cbdb60f",
+  "name": "ChooseShowtimeSeat",
   "auto": true,
   "contexts": [
-    "searching_followup"
+    "choose_row_followup"
   ],
   "responses": [
     {
@@ -11,21 +11,31 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "searching_followup",
-          "lifespan": 1
-        },
-        {
-          "name": "search_info_followup",
+          "name": "choose_seat_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "87490a0a-9dbd-4151-a1a7-7776be7e188b",
-          "name": "medianame",
+          "id": "28a6feac-51a0-4ef6-b1f5-cf15df056721",
+          "name": "rownumber",
           "required": false,
           "dataType": "@sys.any",
-          "value": "$medianame",
+          "value": "$rownumber",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "89e029dd-9c2f-40c0-8ead-5a2e08c212ae",
+          "name": "sessionid",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$sessionid",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

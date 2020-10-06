@@ -1,9 +1,9 @@
 {
-  "id": "3c591a1d-d243-44a4-ba56-7f2cc3d2be74",
-  "name": "SearchPersonPopularTvShows",
+  "id": "13dcfea0-4174-4cac-9aeb-392bc126671d",
+  "name": "SearchActorBirthdate",
   "auto": true,
   "contexts": [
-    "searching_followup"
+    "correct_access_followup"
   ],
   "responses": [
     {
@@ -11,17 +11,17 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "searching_followup",
+          "name": "search_actor_birthdate_followup",
           "lifespan": 1
         },
         {
-          "name": "search_info_followup",
+          "name": "correct_access_followup",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "87490a0a-9dbd-4151-a1a7-7776be7e188b",
+          "id": "bed5cd4b-a13f-42cd-85c2-7dd367a8b9b4",
           "name": "medianame",
           "required": false,
           "dataType": "@sys.any",
