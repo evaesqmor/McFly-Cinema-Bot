@@ -11,13 +11,13 @@
       "action": "",
       "affectedContexts": [
         {
-          "name": "choose_seat_followup",
+          "name": "payment_start",
           "lifespan": 1
         }
       ],
       "parameters": [
         {
-          "id": "28a6feac-51a0-4ef6-b1f5-cf15df056721",
+          "id": "9346fb62-2ea2-47a5-beb4-0ce2c50058be",
           "name": "rownumber",
           "required": false,
           "dataType": "@sys.any",
@@ -31,11 +31,81 @@
           "outputDialogContexts": []
         },
         {
-          "id": "89e029dd-9c2f-40c0-8ead-5a2e08c212ae",
+          "id": "7f2d1294-e4da-4161-a106-36302ac2ed3b",
           "name": "sessionid",
           "required": false,
           "dataType": "@sys.any",
           "value": "$sessionid",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "710afa0f-ed9b-429b-8151-fe08bcb19949",
+          "name": "movietitle",
+          "required": false,
+          "dataType": "",
+          "value": "#choose_row_followup.movietitle",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "72c70010-8ee6-4d84-883f-e6647f6589ce",
+          "name": "showtime",
+          "required": false,
+          "dataType": "",
+          "value": "#choose_row_followup.showtime",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "82e90816-5833-4c44-a176-2cc9e73bb405",
+          "name": "username",
+          "required": false,
+          "dataType": "",
+          "value": "#choose_row_followup.username",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "7dd5eab5-c180-4af0-9ff0-847e141e2687",
+          "name": "password",
+          "required": false,
+          "dataType": "",
+          "value": "#choose_row_followup.password",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "4064e0e9-d568-4e61-ad57-9962349699bc",
+          "name": "alias",
+          "required": false,
+          "dataType": "",
+          "value": "#choose_row_followup.alias",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
