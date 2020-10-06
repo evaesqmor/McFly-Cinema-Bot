@@ -137,7 +137,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   }
   
   /*******SEARCHING CONTENTS*******/
-
   /*General Info Search: Movies, Shows and People. Displaying basic info*/
   function handleMediaSearch(){
     const medianame = agent.parameters.medianame;
@@ -2317,30 +2316,30 @@ function handleSearchGenreActorMostPopularMovies(){
           //Creando matriz en BDD
           if(complete==null){
             agent.add(`Ahora mismo está la sala vacía.`);
-            sessionsRef.child(sessionid).set({time: shwt, movie:movietitle, complete:false});
+            sessionsRef.child(sessionid).set({time: shwt, movie:movietitle,completerows:0, complete:false});
+            complete = false;
             for(var i =1;i<=rows;i++){
               var rowname = "row_"+i;
-              sessionsRef.child(`${sessionid}/matrix/${rowname}`).set({taken:0, full:false});
+              sessionsRef.child(`${sessionid}/matrix/${rowname}`).set({taken:0,  full:false});
               for(var j = 1; j<=columns;j++){
                 var seatname = "seat_"+j; 
                 sessionsRef.child(`${sessionid}/matrix/${rowname}/${seatname}`).set({number:j,status:"available"});
               }
             } 
           }
-          if(complete=="false"){
-          //Filas disponibles
-          agent.add(`Estas son las filas que hay disponibles: `);
-          for(var x = 0;x<=rows;x++){
-            var rowid = "row_"+x;
-            var isfull =snapshot.child(`${sessionid}/matrix/complete`).val();
-            if(isfull==false){
-              agent.add(new Card({title:`Fila ${x}`,text:`Hay asientos disponibles`,
-              buttonText:`Ver disponibles`,buttonUrl:`Asientos fila ${x} (${sessionid})`}));
+          if(complete==false){
+            //Filas disponibles
+            agent.add(`Estas son las filas que hay disponibles: `);
+            for(var x = 0;x<=rows;x++){
+              var rowid = "row_"+x;
+              var isfull =snapshot.child(`${sessionid}/matrix/${rowid}/full`).val();
+              if(isfull==false){
+                agent.add(new Card({title:`Fila ${x}`,text:`Hay asientos disponibles`,
+                buttonText:`Ver disponibles`,buttonUrl:`Asientos fila ${x} (${sessionid})`}));
+              }
             }
-          }
-          }
-          if(complete=="true"){
-          	agent.add(new Card({title:`La sala está completa`,text:`Prueba en otro horario`}));
+          }else{
+            agent.add(new Card({title:`La sala está completa`,text:`Prueba en otro horario`}));
           }
         if(!found){
           agent.add(`No se han encontrado resultados para dicha sesión en ${cinemaname}`);
@@ -2363,8 +2362,8 @@ function handleSearchGenreActorMostPopularMovies(){
         var status = snapshot.child(`${sessionid}/matrix/${rowid}/${seatid}/status`).val();
         if(status=="available"){
           var seatnumber = snapshot.child(`${sessionid}/matrix/${rowid}/${seatid}/number`).val();
-          agent.add(`Asiento ${seatnumber}`);
-        
+          agent.add(new Card({title:`Asiento ${seatnumber}`,text:`Este asiento está disponible`,
+          buttonText:`Comprar`,buttonUrl:`Asiento ${seatnumber} en la fila ${rownumber}`}));
         }
       }
      });

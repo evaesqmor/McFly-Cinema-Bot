@@ -2,7 +2,9 @@
   "id": "3d718a2b-71e0-4328-bbeb-dbc7f5b190d5",
   "name": "TicketPayment",
   "auto": true,
-  "contexts": [],
+  "contexts": [
+    "payment_start"
+  ],
   "responses": [
     {
       "resetContexts": false,
@@ -15,11 +17,39 @@
       ],
       "parameters": [
         {
-          "id": "eef99050-9edc-44cb-8a5e-5915a9e36786",
+          "id": "29b71605-d066-491c-8971-f544190071ce",
+          "name": "seatnumber",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$seatnumber",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "42135aba-b824-4d28-ac0c-29db5810c768",
+          "name": "rownumber",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$rownumber",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "400a8e81-da8c-41b3-8178-21212a498af0",
           "name": "username",
           "required": false,
           "dataType": "",
-          "value": "#movie_showtimes_at_cinema_followup.username",
+          "value": "#payment_start.username",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -29,11 +59,11 @@
           "outputDialogContexts": []
         },
         {
-          "id": "8c958204-0cda-48f2-a3ba-81712c6c1c65",
+          "id": "03fad6fd-fdfb-4ef0-8036-e4a622185789",
           "name": "password",
           "required": false,
           "dataType": "",
-          "value": "#movie_showtimes_at_cinema_followup.password",
+          "value": "#payment_start.password",
           "defaultValue": "",
           "isList": false,
           "prompts": [],
@@ -43,11 +73,25 @@
           "outputDialogContexts": []
         },
         {
-          "id": "01b378fb-3ab3-40f3-9f64-3379fd3f305d",
+          "id": "b7493bd3-cd82-4637-9825-fec86f438615",
           "name": "alias",
           "required": false,
           "dataType": "",
-          "value": "#movie_showtimes_at_cinema_followup.alias",
+          "value": "#payment_start.alias",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "6aa026d7-11cd-4e6b-800b-728856e9e29a",
+          "name": "showtime",
+          "required": false,
+          "dataType": "",
+          "value": "#payment_start.showtime",
           "defaultValue": "",
           "isList": false,
           "prompts": [],

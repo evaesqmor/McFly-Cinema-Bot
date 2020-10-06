@@ -1,0 +1,31 @@
+[
+  {
+    "id": "735d1105-e436-414d-ac4a-999dec90d35a",
+    "data": [
+      {
+        "text": "Asiento ",
+        "userDefined": false
+      },
+      {
+        "text": "1",
+        "meta": "@sys.any",
+        "alias": "seatnumber",
+        "userDefined": true
+      },
+      {
+        "text": " en la fila ",
+        "userDefined": false
+      },
+      {
+        "text": "10",
+        "meta": "@sys.any",
+        "alias": "rownumber",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
